@@ -6,3 +6,7 @@ Target: La pagina sumercé y tá, está dirigido a aquellos colombianos que est�
 Descripción del target: Todos aquello colombianos que viven en chile, tienen un gran amor por su patria y saben que no hay mejor calidad que la que se fabrica en colombia su edad está en promedio entre los 25 y 45 años de edad.
 
 La paleta de colores elegidos es https://coolors.co/cc8f94-c0b283-dcd0c0-f4f4f4-373737 también se puede encontrar en la carpeta design en formato "pdf".
+
+Soy Jonathan Armesto, tengo 29 años, soy de Montevideo,Uruguay. Hace aproximadamente un año que empecé con la programación, mediante un curso empleado por Plan Ceibal 
+aprendiendo HTML, CSS y JavaScript, actualmente me encuentro estudiando un curso de React, y aprendiendo de forma autodidacta.
+
