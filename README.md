@@ -10,3 +10,7 @@ La paleta de colores elegidos es https://coolors.co/cc8f94-c0b283-dcd0c0-f4f4f4-
 La fuente se puede encontrar en https://fonts.google.com/specimen/Caveat+Brush?query=caveat
 
 Los iconos se obtinen desde la pagina https://material.io/resources/icons/?style=baseline
+
+Jair Fonseca
+
+Soy un colombiano que decidio salir a darle la vuelta a sudamerica y en el viaje me enamoré de Tierra del fuego al sur de Chile, me apasiona la tecnología y más especificamente programar, tengo conociminetos en Python, Java, Javascript como lenguajes y los framewokrs express, Vue.js.
