@@ -21,3 +21,8 @@ aprendiendo HTML, CSS y JavaScript, actualmente me encuentro estudiando un curso
 Soy Elízabeth Hortúa, tengo 24 años soy colombiana y hace un tiempo empecé a estudiar programación por medio de unos cursos, ahora mi siguiente paso es hacer la carrera de Ciencias de la computación y hacer proyectos para conseguir mi primer empleo IT.
 
 Soy Jair Fonseca un colombiano que decidio salir a darle la vuelta a sudamerica y en el viaje me enamoré de Tierra del fuego al sur de Chile, me apasiona la tecnología y más especificamente programar, tengo conociminetos en Python, Java, Javascript como lenguajes y los framewokrs express, Vue.js.
+
+
+Tablero del sprint 1: https://github.com/JairFonsecaP/grupo_4_sumerce_y_ta/projects/1
+
+Tablero del sprint 2: https://github.com/JairFonsecaP/grupo_4_sumerce_y_ta/projects/2
