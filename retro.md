@@ -21,3 +21,7 @@ Keep Doing:
 Less of:
 
 Stop Doing:
+
+Resumen sprit 1:
+
+Se trabajo por medio de tareas pequeñas mediante un proyecto de Github donde cada integrante del equipo elegió la tarea en la que se sintiera más comodo, también se hicieron tres reuniones por medio de la plataforma "Zoom", en las cuales se definieron todos los parametros a usar en la pagina "Sumercé y tá", si existian dudas pequeñas que no ameritaban una reunion con todos los integrantes se solucionaba por medio del grupo de "whatsapp", hubo un manejo de git donde se creo una rama "design" en la que cada integrante creó una rama para trabajar sobre ella y luego de terminado el trabajo individual se hizo el merge a la rama "design" en la cual se reviso el trabajo para posterirmente cuando estuviera revisado poder hacer el merge a "main".
