@@ -2,7 +2,7 @@ footer {
   margin-top: 20px;
 }
 footer img {
-  width: 200px;
+  width: 150px;
 }
 h6 {
   text-align: center;
@@ -27,4 +27,29 @@ footer div {
 footer a {
   color: #373737;
   text-decoration: none;
+}
+@media (min-width: 768px) {
+  footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  footer img {
+    width: 100px;
+  }
+  footer li {
+    margin: 5% 0;
+  }
+}
+@media (min-width: 1024px) {
+  footer {
+    justify-content: space-between;
+    padding: 0 10%;
+  }
+  footer li,
+  h6 {
+    text-align: left;
+  }
+  footer img {
+    width: 150px;
+  }
 }
