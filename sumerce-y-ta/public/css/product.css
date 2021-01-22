@@ -1,0 +1,42 @@
+p {
+    font-size: 20px!important;
+}
+
+.img-product {
+    width: 100vw;
+    height: 75vh;
+    position: relative;
+}
+
+.fa-heart {
+    font-size: 2rem;
+    position: absolute;
+    top: 630px;
+    left: 440px;
+    color: black;
+    
+}
+.fa-heart:hover {
+cursor: pointer;
+color: red;
+transition: all .2s ease;
+transform: scale(1.2);
+
+}
+
+
+.img-card {
+    width: 40vw;
+    margin: 10px;
+}
+
+
+.product-related {
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+
+.cards {
+    margin-right: 5px;
+}

@@ -8,6 +8,10 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/index.html"));
 });
 
+app.get("/producto", (req, res) => {
+  res.sendFile(path.join(__dirname, "./views/product.html"));
+});
+
 app.use("/static", express.static(__dirname + "/public"));
 
 app.listen(port, () => {

@@ -9,7 +9,13 @@ body {
   font-family: "Caveat", cursive;
   background-color: #f4f4f4;
 }
-
+ul li a {
+  border-bottom: 4px solid #DCD0C0;
+}
+ul li a:hover {
+  transition: border-bottom 1s;
+  border-bottom: 4px solid #CC8F94;
+}
 .lista-header {
   display: flex;
   justify-content: space-between;
@@ -94,7 +100,7 @@ body {
   .cabecera {
     height: 30px;
   }
-}
+
 
 @media (min-width: 768px) {
   .iconos-header {
