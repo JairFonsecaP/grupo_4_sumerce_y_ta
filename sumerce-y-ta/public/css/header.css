@@ -6,7 +6,7 @@ nav {
 }
 
 body {
-  font-family: "Caveat", cursive;
+  font-family: "Caveat", sans-serif;
   background-color: #f4f4f4;
 }
 ul li a {
@@ -86,8 +86,6 @@ ul li a:hover {
   .iconos-header {
     font-size: 1.6em;
   }
-  
-  }
   .imagen-logo {
     width: 150px;
   }
@@ -120,9 +118,10 @@ ul li a:hover {
   }
 }
 
-@media (min-width: 1024px) {
-    .logo-cabecera {
-        display: none;}
+@media (min-width: 1200px) {
+  .logo-cabecera {
+    display: none;
+  }
   .cabecera {
     padding: 0 50px;
   }
@@ -152,8 +151,7 @@ ul li a:hover {
     font-size: 1.6em;
     margin: 0 15px;
     font-weight: 800;
-    text-align:center;
-    
+    text-align: center;
   }
   nav {
     display: flex;
@@ -164,11 +162,10 @@ ul li a:hover {
   }
   .busqueda {
     border-radius: 15px;
-    margin-right:25px;
+    margin-right: 25px;
   }
   .cabecera-secundaria {
     padding: 0 30px;
-    
   }
   .lista-header {
     display: flex;
@@ -176,9 +173,9 @@ ul li a:hover {
     align-items: center;
     font-size: 1.2em;
     font-weight: 800;
-    text-align:center;  
-    }
-    .lista-header i{
-        font-size: 2em;
-    }
+    text-align: center;
+  }
+  .lista-header i {
+    font-size: 2em;
+  }
 }
