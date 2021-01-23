@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+}
+nav {
+  display: none;
+}
+
+body {
+  font-family: "Caveat", sans-serif;
+  background-color: #f4f4f4;
+}
+
+.lista-header {
+  display: flex;
+  justify-content: space-between;
+}
+.cabecera {
+  background-color: #373737;
+  color: #f4f4f4;
+  display: flex;
+  justify-content: space-between;
+  height: 25px;
+  margin: 0;
+  align-items: flex-start;
+  font-size: 16px;
+  padding: 5px;
+}
+.cabecera a {
+  text-decoration: none;
+  display: inline-block;
+  color: #f4f4f4;
+}
+.cabecera p {
+  margin: 0;
+  font-size: 12px;
+}
+.cabecera-secundaria {
+  background-color: #dcd0d0;
+  padding: 5px;
+  justify-content: space-between;
+}
+.imagen-logo {
+  width: 120px;
+  margin: 0;
+}
+.logo {
+  margin: 0;
+  display: flex;
+}
+.cabecera-secundaria ul {
+  list-style: none;
+  display: none;
+}
+.cabecera-secundaria a {
+  text-decoration: none;
+  display: inline-block;
+  color: #373737;
+}
+.logo-cabecera {
+  display: flex;
+  justify-content: space-between;
+  padding: 2%;
+}
+.iconos-header {
+  color: #373737;
+  text-align: center;
+  font-size: 1.3em;
+  align-self: center;
+}
+.bag-carrito {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+.iconos-header i {
+  margin: 5px;
+}
+
+@media (min-width: 480px) {
+  .iconos-header {
+    font-size: 1.6em;
+  }
+  .imagen-logo {
+    width: 150px;
+  }
+  .iconos-header i {
+    margin: 10px;
+  }
+  .cabecera p {
+    font-size: 14px;
+  }
+  .cabecera {
+    height: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  .iconos-header {
+    font-size: 2em;
+  }
+  .imagen-logo {
+    width: 250px;
+  }
+  .iconos-header i {
+    margin: 25px;
+  }
+  .cabecera p {
+    font-size: 16px;
+  }
+  .cabecera {
+    height: 35px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .logo-cabecera {
+    display: none;
+  }
+  .cabecera {
+    padding: 0 50px;
+  }
+  .cabecera p {
+    font-size: 26px;
+  }
+
+  .bag-carrito {
+    display: none;
+  }
+  .imagen-logo {
+    width: 180px;
+    margin: 0;
+  }
+  .logo-cabecera {
+    margin: 0;
+  }
+  .cabecera-secundaria ul {
+    display: flex;
+    justify-content: space-between;
+  }
+  .cabecera-secundaria {
+    display: flex;
+    align-items: center;
+  }
+  .lista-header li {
+    font-size: 1.6em;
+    margin: 0 15px;
+    font-weight: 800;
+    text-align: center;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    width: 100%;
+    align-items: center;
+  }
+  .busqueda {
+    border-radius: 15px;
+    margin-right: 25px;
+  }
+  .cabecera-secundaria {
+    padding: 0 30px;
+  }
+  .lista-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: 800;
+    text-align: center;
+  }
+  .lista-header i {
+    font-size: 2em;
+  }
+}

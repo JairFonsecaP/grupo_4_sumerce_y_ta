@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+}
+main img {
+  width: 100%;
+}
+main {
+  color: #373737;
+}
+h5 {
+  margin: 15px 0 0 0;
+}
+p {
+  margin: 0;
+}
+.copy-visual div {
+  margin: 15px 0;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.copy-visual {
+  text-align: center;
+  border-top: solid 1px #373737;
+  border-bottom: solid 1px #373737;
+  margin: 30px;
+}
+.copy-visual i {
+  font-size: 2em;
+}
+.recomendados {
+  text-align: center;
+  padding: 15px 0 70px 0;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  border-bottom: solid 1px #373737;
+  justify-content: space-evenly;
+  align-content: center;
+}
+.recomendados div img {
+  padding: 15px;
+  width: 245px;
+  height: 307px;
+}
+.copy-recomendados {
+  order: -1;
+  margin: 0 20px 30px 20px;
+}
+
+button {
+  border-radius: 8px;
+  background-color: #cc8f94;
+}
+.video iframe {
+  width: 560px;
+  height: 315px;
+  align-self: center;
+}
+.video {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: auto;
+  padding: 40px;
+  border-bottom: solid 1px #373737;
+  margin: 30px;
+}
+
+.recomendados div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.no-view-mobile-web,
+.no-view-mobile {
+  display: none;
+}
+
+@media (min-width: 480px) {
+  .copy-visual {
+    font-size: 2em;
+  }
+  .copy-recomendados {
+    font-size: 1.5em;
+  }
+  .video {
+    justify-content: center;
+  }
+  .video iframe {
+    width: 560px;
+    height: 315px;
+  }
+  .recomendados div img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .copy-visual {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 20px;
+    align-items: center;
+    font-size: 1.2em;
+  }
+  .no-view-mobile {
+    display: block;
+  }
+  .recomendados {
+    flex-direction: row;
+    align-items: center;
+  }
+  .video iframe {
+    width: 100%;
+    height: 700px;
+  }
+  .no-view-mobile-web {
+    display: block;
+    text-align: center;
+  }
+  .no-tablet {
+    display: none;
+  }
+  .copy-recomendados {
+    font-size: 2.5em;
+    padding-top: 35px;
+    margin-top: 0;
+    order: 0;
+  }
+}
+@media (min-width: 1200px) {
+  .copy-visual {
+    font-size: 30px;
+  }
+  .no-tablet {
+    display: block;
+  }
+  .no-view-mobile-web {
+    display: none;
+  }
+  .copy-recomendados {
+    font-size: 1.8em;
+  }
+  .recomendados div {
+    width: 33%;
+  }
+  .video iframe {
+    max-width: 1240;
+    height: 700px;
+  }
+}
