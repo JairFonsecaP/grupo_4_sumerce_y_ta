@@ -12,6 +12,7 @@
 .cart-collection {
     margin-top: 0rem;
     padding: 1rem;
+    font-size: 1.4rem;
 }
 
 .carrito-items form{
@@ -134,15 +135,97 @@ color: #333;
 
 .cart-action-button a:first-child {
     order: 1;
-    background: #333;
-    color: white;
+    background:white;
+    color:#333;
     text-decoration: none;
+    border: 1px solid #333;
 }
 
 .cart-header {
     display: none;
 }
+.copy-visual i:hover {
+    transform: rotateY(180deg);
+    transition: 1s;
+    perspective: 4000;
+    color: #cc8f94;
+}
 
+/***** Offer Section *****/
+.offer__bg {
+    background: url(/static/images/9.png) no-repeat center/cover;
+    text-align: center;
+}
+
+
+.offer__data {
+    padding: 3.5rem .25rem;
+    background: rgba(0, 0, 0, .5);
+    color: white;
+    font-size: 1rem;
+    
+}
+
+.offer__title {
+   
+    letter-spacing: .4rem;
+    text-transform: uppercase;
+   
+}
+
+
+.offer__description {
+    margin-bottom: 1rem;
+    letter-spacing: .4rem;
+    font-size: 1.2rem
+}
+.btn-offer {
+   color: #333;
+   text-decoration: none;
+    border-radius: 8px;
+    background-color: #cc8f94;
+    font-size: 20px;
+    border: none;
+    padding: 7px;
+    width: 150px;
+
+ 
+
+}
+.btn-offer:hover {
+    color: white;
+    transition: all ease .3s;
+}
+
+.btn-cart:hover {
+    
+    transition: all ease .3s;
+   
+    background-color: white;
+    color: #cc8f94;
+    border: 1px solid#cc8f94
+}
+.cart-action-button a:first-child:hover {
+    background:#333;
+    color:white;
+    text-decoration: none;
+    border: 1px solid white;
+    transition: all ease .3s;
+}
+
+/* Menu Display */
+
+
+.show {
+    left: 0;
+   
+}
+.active {
+    color: #cc8f94;
+}
+
+
+/* Media Querys */
 @media only screen and (min-width: 768px) {
     .carrito-cantidad-md, .carrito-precio-unidad, .carrito-productos-total {
         display: flex;
@@ -152,6 +235,7 @@ color: #333;
         border-bottom: 1px solid #cc8f94;
         
   }
+ 
   .cart-total {
       justify-content: center;
       margin-left: 1rem;
@@ -171,7 +255,7 @@ color: #333;
   }
 
   .carrito-productos {
-      border: none;
+    border-bottom: 1px solid #cc8f94;
   }
   
   .carrito-productos small {
@@ -228,5 +312,9 @@ text-align: left;
         max-width: 1300px;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .cart-total {
+        font-size: 2rem;
     }
 }
