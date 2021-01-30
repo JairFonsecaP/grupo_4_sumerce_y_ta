@@ -24,6 +24,14 @@ app.get("/categorias", (req, res) => {
 
 });
 
+app.get("/carrito", (req, res) => {
+  res.sendFile(path.join(__dirname, "./views/cart.html"));
+});
+
+app.get("/contacto", (req, res) => {
+  res.sendFile(path.join(__dirname, "./views/contact.html"));
+});
+
 app.use("/static", express.static(__dirname + "/public"));
 
 app.listen(port, () => {
