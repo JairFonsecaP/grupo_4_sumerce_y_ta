@@ -10,6 +10,18 @@ app.get("/", (req, res) => {
 
 app.get("/producto", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/product.html"));
+
+app.get("/registro", (req, res) => {
+  res.sendFile(path.join(__dirname, "./views/register.html"));
+});
+
+app.get("/login", (req, res) => {
+  res.sendFile(path.join(__dirname, "./views/login.html"));
+});
+
+app.get("/categorias", (req, res) => {
+  res.sendFile(path.join(__dirname, "./views/categories.html"));
+
 });
 
 app.use("/static", express.static(__dirname + "/public"));
