@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+  }
+.box-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-form .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 5%;
+    min-height: 425px;
+    background: white;
+    padding: 8% 8% 0% 8%;
+    border: 1px solid grey;
+
+}
+.form-title {
+    display: flex;
+    justify-content: space-around;
+}
+.login-session {
+    border-bottom: 3px solid #CC8F94;
+}
+.form-title .register {
+    background: transparent;
+    border-radius: 5px;
+    color: grey;
+    transition: all .05s ease;
+}
+.form-title .register:hover {
+    color: black;
+    border-bottom: 3px solid #CC8F94;
+}
+.form-fields1 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+}
+input {
+    margin-bottom: 5%;
+    border: none;
+    border-bottom: 1px solid grey;
+}
+.form-button {
+    display: flex;
+    justify-content: center;
+}
+.form-button input {
+    margin-top: 5%;
+    background-color: #CC8F94;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 25px;
+    transition: all .5s ease;
+}
+.form-button input:hover {
+    background-color: transparent;
+    color: #CC8F94;
+    border-color: #CC8F94;
+}
+.forgot-password a {
+    display: flex;
+    justify-content: center;
+    color: black;
+    font-weight: bold;
+}
+
+@media (min-width: 0px) {
+    .box-form .form {
+        min-width: 100%;
+    
+    } 
+}
+@media (min-width: 480px) {
+    .box-form .form {
+        min-width: 450px;
+    
+    } 
+}

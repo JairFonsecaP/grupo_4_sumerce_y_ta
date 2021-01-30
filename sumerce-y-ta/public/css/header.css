@@ -98,6 +98,7 @@ ul li a:hover {
   .cabecera {
     height: 30px;
   }
+  }
 
 
 @media (min-width: 768px) {
@@ -179,4 +180,6 @@ ul li a:hover {
     font-size: 2em;
   }
 }
-}
+
+
+

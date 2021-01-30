@@ -6,7 +6,7 @@
     <title>Sumercé y tá</title>
     <link rel="stylesheet" href="/static/css/normalize.css" />
     <link rel="stylesheet" href="/static/css/header.css" />
-    <link rel="stylesheet" href="/static/css/index.css" />
+    <link rel="stylesheet" href="/static/css/register.css" />
     <link rel="stylesheet" href="/static/css/footer.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -61,7 +61,7 @@
           </ul>
           <div class="lista-header">
             <form>
-              <input type="text" class="busqueda" placeholder="Que estas buscando?" />
+              <input type="text" class="busqueda" />
             </form>
             <a href="#"><i class="fas fa-shopping-bag"></i></a>
           </div>
@@ -69,88 +69,57 @@
       </div>
     </header>
     <main>
-      <section>
-        <div class="carousel"></div>
-      </section>
-      <section class="copy-visual">
-        <div>
-          <i class="far fa-credit-card"></i>
-          <h5>MEDIOS DE PAGOS</h5>
 
-          <p>Tarjetas de crédito y débito</p>
-
-        </div>
-        <div>
-          <i class="fas fa-eye-slash"></i>
-          <h5>COMPRAS SEGURAS</h5>
-          <p>Protejemos tus datos financieros</p>
-        </div>
-        <div>
-          <i class="fas fa-plane-departure"></i>
-          <h5>ENVÍOS RÁPIDOS</h5>
-          <p>Despachos a todas las regiones</p>
-        </div>
-
-      </section>
-        <section>
-      <div class="copy-recomendados no-view-mobile-web">
-        <p>
-          <i class="fas fa-award"></i> RECORRE COLOMBIA
-          <i class="fas fa-award"></i>
-        </p>
-        <p>Recomendado para ti</p>
-        </section>
-
-    
-
-      <section class="recomendados">
-        <div>
-          <img src="/static/images/17.png" alt="Jean" />
-          <button>COMPRAR</button>
-        </div>
-
-        
-        <div class="copy-recomendados ">
+      <section class="box-form">
+        <form action="#" method="POST">
+          <div class="form">
+            <div class="form-title">
+              <h3><a href="/login" class="inicia" style="text-decoration:none">INICIA SESION</a></h3>
+              <h3 class="registrate">REGISTRATE</h3>
+            </div>
+            <div class="form-fields1">
+              <input type="text" name="" placeholder="Nombre de usuario">
+              <input type="tel" name="" placeholder="Teléfono">
+            </div>
+            <div class="form-fields2">
+              <select name="region" >
+                <option value="">- región -</option>
+                <option value="1">Antofagasta</option>
+                <option value="2">Atacama</option>
+                <option value="3">Arica y Parinacota</option>
+                <option value="4">Aysén</option>
+                <option value="5">Bío-Bío</option>
+                <option value="6">Coquimbo</option>
+                <option value="7">La Araucanía</option>
+                <option value="8">Los Lagos</option>
+                <option value="9">Los Ríos</option>
+                <option value="10">Magallanes</option>
+                <option value="11">Maule</option>
+                <option value="12">Metropolitana</option>
+                <option value="13">Ñuble</option>
+                <option value="14">O'Higgins</option>
+                <option value="15">Tarapacá</option>
+                <option value="16">Valparaíso</option>
+              </select>
+              <select name="comuna">
+                <option value="17">Comuna</option>
+              </select>
+            </div>
+            <div class="form-fields3">
+              <input type="email" name="" placeholder="Correo electrónico">
+              <input type="email" name="" placeholder="Confirmar correo electrónico">
+              <input type="password" name="" placeholder="Contraseña">
+              <input type="password" name="" placeholder="Confirmar contraseña">
+            </div>
+            <div class="form-button">
+              <input type="submit" name="" value="Ingresar">
+            </div>
           
-          <p  class="no-tablet">
-            <i class="fas fa-award"></i> RECORRE COLOMBIA
-            <i class="fas fa-award"></i>
-          </br>Recomendado para ti</p>
-        </div>
-        <div >
-          <img src="/static/images/10.png" alt="Jean" class="no-view-mobile"/>
-          <button class="no-view-mobile">COMPRAR</button>
-        </div>   
 
-
-     
-
+          </div>
+        </form>
       </section>
-      <section class="video">
-        <iframe
-          src="https://www.youtube.com/embed/r6T0J90CZY0"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </section>
-      <section class="recomendados">
-        <div>
 
-          <img src="/static/images/9.png" alt="Jean"  class="no-view-mobile " /><button  class="no-view-mobile ">COMPRAR</button>
-
-         
-
-        </div>
-        <div>
-          <img src="/static/images/13.png" alt="Jean" /><button>COMPRAR</button>
-        </div>
-        <div>
-
-          <img src="/static/images/11.png" alt="Jean"  class="no-view-mobile " /><button class="no-view-mobile ">COMPRAR</button>
-
-        </div>
-      </section>
     </main>
     <footer>
       <div>
