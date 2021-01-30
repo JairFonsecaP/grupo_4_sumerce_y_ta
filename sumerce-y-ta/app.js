@@ -16,6 +16,10 @@ app.get("/login", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/login.html"));
 });
 
+app.get("/categorias", (req, res) => {
+  res.sendFile(path.join(__dirname, "./views/categories.html"));
+});
+
 app.use("/static", express.static(__dirname + "/public"));
 
 app.listen(port, () => {
