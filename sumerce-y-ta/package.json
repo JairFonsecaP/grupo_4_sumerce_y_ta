@@ -4,7 +4,7 @@
   "description": "Productos: Inicialmente se empezará a ofrecer ropa de origen colombiano y accesorios de la misma procedencia, entre la ropa hay pantalones, blusas(poleras), ropa interior, fajas, y acesorios como, joyas, cinturones, bolsos y billeteras.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

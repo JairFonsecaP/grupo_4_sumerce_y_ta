@@ -266,6 +266,7 @@ color: #333;
   }
   .cart-header {
       display: flex;
+      text-align: center;
   }
   .cart-header p {
       font-weight: bold;
@@ -306,7 +307,10 @@ text-align: left;
 
 
 @media only screen and (min-width: 1200px) {
-   
+    .cart-header p {
+     
+        width: 24%;
+    }
 
     .product-cart {
         max-width: 1300px;
