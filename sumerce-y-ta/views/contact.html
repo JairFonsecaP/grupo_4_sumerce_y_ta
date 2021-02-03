@@ -8,10 +8,8 @@
     <link rel="stylesheet" href="/static/css/header.css" />
     <link rel="stylesheet" href="/static/css/index.css" />
     <link rel="stylesheet" href="/static/css/footer.css" />
-    <link rel="stylesheet" href="/static/css/cart.css" />
-    <link rel="stylesheet" href="/static/css/product.css" />
+    <link rel="stylesheet" href="/static/css/contact.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    
     <link
       href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
       rel="stylesheet"
@@ -26,12 +24,15 @@
     <header>
       <div class="cabecera">
         <p>Envios a todo Chile</p>
-        <p><a href="#">Seguir mi pedido </a> | <a href="/contacto">Contáctanos</a></p>
+        <p>
+          <a href="#">Seguir mi pedido </a> |
+          <a href="/contacto">Contáctanos</a>
+        </p>
       </div>
       <div class="cabecera-secundaria">
         <div class="logo-cabecera">
           <div class="bag-carrito">
-            <a href="#" class="iconos-header">
+            <a href="/" class="iconos-header">
               <i class="fas fa-bars"></i>
             </a>
           </div>
@@ -42,7 +43,7 @@
               class="imagen-logo"
           /></a>
           <div class="bag-carrito">
-            <a href="" class="iconos-header"><i class="fas fa-search"></i></a>
+            <a href="#" class="iconos-header"><i class="fas fa-search"></i></a>
             <a href="/carrito" class="iconos-header"
               ><i class="fas fa-shopping-bag"></i
             ></a>
@@ -57,105 +58,105 @@
           /></a>
 
           <ul class="lista-header">
-            <li><a href="/categorias">Ropa</a></li>
-            <li><a href="/categorias">Deportivo</a></li>
-            <li><a href="/categorias">Accesorios</a></li>
+            <li><a href="/producto">Ropa</a></li>
+            <li><a href="#">Deportivo</a></li>
+            <li><a href="#">Accesorios</a></li>
             <li><a href="/login">Mi Cuenta</a></li>
           </ul>
           <div class="lista-header">
             <form>
-              <input type="text" class="busqueda" placeholder="Que estas buscando?" />
+              <input
+                type="text"
+                class="busqueda"
+                placeholder="Que estas buscando?"
+              />
             </form>
             <a href="/carrito"><i class="fas fa-shopping-bag"></i></a>
           </div>
         </nav>
       </div>
     </header>
+
     <main>
-      <section>
-        <div class="carousel"></div>
-      </section>
-      <section class="copy-visual">
-        <div>
-          <i class="far fa-credit-card"></i>
-          <h5>MEDIOS DE PAGOS</h5>
+      <div class="container">
+        <span class="big-circle"></span>
 
-          <p>Tarjetas de crédito y débito</p>
+        <div class="form">
+          <div class="contact-info">
+            <h3 class="title">Pongámonos en contacto</h3>
+            <p class="text">
+              Ponte en contacto con uno de nuestros asistentes, y a la brevedad
+              nos pondremos en comunicación o llamanos al +456126212 para hablar
+              con nuestros operadores.
+            </p>
 
+            <div class="info">
+              <div class="information">
+                <i class="fas fa-map-marked-alt icon"></i>
+                <p>Bogota, Colombia</p>
+              </div>
+              <div class="information">
+                <i class="far fa-envelope icon"></i>
+                <p>sumerce_y_ta@ipsum.com</p>
+              </div>
+              <div class="information">
+                <i class="fas fa-phone icon"></i>
+                <p>+456126212</p>
+              </div>
+            </div>
+
+            <div class="social-media">
+              <p>Mirá lo ultimo en :</p>
+              <div class="social-icons">
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <span class="circle one"></span>
+            <span class="circle two"></span>
+
+            <form action="index.html" autocomplete="off">
+              <h3 class="title">Charlá con nosotros</h3>
+              <div class="input-container">
+                <input type="text" name="name" class="input" />
+                <label for="">Nombre Completo</label>
+                <span>Nombre</span>
+              </div>
+              <div class="input-container">
+                <input type="email" name="email" class="input" />
+                <label for="">Email</label>
+                <span>Email</span>
+              </div>
+              <div class="input-container">
+                <input type="tel" name="phone" class="input" />
+                <label for="">Telefono</label>
+                <span>Telefono/Cel</span>
+              </div>
+              <div class="input-container textarea">
+                <textarea name="message" class="input"></textarea>
+                <label for="">Mensaje</label>
+                <span>Mensaje</span>
+              </div>
+              <input type="submit" value="Enviar" class="btn" />
+            </form>
+          </div>
         </div>
-        <div>
-          <i class="fas fa-eye-slash"></i>
-          <h5>COMPRAS SEGURAS</h5>
-          <p>Protejemos tus datos financieros</p>
-        </div>
-        <div>
-          <i class="fas fa-plane-departure"></i>
-          <h5>ENVÍOS RÁPIDOS</h5>
-          <p>Despachos a todas las regiones</p>
-        </div>
-
-      </section>
-        <section>
-      <div class="copy-recomendados no-view-mobile-web">
-        <p>
-          <i class="fas fa-award"></i> RECORRE COLOMBIA
-          <i class="fas fa-award"></i>
-        </p>
-        <p>Recomendado para ti</p>
-        </section>
-
-    
-
-      <section class="recomendados">
-        <div>
-          <img src="/static/images/17.png" alt="Jean" />
-
-          <a href="carrito"><button class="btn-add-to-cart">COMPRAR</button></a>
-        </div>
-
-        
-        <div class="copy-recomendados ">
-          
-          <p  class="no-tablet">
-            <i class="fas fa-award"></i> RECORRE COLOMBIA
-            <i class="fas fa-award"></i>
-          </br>Recomendado para ti</p>
-        </div>
-        <div >
-          <img src="/static/images/10.png" alt="Jean" class="no-view-mobile"/>
-          <a href="carrito"><button class="no-view-mobile btn-add-to-cart">COMPRAR</button></a>
-        </div>   
-
-
-     
-
-      </section>
-      <section class="video">
-        <iframe
-          src="https://www.youtube.com/embed/r6T0J90CZY0"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </section>
-      <section class="recomendados">
-        <div>
-
-          <img src="/static/images/9.png" alt="Jean"  class="no-view-mobile " /><a href="carrito"><button  class="no-view-mobile btn-add-to-cart">COMPRAR</button></a>
-
-         
-
-        </div>
-        <div>
-          <img src="/static/images/13.png" alt="Jean" /><a href="carrito"><button class="btn-add-to-cart">COMPRAR</button><a href="carrito"></a>
-        </div>
-        <div>
-
-          <img src="/static/images/11.png" alt="Jean"  class="no-view-mobile " /><a href="carrito"><button class="no-view-mobile btn-add-to-cart">COMPRAR</button></a>
-
-        </div>
-      </section>
+      </div>
     </main>
+
     <footer>
       <div>
         <h6>Información</h6>
@@ -211,5 +212,6 @@
         </ul>
       </div>
     </footer>
+    <script src="/static/Js/contact.js"></script>
   </body>
 </html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sumercé y tá</title>
+    <link rel="stylesheet" href="/static/css/normalize.css" />
+    <link rel="stylesheet" href="/static/css/header.css" />
+    <link rel="stylesheet" href="/static/css/index.css" />
+    <link rel="stylesheet" href="/static/css/footer.css" />
+    <link rel="stylesheet" href="/static/css/cart.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/5cd85102cd.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="cabecera">
+        <p>Envios a todo Chile</p>
+        <p>
+          <a href="#">Seguir mi pedido </a> |
+          <a href="/contacto">Contáctanos</a>
+        </p>
+      </div>
+      <div class="cabecera-secundaria">
+        <div class="logo-cabecera">
+          <div class="bag-carrito">
+            <a href="#" class="iconos-header">
+              <i class="fas fa-bars"></i>
+            </a>
+          </div>
+          <a href="/" class="logo">
+            <img
+              src="/static/images/logo_de_inicio.png"
+              alt="Logo"
+              class="imagen-logo"
+          /></a>
+          <div class="bag-carrito">
+            <a href="#" class="iconos-header"><i class="fas fa-search"></i></a>
+            <a href="/carrito" class="iconos-header"
+              ><i class="fas fa-shopping-bag"></i
+            ></a>
+          </div>
+        </div>
+        <nav>
+          <a href="/">
+            <img
+              src="/static/images/logo_de_inicio.png"
+              alt="Logo"
+              class="imagen-logo"
+          /></a>
+
+          <ul class="lista-header">
+            <li><a href="/categorias" class="nav__link active">Ropa</a></li>
+            <li><a href="/categorias" class="nav__link">Deportivo</a></li>
+            <li><a href="/categorias" class="nav__link">Accesorios</a></li>
+            <li><a href="/login" class="nav__link">Mi Cuenta</a></li>
+          </ul>
+          <div class="lista-header">
+            <form>
+              <input
+                type="text"
+                class="busqueda"
+                placeholder="Que estas buscando?"
+              />
+            </form>
+            <a href="/carrito"><i class="fas fa-shopping-bag"></i></a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="product-cart">
+        <h4 class="banner-cart">Mi Carrito</h4>
+        <div class="contenedor">
+          <div class="cart-collection">
+            <div class="carrito-items">
+              <div class="cart-header">
+                <p>Producto</p>
+                <p>Cantidad</p>
+                <p>Precio unitario</p>
+                <p>Subtotal</p>
+              </div>
+              <form action="">
+                <div class="carrito-productos">
+                  <div class="carrito-imagen">
+                    <img src="/static/images/9.png" alt="producto" />
+                  </div>
+                  <div class="carrito-product-info">
+                    <p class="nombre-producto-carrito">Jean Slim</p>
+
+                    <p>Talle: M</p>
+                    <p>Color: Azul</p>
+                    <p class="carrito-price">$1,250</p>
+                    <small>x 1</small>
+                  </div>
+                </div>
+                <div class="carrito-cantidad-md">
+                  <div class="cart-cantidad-controles">
+                    <button>-</button>
+                    <input type="number" value="1" readonly />
+                    <button>+</button>
+                  </div>
+                </div>
+                <div class="carrito-precio-unidad">
+                  <h4>$1,250</h4>
+                </div>
+                <div class="carrito-productos-total">
+                  <h4>$1,250</h4>
+                </div>
+                <div class="cart-control-sm">
+                  <div class="remove">
+                    <span><i class="far fa-trash-alt"></i></span> Remove
+                  </div>
+                  <div class="cart-cantidad-controles">
+                    <button>-</button>
+                    <input type="number" value="1" readonly />
+                    <button>+</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="carrito-items">
+              <form action="">
+                <div class="carrito-productos">
+                  <div class="carrito-imagen">
+                    <img src="/static/images/9.png" alt="producto" />
+                  </div>
+                  <div class="carrito-product-info">
+                    <p class="nombre-producto-carrito">Jean Slim</p>
+
+                    <p>Talle: M</p>
+                    <p>Color: Azul</p>
+                    <p class="carrito-price">$1,250</p>
+                    <small>x 1</small>
+                  </div>
+                </div>
+                <div class="carrito-cantidad-md">
+                  <div class="cart-cantidad-controles">
+                    <button>-</button>
+                    <input type="number" value="1" readonly />
+                    <button>+</button>
+                  </div>
+                </div>
+                <div class="carrito-precio-unidad">
+                  <h4>$1,250</h4>
+                </div>
+                <div class="carrito-productos-total">
+                  <h4>$1,250</h4>
+                </div>
+                <div class="cart-control-sm">
+                  <div class="remove">
+                    <span><i class="far fa-trash-alt"></i></span> Remove
+                  </div>
+                  <div class="cart-cantidad-controles">
+                    <button>-</button>
+                    <input type="number" value="1" readonly />
+                    <button>+</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="carrito-items">
+              <form action="">
+                <div class="carrito-productos">
+                  <div class="carrito-imagen">
+                    <img src="/static/images/9.png" alt="producto" />
+                  </div>
+                  <div class="carrito-product-info">
+                    <p class="nombre-producto-carrito">Jean Slim</p>
+
+                    <p>Talle: M</p>
+                    <p>Color: Azul</p>
+                    <p class="carrito-price">$1,250</p>
+                    <small>x 1</small>
+                  </div>
+                </div>
+                <div class="carrito-cantidad-md">
+                  <div class="cart-cantidad-controles">
+                    <button>-</button>
+                    <input type="number" value="1" readonly />
+                    <button>+</button>
+                  </div>
+                </div>
+                <div class="carrito-precio-unidad">
+                  <h4>$1,250</h4>
+                </div>
+                <div class="carrito-productos-total">
+                  <h4>$1,250</h4>
+                </div>
+                <div class="cart-control-sm">
+                  <div class="remove">
+                    <span><i class="far fa-trash-alt"></i></span> Remove
+                  </div>
+                  <div class="cart-cantidad-controles">
+                    <button>-</button>
+                    <input type="number" value="1" readonly />
+                    <button>+</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="cart-total-holder">
+            <div class="cart-total">
+              <p>Total:</p>
+              <p>$3.750</p>
+            </div>
+
+            <div class="cart-action-button">
+              <a href="/categorias">Continuar comprando</a>
+              <a href="/" class="btn-cart">Proceder al pago</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <section class="offer section">
+      <div class="offer__bg">
+        <div class="offer__data">
+          <h2 class="offer__title">Ofertas</h2>
+          <p class="offer__description">Descuentos especiales en Accesorios</p>
+
+          <a href="/categorias" class="btn-offer">SHOP NOW</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="copy-visual">
+      <div>
+        <i class="far fa-credit-card"></i>
+        <h5>MEDIOS DE PAGOS</h5>
+        <p>Tarjeas de crédito y débito</p>
+      </div>
+      <div>
+        <i class="fas fa-eye-slash"></i>
+        <h5>COMPRAS SEGURAS</h5>
+        <p>Protejemos tus datos financieros</p>
+      </div>
+      <div>
+        <i class="fas fa-plane-departure"></i>
+        <h5>ENVÍOS RÁPIDOS</h5>
+        <p>Despachos a todas las regiones</p>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        <h6>Información</h6>
+        <ul>
+          <li><a href="#">Sobre nosotros</a></li>
+          <li><a href="#">politica de datos</a></li>
+          <li>
+            <a href="#">
+              <img src="/static/images/logo_sin_fondo.png" alt="Logo redondo" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h6>Servicio al cliente</h6>
+        <ul>
+          <li><a href="#">¿Cómo comprar?</a></li>
+          <li><a href="#">Envios</a></li>
+          <li><a href="#">Cambios y devoluciones</a></li>
+          <li><a href="#">Guia de tallas</a></li>
+          <li><a href="#">Politicas de despacho</a></li>
+          <li><a href="#">Terminos y condiciones de compra</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Contactanos</h6>
+        <ul>
+          <li><a href="#">Escríbenos a nuestro whatsapp</a></li>
+          <li><a href="#">#-####-####</a></li>
+          <li><a href="#">Consultas por messenger</a></li>
+          <li>
+            <a href="mailto:sumercetiendaonline@gmail.com"
+              >sumercetiendaonline@gmail.com</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h6>Medios de pago</h6>
+        <ul>
+          <li>
+            <a href="#"
+              ><img src="/static/images/webpay.png" alt="Logo Webpay"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img
+                src="/static/images/mercadopago.png"
+                alt="Logo Mercado Pago"
+            /></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script src="js/menuMobile.js"></script>
+  </body>
+</html>

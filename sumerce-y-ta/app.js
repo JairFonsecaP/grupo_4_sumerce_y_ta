@@ -8,6 +8,30 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/index.html"));
 });
 
+app.get("/producto", (req, res) => {
+  res.sendFile(path.join(__dirname, "./views/product.html"));
+});
+
+app.get("/registro", (req, res) => {
+  res.sendFile(path.join(__dirname, "./views/register.html"));
+});
+
+app.get("/login", (req, res) => {
+  res.sendFile(path.join(__dirname, "./views/login.html"));
+});
+
+app.get("/categorias", (req, res) => {
+  res.sendFile(path.join(__dirname, "./views/categories.html"));
+});
+
+app.get("/carrito", (req, res) => {
+  res.sendFile(path.join(__dirname, "./views/cart.html"));
+});
+
+app.get("/contacto", (req, res) => {
+  res.sendFile(path.join(__dirname, "./views/contact.html"));
+});
+
 app.use("/static", express.static(__dirname + "/public"));
 
 app.listen(port, () => {
