@@ -36,7 +36,7 @@ main {
     justify-content: center;
 }
 .folder2, .folder3 {
-    visibility: collapse;
+    display: none;
 }
 article {
     margin: 2%;
@@ -67,11 +67,17 @@ img.categories{
         font-size: 27px;
     
     } 
-    .folder2, .folder3 {
-        visibility: visible;
+    .folder1 {
+        display: flex;
+    }
+    .folder2 {
+        display: flex;
+    }
+    .folder3 {
+        display: none;
     }
     article {
-        margin: 10px;
+        margin: 15px;
     }
 }
 @media (min-width: 1200px) {
@@ -80,9 +86,9 @@ img.categories{
         font-size: 32px;
     } 
     .folder2, .folder3 {
-        visibility: visible;
+        display: flex;
     }
     article {
-        margin: 10px;
+        margin: 25px;
     }
 }
