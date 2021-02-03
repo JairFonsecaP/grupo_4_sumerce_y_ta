@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="/static/css/header.css" />
     <link rel="stylesheet" href="/static/css/index.css" />
     <link rel="stylesheet" href="/static/css/footer.css" />
+    <link rel="stylesheet" href="/static/css/cart.css" />
+    <link rel="stylesheet" href="/static/css/product.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
+    
     <link
       href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
       rel="stylesheet"
@@ -23,7 +26,7 @@
     <header>
       <div class="cabecera">
         <p>Envios a todo Chile</p>
-        <p><a href="#">Seguir mi pedido </a> | <a href="#">Contáctanos</a></p>
+        <p><a href="#">Seguir mi pedido </a> | <a href="/contacto">Contáctanos</a></p>
       </div>
       <div class="cabecera-secundaria">
         <div class="logo-cabecera">
@@ -32,21 +35,21 @@
               <i class="fas fa-bars"></i>
             </a>
           </div>
-          <a href="#" class="logo">
+          <a href="/" class="logo">
             <img
               src="/static/images/logo_de_inicio.png"
               alt="Logo"
               class="imagen-logo"
           /></a>
           <div class="bag-carrito">
-            <a href="#" class="iconos-header"><i class="fas fa-search"></i></a>
-            <a href="#" class="iconos-header"
+            <a href="" class="iconos-header"><i class="fas fa-search"></i></a>
+            <a href="/carrito" class="iconos-header"
               ><i class="fas fa-shopping-bag"></i
             ></a>
           </div>
         </div>
         <nav>
-          <a href="#">
+          <a href="/">
             <img
               src="/static/images/logo_de_inicio.png"
               alt="Logo"
@@ -54,16 +57,16 @@
           /></a>
 
           <ul class="lista-header">
-            <li><a href="#">Ropa</a></li>
-            <li><a href="#">Deportivo</a></li>
-            <li><a href="#">Accesorios</a></li>
-            <li><a href="#">Mi Cuenta</a></li>
+            <li><a href="/categorias">Ropa</a></li>
+            <li><a href="/categorias">Deportivo</a></li>
+            <li><a href="/categorias">Accesorios</a></li>
+            <li><a href="/login">Mi Cuenta</a></li>
           </ul>
           <div class="lista-header">
             <form>
               <input type="text" class="busqueda" placeholder="Que estas buscando?" />
             </form>
-            <a href="#"><i class="fas fa-shopping-bag"></i></a>
+            <a href="/carrito"><i class="fas fa-shopping-bag"></i></a>
           </div>
         </nav>
       </div>
@@ -106,7 +109,8 @@
       <section class="recomendados">
         <div>
           <img src="/static/images/17.png" alt="Jean" />
-          <button>COMPRAR</button>
+
+          <a href="carrito"><button class="btn-add-to-cart">COMPRAR</button></a>
         </div>
 
         
@@ -119,7 +123,7 @@
         </div>
         <div >
           <img src="/static/images/10.png" alt="Jean" class="no-view-mobile"/>
-          <button class="no-view-mobile">COMPRAR</button>
+          <a href="carrito"><button class="no-view-mobile btn-add-to-cart">COMPRAR</button></a>
         </div>   
 
 
@@ -137,17 +141,17 @@
       <section class="recomendados">
         <div>
 
-          <img src="/static/images/9.png" alt="Jean"  class="no-view-mobile " /><button  class="no-view-mobile ">COMPRAR</button>
+          <img src="/static/images/9.png" alt="Jean"  class="no-view-mobile " /><a href="carrito"><button  class="no-view-mobile btn-add-to-cart">COMPRAR</button></a>
 
          
 
         </div>
         <div>
-          <img src="/static/images/13.png" alt="Jean" /><button>COMPRAR</button>
+          <img src="/static/images/13.png" alt="Jean" /><a href="carrito"><button class="btn-add-to-cart">COMPRAR</button><a href="carrito"></a>
         </div>
         <div>
 
-          <img src="/static/images/11.png" alt="Jean"  class="no-view-mobile " /><button class="no-view-mobile ">COMPRAR</button>
+          <img src="/static/images/11.png" alt="Jean"  class="no-view-mobile " /><a href="carrito"><button class="no-view-mobile btn-add-to-cart">COMPRAR</button></a>
 
         </div>
       </section>
