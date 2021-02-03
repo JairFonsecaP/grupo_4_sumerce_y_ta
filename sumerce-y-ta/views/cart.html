@@ -19,7 +19,7 @@
   <header>
     <div class="cabecera">
       <p>Envios a todo Chile</p>
-      <p><a href="#">Seguir mi pedido </a> | <a href="#">Contáctanos</a></p>
+      <p><a href="#">Seguir mi pedido </a> | <a href="/contacto">Contáctanos</a></p>
     </div>
     <div class="cabecera-secundaria">
       <div class="logo-cabecera">
@@ -28,15 +28,15 @@
             <i class="fas fa-bars" ></i>
           </a>
         </div>
-        <a href="#" class="logo">
+        <a href="/" class="logo">
           <img src="/static/images/logo_de_inicio.png" alt="Logo" class="imagen-logo" /></a>
         <div class="bag-carrito">
           <a href="#" class="iconos-header"><i class="fas fa-search"></i></a>
-          <a href="#" class="iconos-header"><i class="fas fa-shopping-bag"></i></a>
+          <a href="/carrito" class="iconos-header"><i class="fas fa-shopping-bag"></i></a>
         </div>
       </div>
       <nav >
-        <a href="#">
+        <a href="/">
           <img src="/static/images/logo_de_inicio.png" alt="Logo" class="imagen-logo" /></a>
 
         <ul class="lista-header">
@@ -49,7 +49,7 @@
           <form>
             <input type="text" class="busqueda" placeholder="Que estas buscando?" />
           </form>
-          <a href="#"><i class="fas fa-shopping-bag"></i></a>
+          <a href="/carrito"><i class="fas fa-shopping-bag"></i></a>
         </div>
       </nav>
     </div>
@@ -66,13 +66,14 @@
         
 
         <div class="cart-collection">
-<div class="cart-header">
-  <p>Producto</p>
-  <p>Cantidad</p>
-  <p>Precio unitario</p>
-  <p>Subtotal</p>
-</div>
+
           <div class="carrito-items">
+            <div class="cart-header">
+              <p>Producto</p>
+              <p>Cantidad</p>
+              <p>Precio unitario</p>
+              <p>Subtotal</p>
+            </div>
             <form action="">
               <div class="carrito-productos">
                 <div class="carrito-imagen">
@@ -204,8 +205,8 @@
   </div>
 
   <div class="cart-action-button">
-    <a href="">Continuar comprando</a>
-    <a href="" class="btn-cart">Proceder al pago</a>
+    <a href="/categorias">Continuar comprando</a>
+    <a href="/" class="btn-cart">Proceder al pago</a>
   </div>
 </div>
 
@@ -226,7 +227,7 @@
             <h2 class="offer__title">Ofertas</h2>
             <p class="offer__description">Descuentos especiales en Accesorios</p>
 
-            <a href="" class="btn-offer">SHOP NOW</a>
+            <a href="/categorias" class="btn-offer">SHOP NOW</a>
         </div>
     </div>
 </section>
