@@ -41,6 +41,8 @@ Se trabajo por medio de tareas pequeñas mediante un proyecto de Github donde ca
 
 - Comenzar a tener una convención de nombres.
 
+- Poner una columna 'Revised' en el tablero del proyecto para que cada issue sea revisado por algún integrante del equipo distinto al que lo hizo.
+
 - Empezar a hacer el código desde el primer día, para que la cantidad de horas que tengamos que dedicarle por día al proyecto sea siempre constante y no incremental. 
 
 #### More of:
