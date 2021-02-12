@@ -3,25 +3,26 @@ exports.index = (req, res) => {
 };
 
 exports.carrito = (req, res) => {
-  res.render("cart");
+  res.render("products/cart");
 };
 
 exports.categorias = (req, res) => {
-  res.render("categories");
-};
-
-exports.contacto = (req, res) => {
-  res.render("contact");
-};
-
-exports.login = (req, res) => {
-  res.render("login");
+  res.render("products/categories");
 };
 
 exports.producto = (req, res) => {
-  res.render("product");
+  res.render("products/product");
+};
+
+
+exports.contacto = (req, res) => {
+  res.render("users/contact");
+};
+
+exports.login = (req, res) => {
+  res.render("users/login");
 };
 
 exports.registro = (req, res) => {
-  res.render("register");
+  res.render("users/register");
 };
