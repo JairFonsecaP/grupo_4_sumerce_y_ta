@@ -20,61 +20,7 @@
   </head>
 
   <body>
-    <header>
-      <div class="cabecera">
-        <p>Envios a todo Chile</p>
-        <p><a href="#">Seguir mi pedido </a> | <a href="/contacto">Contáctanos</a></p>
-      </div>
-      <div class="cabecera-secundaria">
-        <div class="logo-cabecera">
-          <div class="bag-carrito">
-            <a href="/carrito" class="iconos-header">
-              <i class="fas fa-bars"></i>
-            </a>
-          </div>
-          <a href="/" class="logo">
-            <img
-              src="/static/images/logo_de_inicio.png"
-              alt="Logo"
-              class="imagen-logo"
-          /></a>
-          <div class="bag-carrito">
-            <a href="#" class="iconos-header"><i class="fas fa-search"></i></a>
-            <a href="/carrito" class="iconos-header"
-              ><i class="fas fa-shopping-bag"></i
-            ></a>
-          </div>
-        </div>
-        <nav>
-          <a href="/">
-            <img
-              src="/static/images/logo_de_inicio.png"
-              alt="Logo"
-              class="imagen-logo"
-          /></a>
-
-          <ul class="lista-header">
-<<<<<<< HEAD
-            <li><a href="categorias">Ropa</a></li>
-            <li><a href="categorias">Deportivo</a></li>
-            <li><a href="categorias">Accesorios</a></li>
-            <li><a href="/login">Mi Cuenta</a></li>
-=======
-            <li><a href="/categorias">Ropa</a></li>
-            <li><a href="/categorias">Deportivo</a></li>
-            <li><a href="/categorias">Accesorios</a></li>
-            <li><a href="/categorias">Mi Cuenta</a></li>
->>>>>>> fb917c1dbd0450d585bb1c0f35f83548b3a4230d
-          </ul>
-          <div class="lista-header">
-            <form>
-              <input type="text" class="busqueda" />
-            </form>
-            <a href="#"><i class="fas fa-shopping-bag"></i></a>
-          </div>
-        </nav>
-      </div>
-    </header>
+    <%- include( './partials/header' ) %> 
     <main>
       <section class="box-form">
         <form action="#" method="POST">

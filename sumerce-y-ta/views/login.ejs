@@ -20,65 +20,7 @@
   </head>
 
   <body>
-    <header>
-      <div class="cabecera">
-        <p>Envios a todo Chile</p>
-<<<<<<< HEAD
-        <p>
-          <a href="#">Seguir mi pedido </a> |
-          <a href="/contacto">Contáctanos</a>
-        </p>
-=======
-        <p><a href="#">Seguir mi pedido </a> | <a href="/contacto">Contáctanos</a></p>
->>>>>>> fb917c1dbd0450d585bb1c0f35f83548b3a4230d
-      </div>
-      <div class="cabecera-secundaria">
-        <div class="logo-cabecera">
-          <div class="bag-carrito">
-            <a href="/carrito" class="iconos-header">
-              <i class="fas fa-bars"></i>
-            </a>
-          </div>
-          <a href="/" class="logo">
-            <img
-              src="/static/images/logo_de_inicio.png"
-              alt="Logo"
-              class="imagen-logo"
-          /></a>
-          <div class="bag-carrito">
-            <a href="#" class="iconos-header"><i class="fas fa-search"></i></a>
-            <a href="/carrito" class="iconos-header"
-              ><i class="fas fa-shopping-bag"></i
-            ></a>
-          </div>
-        </div>
-        <nav>
-          <a href="">
-            <img
-              src="/static/images/logo_de_inicio.png"
-              alt="Logo"
-              class="imagen-logo"
-          /></a>
-
-          <ul class="lista-header">
-            <li><a href="/categorias">Ropa</a></li>
-            <li><a href="/categorias">Deportivo</a></li>
-            <li><a href="/categorias">Accesorios</a></li>
-<<<<<<< HEAD
-            <li><a href="/login">Mi Cuenta</a></li>
-=======
-            <li><a href="/categorias">Mi Cuenta</a></li>
->>>>>>> fb917c1dbd0450d585bb1c0f35f83548b3a4230d
-          </ul>
-          <div class="lista-header">
-            <form>
-              <input type="text" class="busqueda" />
-            </form>
-            <a href="/carrito"><i class="fas fa-shopping-bag"></i></a>
-          </div>
-        </nav>
-      </div>
-    </header>
+    <%- include( './partials/header' ) %> 
     <main>
       <section class="box-form">
         <form action="#" method="POST">
@@ -113,60 +55,6 @@
         </form>
       </section>
     </main>
-    <footer>
-      <div>
-        <h6>Información</h6>
-        <ul>
-          <li><a href="#">Sobre nosotros</a></li>
-          <li><a href="#">politica de datos</a></li>
-          <li>
-            <a href="#">
-              <img src="/static/images/logo_sin_fondo.png" alt="Logo redondo" />
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h6>Servicio al cliente</h6>
-        <ul>
-          <li><a href="#">¿Cómo comprar?</a></li>
-          <li><a href="#">Envios</a></li>
-          <li><a href="#">Cambios y devoluciones</a></li>
-          <li><a href="#">Guia de tallas</a></li>
-          <li><a href="#">Politicas de despacho</a></li>
-          <li><a href="#">Terminos y condiciones de compra</a></li>
-        </ul>
-      </div>
-      <div>
-        <h6>Contactanos</h6>
-        <ul>
-          <li><a href="#">Escríbenos a nuestro whatsapp</a></li>
-          <li><a href="#">#-####-####</a></li>
-          <li><a href="#">Consultas por messenger</a></li>
-          <li>
-            <a href="mailto:sumercetiendaonline@gmail.com"
-              >sumercetiendaonline@gmail.com</a
-            >
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h6>Medios de pago</h6>
-        <ul>
-          <li>
-            <a href="#"
-              ><img src="/static/images/webpay.png" alt="Logo Webpay"
-            /></a>
-          </li>
-          <li>
-            <a href="#"
-              ><img
-                src="/static/images/mercadopago.png"
-                alt="Logo Mercado Pago"
-            /></a>
-          </li>
-        </ul>
-      </div>
-    </footer>
+    <%- include( './partials/footer' ) %> 
   </body>
 </html>
