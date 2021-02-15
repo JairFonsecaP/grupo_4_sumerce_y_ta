@@ -1,0 +1,105 @@
+main{
+    background-color: #dcd0d0;
+    border-top: solid;
+    border-bottom: solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.modal-create {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0.7;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    display: none;
+}
+.modal-edit {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0.7;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    display: none;
+}
+.close-create {
+    position: absolute;
+    top: 0;
+    right: 14px;
+    cursor: pointer;
+}
+.close-edit {
+    position: absolute;
+    top: 0;
+    right: 14px;
+    cursor: pointer;
+}
+.internal-modal {
+    padding: 20px;
+    background-color: white;
+    border-radius: 4px;
+    text-align: center;
+    position: relative;
+}
+.internal-modal label {
+    font-weight: bold;
+    color: black;
+}
+#button-create, #button-edit {
+    margin: 14%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50px;
+    background: #dcd0d0;
+    box-shadow:  14px 14px 24px #b7adad,
+                -14px -14px 24px #fff3f3;
+    text-align: center;
+    font-size: 30px;
+    text-decoration: none;
+} 
+.create{
+    color: #373737;
+    font-weight: bold;
+}
+.edit {
+    color: #373737;
+    font-weight: bold;
+}
+.fas{
+    color: #373737;
+}
+.button-products {
+    margin-top: 5%;
+    background-color: #CC8F94;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 25px;
+    transition: all .5s ease;
+}
+.button-products:hover {
+    background-color: transparent;
+    color: #CC8F94;
+    border-color: #CC8F94;
+}
+
+@media (min-width: 768px) {
+    main {
+        display: flex;
+        flex-direction: row;
+    }
+  }
