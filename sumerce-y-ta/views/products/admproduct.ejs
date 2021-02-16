@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/static/css/normalize.css" />
     <link rel="stylesheet" href="/static/css/header.css" />
     <link rel="stylesheet" href="/static/css/index.css" />
     <link rel="stylesheet" href="/static/css/admproduct.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    
+
     <link
       href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
       rel="stylesheet"
@@ -19,165 +19,33 @@
       src="https://kit.fontawesome.com/5cd85102cd.js"
       crossorigin="anonymous"
     ></script>
-</head>
-<body>
+  </head>
+  <body>
     <%- include( '../partials/header' ) %>
     <main>
-<%# CREAR PRODUCTO %>
-    <div class="modal-create">
+      <%# CREAR PRODUCTO %>
+      <div class="modal-create">
         <div class="internal-modal">
-            <div class="close-create"><i class="fas fa-times"></i></div>
-        <form action="/admproducto" method="POST">
-          <fieldset>
-            <label for="name">Nombre</label>
-            <input type="text" name="name" id="name" placeholder="nombre">
-          </fieldset>
-          <fieldset>
-            <label for="description">Descripción</label>
-            <input type="textarea" name="description" id="description" placeholder="descripcion">
-          </fieldset>
-          <fieldset>
-            <label for="photo">Foto</label>
-            <input type="file" name="photo" id="photo" accept=".jpg, .png">
-          </fieldset>
-          <fieldset>
-            <label>Categoría</label>
-            <select name="categorie">
-                <option value="ropa">ropa</option>
-                <option value="deportivo">deportivo</option>
-                <option value="accesorios">accesorios</option>
-            </select>
-          </fieldset>
-          <fieldset>
-              <label for="">Talla</label>
-              <input type="checkbox" id="xs" name="tallas" value="xs" />
-              <label for="xs"> XS</label>
-              <input type="checkbox" id="s" name="tallas" value="s" />
-              <label for="s"> S</label>
-              <input type="checkbox" id="m" name="tallas" value="m" />
-              <label for="m"> M</label>
-              <input type="checkbox" id="l" name="tallas" value="l" />
-              <label for="l"> L</label>
-              <input type="checkbox" id="xl" name="tallas" value="xl" />
-              <label for="xl"> XL</label>
-              <input type="checkbox" id="xll" name="tallas" value="xll" />
-              <label for="xll"> XLL</label>
-          </fieldset>
-          <fieldset>
-              <label>Tonalidad</label>
-              <input type="checkbox" id="claro" name="tonalidades" value="claro" />
-              <label for="claro"> Claro</label>
-              <input type="checkbox" id="medio" name="tonalidades" value="medio" />
-              <label for="medio"> Medio</label>
-              <input type="checkbox" id="oscuro" name="tonalidades" value="oscuro" />
-              <label for="oscuro"> Oscuro</label>
-              <input type="checkbox" id="pasteles" name="tonalidades" value="pasteles" />
-              <label for="pasteles"> Pasteles</label>
-              <input type="checkbox" id="militar" name="tonalidades" value="militar" />
-              <label for="militar"> Militar</label>
-              <input type="checkbox" id="multicolor" name="tonalidades" value="multicolor" />
-              <label for="multicolor"> Multicolor</label>
-              <input type="checkbox" id="metalizados" name="tonalidades" value="metalizados" />
-              <label for="metalizados"> Metalizados</label>
-          </fieldset>
-          <fieldset>
-            <label for="">Tipo</label>
-            <input type="checkbox" id="manga-larga" name="tipo" value="manga-larga" />
-            <label for="manga-larga"> Manga larga</label>
-            <input type="checkbox" id="deportivas" name="tipo" value="deportivas" />
-            <label for="deportivas"> Deportivas</label>
-            <input type="checkbox" id="top" name="tipo" value="top" />
-            <label for="top"> Top</label>
-            <input type="checkbox" id="manga-corta" name="tipo" value="manga-corta" />
-            <label for="manga-corta"> Manga corta</label>
-            <input type="checkbox" id="sin-manga" name="tipo" value="sin-manga" />
-            <label for="sin-manga"> Sin manga</label>
-          </fieldset>
-          <label for="precio">Precio</label>
-          <input type="text" id="precio" value="precio">
-          <button type="submit" class="button-products">Agregar</button>
-        </form>
+          <div class="close-create"><i class="fas fa-times"></i></div>
+          <%- include( '../partials/formularioProducto' ) %>
         </div>
-    </div>
-    <a href="#" id="button-create"><i class="fas fa-plus"></i><div class="create">Crear producto</div></a>
-<%# EDITAR PRODUCTO %>
-    <div class="modal-edit">
+      </div>
+      <a href="#" id="button-create"
+        ><i class="fas fa-plus"></i>
+        <div class="create">Crear producto</div></a
+      >
+      <%# EDITAR PRODUCTO %>
+      <div class="modal-edit">
         <div class="internal-modal">
-            <div class="close-edit"><i class="fas fa-times"></i></div>
-            <form action="/admproducto" method="POST">
-                <fieldset>
-                  <label for="name">Nombre</label>
-                  <input type="text" name="name" id="name" placeholder="nombre">
-                </fieldset>
-                <fieldset>
-                  <label for="description">Descripción</label>
-                  <input type="textarea" name="description" id="description" placeholder="descripcion">
-                </fieldset>
-                <fieldset>
-                  <label for="photo">Foto</label>
-                  <input type="file" name="photo" id="photo" accept=".jpg, .png">
-                </fieldset>
-                <fieldset>
-                  <label>Categoría</label>
-                  <select name="categorie">
-                      <option value="ropa">ropa</option>
-                      <option value="deportivo">deportivo</option>
-                      <option value="accesorios">accesorios</option>
-                  </select>
-                </fieldset>
-                <fieldset>
-                    <label for="">Talla</label>
-                    <input type="checkbox" id="xs" name="tallas" value="xs" />
-                    <label for="xs"> XS</label>
-                    <input type="checkbox" id="s" name="tallas" value="s" />
-                    <label for="s"> S</label>
-                    <input type="checkbox" id="m" name="tallas" value="m" />
-                    <label for="m"> M</label>
-                    <input type="checkbox" id="l" name="tallas" value="l" />
-                    <label for="l"> L</label>
-                    <input type="checkbox" id="xl" name="tallas" value="xl" />
-                    <label for="xl"> XL</label>
-                    <input type="checkbox" id="xll" name="tallas" value="xll" />
-                    <label for="xll"> XLL</label>
-                </fieldset>
-                <fieldset>
-                    <label>Tonalidad</label>
-                    <input type="checkbox" id="claro" name="tonalidades" value="claro" />
-                    <label for="claro"> Claro</label>
-                    <input type="checkbox" id="medio" name="tonalidades" value="medio" />
-                    <label for="medio"> Medio</label>
-                    <input type="checkbox" id="oscuro" name="tonalidades" value="oscuro" />
-                    <label for="oscuro"> Oscuro</label>
-                    <input type="checkbox" id="pasteles" name="tonalidades" value="pasteles" />
-                    <label for="pasteles"> Pasteles</label>
-                    <input type="checkbox" id="militar" name="tonalidades" value="militar" />
-                    <label for="militar"> Militar</label>
-                    <input type="checkbox" id="multicolor" name="tonalidades" value="multicolor" />
-                    <label for="multicolor"> Multicolor</label>
-                    <input type="checkbox" id="metalizados" name="tonalidades" value="metalizados" />
-                    <label for="metalizados"> Metalizados</label>
-                </fieldset>
-                <fieldset>
-                  <label for="">Tipo</label>
-                  <input type="checkbox" id="manga-larga" name="tipo" value="manga-larga" />
-                  <label for="manga-larga"> Manga larga</label>
-                  <input type="checkbox" id="deportivas" name="tipo" value="deportivas" />
-                  <label for="deportivas"> Deportivas</label>
-                  <input type="checkbox" id="top" name="tipo" value="top" />
-                  <label for="top"> Top</label>
-                  <input type="checkbox" id="manga-corta" name="tipo" value="manga-corta" />
-                  <label for="manga-corta"> Manga corta</label>
-                  <input type="checkbox" id="sin-manga" name="tipo" value="sin-manga" />
-                  <label for="sin-manga"> Sin manga</label>
-                </fieldset>
-                <label for="precio">Precio</label>
-                <input type="text" id="precio" value="precio">
-                <button type="submit" class="button-products">Agregar</button>
-              </form>
+          <div class="close-edit"><i class="fas fa-times"></i></div>
+          <%- include( '../partials/formularioProducto' ) %>
         </div>
-    </div>
-    <a href="#" id="button-edit"><i class="fas fa-pen"></i><div class="edit">Editar producto</div></a>
-    <script src="/static/Js/admproduct.js"></script>
-</main>
-</body>
+      </div>
+      <a href="#" id="button-edit"
+        ><i class="fas fa-pen"></i>
+        <div class="edit">Editar producto</div></a
+      >
+      <script src="/static/Js/admproduct.js"></script>
+    </main>
+  </body>
 </html>
