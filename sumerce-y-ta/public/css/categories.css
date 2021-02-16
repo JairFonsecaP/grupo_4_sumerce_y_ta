@@ -82,6 +82,7 @@ img.categories{
 }
 @media (min-width: 1200px) {
     .select-menu {
+        margin-left: 30px;
         width: 29%;
         font-size: 32px;
     } 

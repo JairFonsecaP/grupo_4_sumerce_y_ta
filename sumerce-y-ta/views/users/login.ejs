@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sumercé y tá</title>
+    <link rel="stylesheet" href="/static/css/normalize.css" />
+    <link rel="stylesheet" href="/static/css/header.css" />
+    <link rel="stylesheet" href="/static/css/login.css" />
+    <link rel="stylesheet" href="/static/css/footer.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/5cd85102cd.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <%- include( '../partials/header' ) %> 
+    <main>
+      <section class="box-form">
+        <form action="#" method="POST">
+          <div class="form">
+            <div class="form-title">
+              <h3 class="login-session">INICIA SESION</h3>
+              <h3 class="register">
+                <a
+                  href="/registro"
+                  class="register"
+                  style="text-decoration: none"
+                  ;
+                  >REGISTRATE</a
+                >
+              </h3>
+            </div>
+            <div class="form-fields1">
+              <input
+                type="text"
+                name=""
+                placeholder="Usuario o correo electrónico"
+              />
+              <input type="password" name="" placeholder="Contraseña" />
+            </div>
+            <div class="form-button">
+              <input type="submit" name="" value="Ingresar" />
+            </div>
+            <div class="forgot-password">
+              <a href="#">¿Olvidaste tu contraseña?</a>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+    <%- include( '../partials/footer' ) %> 
+  </body>
+</html>

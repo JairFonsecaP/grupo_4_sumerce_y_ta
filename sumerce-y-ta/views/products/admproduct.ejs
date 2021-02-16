@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/normalize.css" />
+    <link rel="stylesheet" href="/static/css/header.css" />
+    <link rel="stylesheet" href="/static/css/index.css" />
+    <link rel="stylesheet" href="/static/css/admproduct.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/5cd85102cd.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <%- include( '../partials/header' ) %>
+    <main>
+      <%# CREAR PRODUCTO %>
+      <div class="modal-create">
+        <div class="internal-modal">
+          <div class="close-create"><i class="fas fa-times"></i></div>
+          <%- include( '../partials/formularioProducto' ) %>
+        </div>
+      </div>
+      <a href="#" id="button-create"
+        ><i class="fas fa-plus"></i>
+        <div class="create">Crear producto</div></a
+      >
+      <%# EDITAR PRODUCTO %>
+      <div class="modal-edit">
+        <div class="internal-modal">
+          <div class="close-edit"><i class="fas fa-times"></i></div>
+          <%- include( '../partials/formularioProducto' ) %>
+        </div>
+      </div>
+      <a href="#" id="button-edit"
+        ><i class="fas fa-pen"></i>
+        <div class="edit">Editar producto</div></a
+      >
+      <script src="/static/Js/admproduct.js"></script>
+    </main>
+  </body>
+</html>

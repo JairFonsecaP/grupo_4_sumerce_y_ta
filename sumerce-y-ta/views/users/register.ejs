@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sumercé y tá</title>
+    <link rel="stylesheet" href="/static/css/normalize.css" />
+    <link rel="stylesheet" href="/static/css/header.css" />
+    <link rel="stylesheet" href="/static/css/register.css" />
+    <link rel="stylesheet" href="/static/css/footer.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/5cd85102cd.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <%- include( '../partials/header' ) %> 
+    <main>
+      <section class="box-form">
+        <form action="#" method="POST">
+          <div class="form">
+            <div class="form-title">
+              <h3>
+                <a href="/login" class="inicia" style="text-decoration: none"
+                  >INICIA SESION</a
+                >
+              </h3>
+              <h3 class="registrate">REGISTRATE</h3>
+            </div>
+            <div class="form-fields1">
+              <input type="text" name="" placeholder="Nombre de usuario" />
+              <input type="tel" name="" placeholder="Teléfono" />
+            </div>
+            <div class="form-fields2">
+              <select name="region">
+                <option value="">- región -</option>
+                <option value="1">Antofagasta</option>
+                <option value="2">Atacama</option>
+                <option value="3">Arica y Parinacota</option>
+                <option value="4">Aysén</option>
+                <option value="5">Bío-Bío</option>
+                <option value="6">Coquimbo</option>
+                <option value="7">La Araucanía</option>
+                <option value="8">Los Lagos</option>
+                <option value="9">Los Ríos</option>
+                <option value="10">Magallanes</option>
+                <option value="11">Maule</option>
+                <option value="12">Metropolitana</option>
+                <option value="13">Ñuble</option>
+                <option value="14">O'Higgins</option>
+                <option value="15">Tarapacá</option>
+                <option value="16">Valparaíso</option>
+              </select>
+              <select name="comuna">
+                <option value="17">Comuna</option>
+              </select>
+            </div>
+            <div class="form-fields3">
+              <input type="email" name="" placeholder="Correo electrónico" />
+              <input
+                type="email"
+                name=""
+                placeholder="Confirmar correo electrónico"
+              />
+              <input type="password" name="" placeholder="Contraseña" />
+              <input
+                type="password"
+                name=""
+                placeholder="Confirmar contraseña"
+              />
+            </div>
+            <div class="form-button">
+              <input type="submit" name="" value="Ingresar" />
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+    <%- include( '../partials/footer' ) %> 
+  </body>
+</html>
