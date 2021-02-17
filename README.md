@@ -26,3 +26,5 @@ Soy Jair Fonseca un colombiano que decidio salir a darle la vuelta a sudamerica 
 Tablero del sprint 1: https://github.com/JairFonsecaP/grupo_4_sumerce_y_ta/projects/1
 
 Tablero del sprint 2: https://github.com/JairFonsecaP/grupo_4_sumerce_y_ta/projects/2
+
+Tablero del sprint 3: https://github.com/JairFonsecaP/grupo_4_sumerce_y_ta/projects/3
