@@ -12,6 +12,7 @@ exports.index = (req, res) => {
 exports.search = (req, res) => {
   let busca = req.query.search;
   let results = [];
+
   products.forEach((product) => {
     if (product.name.includes(busca)) {
       results.push(product);
