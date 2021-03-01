@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sumercé y tá</title>
+  <title><%= product.name %></title>
   <link rel="stylesheet" href="/static/css/normalize.css" />
   <link rel="stylesheet" href="/static/css/header.css" />
   <link rel="stylesheet" href="/static/css/footer.css" />
@@ -21,7 +21,7 @@
 <main>
    
     <section class="section-product">
-      <img class="img-product" src="/static/images/9.png" alt="">
+      <img class="img-product" src="/static/images/<%= product.photo %>" alt="">
       <div class="contenedor-flex">
         
       
@@ -29,8 +29,8 @@
       
         <div class="mr-25px contenido-producto">
        
-          <h2>Aros de plata 925 con incrustaciones de esmeraldas</h2>
-          <p class="precio-producto">Precio: $$$$$</p>
+          <h2><%= product.name %></h2>
+          <p class="precio-producto">Precio: $<%= toThousand(product.price) %></p>
           <p>Ref. ####-##</p>
           <i class="far fa-heart"></i>
         </div>
@@ -72,10 +72,7 @@
     </section>
       <div>
         <div class="description-product">
-          <h2 class="mr-25px">Descripcion del producto</h2>
-          <p class="mr-25px mr-15pxright">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium iste
-            inventore sint ratione in magni tenetur! Dolore commodi impedit magnam quaerat numquam harum iste corrupti
-            accusamus, asperiores assumenda vel saepe.</p>
+          <%= product.description %>
         </div>
         <h2 class="mr-25px">Materiales</h2>
         <div class="container-materiales">
@@ -101,8 +98,8 @@
     <section class="colletion section">
       <div class="collection__container bd-grid">
         <div class="collection__box">
-          <img src="static/images/10.png" alt="" class="collection__img">
-
+          <img src="/static/images/<%= product.photo %>" alt="" class="collection__img">
+          
           <div class="collection__data-left">
             <h2 class="collection__title"><span class="collection__subtitle">Dama</span><br>Accesorios</h2>
             <a href="/categorias" class="collection__view">Ver Coleccion</a>
@@ -117,10 +114,10 @@
             <a href="/categorias" class="collection__view">Ver Coleccion</a>
 
           </div>
-          <img src="static/images/11.png" alt="" class="collection__img">
+          <img src="/static/images/<%= product.photo %>" alt="" class="collection__img">
         </div>
         <div class="collection__box">
-          <img src="static/images/12.png" alt="" class="collection__img">
+          <img src="/static/images/<%= product.photo %>" alt="" class="collection__img">
           <div class="collection__data-left">
             <h2 class="collection__title"><span class="collection__subtitle">Dama</span><br>Accesorios</h2>
             <a href="/categorias" class="collection__view">Ver Coleccion</a>
@@ -134,7 +131,7 @@
             <a href="/categorias" class="collection__view">Ver Coleccion</a>
 
           </div>
-          <img src="static/images/14.png" alt="" class="collection__img">
+          <img src="/static/images/<%= product.photo %>" alt="" class="collection__img">
         </div>
       </div>
     </section>
