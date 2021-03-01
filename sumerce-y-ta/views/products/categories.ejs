@@ -1,162 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sumercé y tá</title>
+    <link rel="stylesheet" href="/static/css/normalize.css" />
+    <link rel="stylesheet" href="/static/css/header.css" />
+    <link rel="stylesheet" href="/static/css/categories.css" />
+    <link rel="stylesheet" href="/static/css/footer.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/5cd85102cd.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sumercé y tá</title>
-  <link rel="stylesheet" href="/static/css/normalize.css" />
-  <link rel="stylesheet" href="/static/css/header.css" />
-  <link rel="stylesheet" href="/static/css/categories.css" />
-  <link rel="stylesheet" href="/static/css/footer.css" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/5cd85102cd.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
-  <%- include( '../partials/header' ) %>
-  <main>
-    <div class="select-menu">
-      <form class="form-options">
-        <h4>Camisas, blusas y poleras</h4>
-        <p>Tallas</p>
-        <div class="option">
-          <input type="checkbox" id="xs" name="tallas" value="xs" />
-          <label for="xs"> XS</label>
-        </div>
-        <div class="option">
-          <input type="checkbox" id="s" name="tallas" value="s" />
-          <label for="s"> S</label>
-        </div>
-        <div class="option">
-          <input type="checkbox" id="m" name="tallas" value="m" />
-          <label for="m"> M</label>
-        </div>
-        <div class="option">
-          <input type="checkbox" id="l" name="tallas" value="l" />
-          <label for="l"> L</label>
-        </div>
-        <div class="option">
-          <input type="checkbox" id="xl" name="tallas" value="xl" />
-          <label for="xl"> XL</label>
-        </div>
-        <div class="option">
-          <input type="checkbox" id="xll" name="tallas" value="xll" />
-          <label for="xll"> XLL</label>
-        </div>
-
-        <p>Tonalidades</p>
-        <div class="option">
-          <input type="checkbox" id="claro" name="tonalidades" value="claro" />
-          <label for="claro"> Claro</label>
-        </div>
-        <div class="option">
-          <input type="checkbox" id="medio" name="tonalidades" value="medio" />
-          <label for="medio"> Medio</label>
-        </div>
-        <div class="option">
-          <input type="checkbox" id="oscuro" name="tonalidades" value="oscuro" />
-          <label for="oscuro"> Oscuro</label>
-        </div>
-        <div class="option">
-          <input type="checkbox" id="pasteles" name="tonalidades" value="pasteles" />
-          <label for="pasteles"> Pasteles</label>
-        </div>
-        <div class="option">
-          <input type="checkbox" id="militar" name="tonalidades" value="militar" />
-          <label for="militar"> Militar</label>
-        </div>
-        <div class="option">
-          <input type="checkbox" id="multicolor" name="tonalidades" value="multicolor" />
-          <label for="multicolor"> Multicolor</label>
-        </div>
-        <div class="option">
-          <input type="checkbox" id="metalizados" name="tonalidades" value="metalizados" />
-          <label for="metalizados"> Metalizados</label>
-        </div>
-
-        <p>Tipo</p>
-        <div class="option">
-          <input type="checkbox" id="manga-larga" name="tipo" value="manga-larga" />
-          <label for="manga-larga"> Manga larga</label>
-        </div>
-        <div class="option">
-          <input type="checkbox" id="deportivas" name="tipo" value="deportivas" />
-          <label for="deportivas"> Deportivas</label>
-        </div>
-        <div class="option">
-          <input type="checkbox" id="top" name="tipo" value="top" />
-          <label for="top"> Top</label>
-        </div>
-        <div class="option">
-          <input type="checkbox" id="manga-corta" name="tipo" value="manga-corta" />
-          <label for="manga-corta"> Manga corta</label>
-        </div>
-        <div class="option">
-          <input type="checkbox" id="sin-manga" name="tipo" value="sin-manga" />
-          <label for="sin-manga"> Sin manga</label>
-        </div>
-      </form>
-    </div>
-    <div class="categories-folder">
-      <div class="folder1">
-        <article>
-          <img src="/static/images/9.png" class="categories" />
-          <div class="description-box">
-            <h3>Blusa manga corta</h3>
-            <p class="precios">$$$.$$$</p>
-            <a href="/carrito"><button type="button">Comprar</button></a>
+  <body>
+    <%- include( '../partials/header' ) %>
+    <main>
+      <div class="select-menu">
+        <form class="form-options">
+          <h4>Camisas, blusas y poleras</h4>
+          <p>Tallas</p>
+          <div class="option">
+            <input type="checkbox" id="xs" name="tallas" value="xs" />
+            <label for="xs"> XS</label>
           </div>
-        </article>
-        <article>
-          <img src="/static/images/10.png" class="categories" />
-          <div class="description-box">
-            <h3>Blusa manga corta</h3>
-            <p class="precios">$$$.$$$</p>
-            <a href="/carrito"> <button type="button">Comprar</button></a>
+          <div class="option">
+            <input type="checkbox" id="s" name="tallas" value="s" />
+            <label for="s"> S</label>
           </div>
-        </article>
+          <div class="option">
+            <input type="checkbox" id="m" name="tallas" value="m" />
+            <label for="m"> M</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="l" name="tallas" value="l" />
+            <label for="l"> L</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="xl" name="tallas" value="xl" />
+            <label for="xl"> XL</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="xll" name="tallas" value="xll" />
+            <label for="xll"> XLL</label>
+          </div>
+
+          <p>Tonalidades</p>
+          <div class="option">
+            <input
+              type="checkbox"
+              id="claro"
+              name="tonalidades"
+              value="claro"
+            />
+            <label for="claro"> Claro</label>
+          </div>
+          <div class="option">
+            <input
+              type="checkbox"
+              id="medio"
+              name="tonalidades"
+              value="medio"
+            />
+            <label for="medio"> Medio</label>
+          </div>
+          <div class="option">
+            <input
+              type="checkbox"
+              id="oscuro"
+              name="tonalidades"
+              value="oscuro"
+            />
+            <label for="oscuro"> Oscuro</label>
+          </div>
+          <div class="option">
+            <input
+              type="checkbox"
+              id="pasteles"
+              name="tonalidades"
+              value="pasteles"
+            />
+            <label for="pasteles"> Pasteles</label>
+          </div>
+          <div class="option">
+            <input
+              type="checkbox"
+              id="militar"
+              name="tonalidades"
+              value="militar"
+            />
+            <label for="militar"> Militar</label>
+          </div>
+          <div class="option">
+            <input
+              type="checkbox"
+              id="multicolor"
+              name="tonalidades"
+              value="multicolor"
+            />
+            <label for="multicolor"> Multicolor</label>
+          </div>
+          <div class="option">
+            <input
+              type="checkbox"
+              id="metalizados"
+              name="tonalidades"
+              value="metalizados"
+            />
+            <label for="metalizados"> Metalizados</label>
+          </div>
+
+          <p>Tipo</p>
+          <div class="option">
+            <input
+              type="checkbox"
+              id="manga-larga"
+              name="tipo"
+              value="manga-larga"
+            />
+            <label for="manga-larga"> Manga larga</label>
+          </div>
+          <div class="option">
+            <input
+              type="checkbox"
+              id="deportivas"
+              name="tipo"
+              value="deportivas"
+            />
+            <label for="deportivas"> Deportivas</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="top" name="tipo" value="top" />
+            <label for="top"> Top</label>
+          </div>
+          <div class="option">
+            <input
+              type="checkbox"
+              id="manga-corta"
+              name="tipo"
+              value="manga-corta"
+            />
+            <label for="manga-corta"> Manga corta</label>
+          </div>
+          <div class="option">
+            <input
+              type="checkbox"
+              id="sin-manga"
+              name="tipo"
+              value="sin-manga"
+            />
+            <label for="sin-manga"> Sin manga</label>
+          </div>
+        </form>
       </div>
-      <div class="folder2">
-        <article>
-          <img src="/static/images/11.png" class="categories" />
-          <div class="description-box">
-            <h3>Blusa manga corta</h3>
-            <p class="precios">$$$.$$$</p>
-            <a href="/carrito"> <button type="button">Comprar</button></a>
-          </div>
-        </article>
-        <article>
-          <img src="/static/images/12.png" class="categories" />
-          <div class="description-box">
-            <h3>Blusa manga corta</h3>
-            <p class="precios">$$$.$$$</p>
-            <a href="/carrito"> <button type="button">Comprar</button></a>
-          </div>
-        </article>
-      </div>
-      <div class="folder3">
-        <article>
-          <img src="/static/images/13.png" class="categories" />
-          <div class="description-box">
-            <h3>Blusa manga corta</h3>
-            <p class="precios">$$$.$$$</p>
-            <a href="/carrito"> <button type="button">Comprar</button></a>
-          </div>
-        </article>
-        <article>
-          <img src="/static/images/14.png" class="categories" />
-          <div class="description-box">
-            <h3>Blusa manga corta</h3>
-            <p class="precios">$$$.$$$</p>
-            <a href="/carrito"> <button type="button">Comprar</button></a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </main>
-  <%- include( '../partials/footer' ) %> 
-</body>
+      <div class="categories-folder">
+        <div class="folder1">
+          <% products.forEach(product=>{ %>
 
+          <article>
+            <img src="/static/images/<%= product.photo %>" class="categories" />
+            <div class="description-box">
+              <h3><%= product.name %></h3>
+              <p class="precios">$ <%= product.price%></p>
+              <a href="/carrito"><button type="button">Comprar</button></a>
+            </div>
+          </article>
+          <% }) %>
+        </div>
+      </div>
+    </main>
+    <%- include( '../partials/footer' ) %>
+  </body>
 </html>
