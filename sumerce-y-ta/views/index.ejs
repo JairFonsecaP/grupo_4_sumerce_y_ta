@@ -61,7 +61,7 @@
 
       <section class="recomendados">
         <div>
-          <img src="/static/images/17.png" alt="Jean" />
+          <img src="/static/images/<%=products[0].photo%>" alt="Jean" />
 
           <a href="products/carrito"><button class="btn-add-to-cart">COMPRAR</button></a>
         </div>
@@ -75,8 +75,8 @@
           </br>Recomendado para ti</p>
         </div>
         <div >
-          <img src="/static/images/10.png" alt="Jean" class="no-view-mobile"/>
-          <a href="carrito"><button class="no-view-mobile btn-add-to-cart">COMPRAR</button></a>
+          <img src="/static/images/<%=products[0].photo%>" alt="Jean" class="no-view-mobile"/>
+          <a href="products/carrito"><button class="no-view-mobile btn-add-to-cart">COMPRAR</button></a>
         </div>   
 
 
@@ -92,21 +92,15 @@
         ></iframe>
       </section>
       <section class="recomendados">
-        <div>
+        <% for(let i = 0; i<3; i++){ %>
+          <div>
 
-          <img src="/static/images/9.png" alt="Jean"  class="no-view-mobile " /><a href="carrito"><button  class="no-view-mobile btn-add-to-cart">COMPRAR</button></a>
-
-         
-
-        </div>
-        <div>
-          <img src="/static/images/13.png" alt="Jean" /><a href="carrito"><button class="btn-add-to-cart">COMPRAR</button><a href="carrito"></a>
-        </div>
-        <div>
-
-          <img src="/static/images/11.png" alt="Jean"  class="no-view-mobile " /><a href="carrito"><button class="no-view-mobile btn-add-to-cart">COMPRAR</button></a>
-
-        </div>
+            <img src="/static/images/<%=products[0].photo%>" alt="Jean"  class="no-view-mobile " /><a href="products/carrito"><button  class="no-view-mobile btn-add-to-cart">COMPRAR</button></a>
+  
+           
+  
+          </div>
+        <% } %> 
       </section>
     </main>
     <%- include( './partials/footer' ) %> 
