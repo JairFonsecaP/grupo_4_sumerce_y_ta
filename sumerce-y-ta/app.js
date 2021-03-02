@@ -4,6 +4,8 @@ const path = require("path");
 const router = require("./routes/index");
 
 const port = 3000;
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
