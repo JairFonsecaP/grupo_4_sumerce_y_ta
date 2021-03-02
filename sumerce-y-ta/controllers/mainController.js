@@ -6,7 +6,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 exports.index = (req, res) => {
-  res.render("index");
+  res.render("index", {products:products});
 };
 
 exports.search = (req, res) => {
