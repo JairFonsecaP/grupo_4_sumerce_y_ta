@@ -37,10 +37,11 @@
         <div class="details">
           <select class="input-size-tamano" name="#" id="#">
             <option value="#">Elige tamaño</option>
-            <option value="S">S</option>
-            <option value="M">M</option>
-            <option value="G">G</option>
-            <option value="XG">XG</option>
+            <%let tallas = product.sizes.split(',')
+            tallas.forEach(talla=>{%>
+            <option value="<%=talla%>"><%=talla.toUpperCase()%></option>
+
+            <% }) %>
           </select>
 
           <input class="input-size " type="text" placeholder="Personaliza tu accesorio"><i class="fas fa-pen"></i>

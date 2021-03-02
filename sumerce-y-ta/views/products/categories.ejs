@@ -164,7 +164,11 @@
           <% products.forEach((product)=>{ if(category ===
           product.categories.toLowerCase()){%>
           <article>
-            <img src="/static/images/<%= product.photo %>" class="categories" />
+            <a href="/products/producto/<%=product.id%>"
+              ><img
+                src="/static/images/<%= product.photo %>"
+                class="categories"
+            /></a>
             <div class="description-box">
               <h3><%= product.name %></h3>
               <p class="precios">$ <%= toThousand(product.price)%></p>
