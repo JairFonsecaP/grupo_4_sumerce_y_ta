@@ -55,3 +55,5 @@ exports.store = (req, res) => {
   );
   res.redirect("/products/admproducto");
 };
+
+exports.edit = (req, res) => {};

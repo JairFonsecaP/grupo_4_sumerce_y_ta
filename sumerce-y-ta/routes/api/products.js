@@ -3,7 +3,12 @@ const productController = require("../../controllers/productsController");
 const upload = require("../../middlewares/photoUp");
 
 router.get("/admproducto", productController.admproducto);
-router.post("/admproducto", upload.single("photo"), productController.store);
+router.post(
+  "/admproducto/create",
+  upload.single("photo"),
+  productController.store
+);
+router.post("/admproducto/edit", productController.edit);
 
 router.get("/producto", productController.producto);
 router.get("/categorias/:category", productController.categorias);

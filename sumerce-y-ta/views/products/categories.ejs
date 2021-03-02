@@ -167,7 +167,7 @@
             <img src="/static/images/<%= product.photo %>" class="categories" />
             <div class="description-box">
               <h3><%= product.name %></h3>
-              <p class="precios">$ <%= product.price%></p>
+              <p class="precios">$ <%= toThousand(product.price)%></p>
               <a href="products/carrito"
                 ><button type="button">Comprar</button></a
               >
