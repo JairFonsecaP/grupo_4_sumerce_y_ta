@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const uniqid = require("uniqid");
 
 const productsFilePath = path.join(__dirname, "../data/products.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
@@ -19,9 +20,17 @@ exports.categorias = (req, res) => {
 };
 
 exports.producto = (req, res) => {
-  let idDetail = req.params.id - 1;
-  let product = products[idDetail];
-  res.render("products/product", { product: product, toThousand: toThousand });
+  let idDetail = req.params.id;
+  products.forEach((product) => {
+    if (product.id === idDetail) {
+      res.render("products/product", {
+        product: product,
+        toThousand: toThousand,
+      });
+    }
+  });
+
+  //res.render("products/product", { product: product, toThousand: toThousand });
 };
 
 exports.admproducto = (req, res) => {
@@ -37,7 +46,7 @@ exports.store = (req, res) => {
   type = type.toString();
   tonalidades = tonalidades.toString();
 
-  product.id = products.length + 1;
+  product.id = uniqid();
   product.name = req.body.name;
   product.categories = req.body.categories;
   product.color = tonalidades;
@@ -46,13 +55,9 @@ exports.store = (req, res) => {
   product.price = req.body.price;
   product.type = type;
   product.photo = req.body.photo;
-  console.log(product.id);
   products.push(product);
   let created = JSON.stringify(products);
-  fs.writeFileSync(
-    path.join(__dirname, "../data/productsDataBase.json"),
-    created
-  );
+  fs.writeFileSync(path.join(__dirname, "../data/products.json"), created);
   res.redirect("/products/admproducto");
 };
 
