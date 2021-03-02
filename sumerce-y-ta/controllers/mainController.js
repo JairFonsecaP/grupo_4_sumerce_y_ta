@@ -1,32 +1,22 @@
+const fs = require("fs");
+const path = require("path");
+
+const productsFilePath = path.join(__dirname, "../data/products.json");
+const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
 exports.index = (req, res) => {
   res.render("index");
 };
 
-exports.carrito = (req, res) => {
-  res.render("products/cart");
-};
+exports.search = (req, res) => {
+  let busca = req.query.search;
+  let results = [];
+  products.forEach((product) => {
+    if (product.name.includes(busca)) {
+      results.push(product);
+    }
+  });
 
-exports.categorias = (req, res) => {
-  res.render("products/categories");
+  res.render("results", { results: results, busca: busca });
 };
-
-exports.producto = (req, res) => {
-  res.render("products/product");
-};
-
-exports.admproducto = (req, res) => {
-  res.render("products/admproduct");
-};
-
-exports.contacto = (req, res) => {
-  res.render("users/contact");
-};
-
-exports.login = (req, res) => {
-  res.render("users/login");
-};
-
-exports.registro = (req, res) => {
-  res.render("users/register");
-};
-

@@ -1,13 +1,13 @@
-const router = require("express").Router();
+const express = require("express");
+const router = express.Router();
+const products = require("./api/products");
+const users = require("./api/users");
 const mainController = require("../controllers/mainController");
 
 router.get("/", mainController.index);
-router.get("/carrito", mainController.carrito);
-router.get("/categorias", mainController.categorias);
-router.get("/contacto", mainController.contacto);
-router.get("/login", mainController.login);
-router.get("/producto", mainController.producto);
-router.get("/registro", mainController.registro);
-router.get("/admproducto", mainController.admproducto);
+router.get("/search", mainController.search);
+
+router.use("/products", products);
+router.use("/users", users);
 
 module.exports = router;
