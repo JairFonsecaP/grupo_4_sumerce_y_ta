@@ -5,7 +5,7 @@ router.get("/admproducto", productController.admproducto);
 router.post("/admproducto", productController.store);
 
 router.get("/producto", productController.producto);
-router.get("/categorias", productController.categorias);
+router.get("/categorias/:category", productController.categorias);
 router.get("/carrito", productController.carrito);
 
 module.exports = router;

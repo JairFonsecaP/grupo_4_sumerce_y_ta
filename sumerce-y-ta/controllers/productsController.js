@@ -10,9 +10,11 @@ exports.carrito = (req, res) => {
 };
 
 exports.categorias = (req, res) => {
+  const category = req.params.category;
   res.render("products/categories", {
     products: products,
     toThousand: toThousand,
+    category: category,
   });
 };
 
