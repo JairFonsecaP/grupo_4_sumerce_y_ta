@@ -20,48 +20,57 @@
   </head>
   <body>
     <%- include( '../partials/header' ) %>
+    
     <main>
         <%# CREATE BUTTON %>
-        <div class="fix">
-            <a href="#" id="button-create"><i class="fas fa-plus"></i>
-            <div class="create">Crear</div></a>
-        </div>
-
-        <div class="flex">
-        <%# TITLES %>
-        <div class="flex-container">
-            <div class="product">Producto</div>
-            <div class="name">Nombre</div>
-            <div class="category">Categoría</div>
-            <div class="color">Color</div>
-            <div class="sizes">Talla</div>
-            <div class="description">Descripción</div>
-            <div class="type">Tipo</div>
-            <div class="price">Precio</div>
-            <div class="modify">Editar</div>
-            <div class="delete">Eliminar</div>
-          </div>
-        <% products.forEach(product => { %>
-            <div class="flex-container">
-            <div class="product"><img src="/static/images/<%= product.photo %>" alt="" class="admimg"></div>
-            <div class="name"><%=product.name%></div>
-            <div class="category"><%=product.category%></div>
-            <div class="color"><%=product.color%></div>
-            <div class="sizes"><%=product.sizes%></div>
-            <div class="description"><%=product.description%></div>
-            <div class="type"><%=product.type%></div>
-            <div class="price"><%=product.price%></div>
-            <div class="modify">
-                <a href="#" id="button-edit"><i class="fas fa-pen"></i>
-                <div class="edit"></div></a>
-            </div>
-            <div class="delete">
-                <a href="#" id="button-delete"><i class="fas fa-times-circle"></i>
-                    <div class="delete"></div></a>
-            </div>
-          </div>
+        <div>
+          <a href="#" id="button-create">
+            <button class="create">Crea tu producto <i class="fas fa-plus"></i></button>
+          </a>
+         </div>
+        <!--Tabla crear y editar producto-->
+    <table>
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Nombre</th>
+          <th>Categoria</th>
+          <th>Color</th>
+          <th>Talla</th>
+          <th>Descripcion</th>
+          <th>Tipo</th>
+          <th>Precio</th>
+          <th></th>
+          <th></th>
+          <tbody></tbody>
+        </tr>
+        <% products.map(product => { %>
+          <tr>
+        <td><img src="/static/images/<%= product.photo %>" alt="" class="admimg"></td>
+        <td><%=product.name%></td>
+        <td><%=product.categories%></td>
+        <td><%=product.color%></td>
+        <td><%=product.sizes.toUpperCase()%></td>
+        <td><%=product.description%></td>
+        <td><%=product.type%></td>
+        <td><%=product.price%></td>
+        <td>
+          <a href="#" id="button-edit">
+            <button class="edit">
+              <i class="fas fa-pen"></i>
+            </button>
+          </a>
+          
+        </td>
+        <td><a href="#" id="button-delete">
+          <button class="delete-btn"><i class="fas fa-times-circle"></i></button>
+      </a></td>
+      </tr>
         <% }); %>
-    </div>
+      </thead>
+    </table>
+
+       
       
         <%# CREAR PRODUCTO %>
       <div class="modal-create">
@@ -79,5 +88,7 @@
       </div>
       <script src="/static/Js/admproduct.js"></script>
     </main>
+
+   
   </body>
 </html>

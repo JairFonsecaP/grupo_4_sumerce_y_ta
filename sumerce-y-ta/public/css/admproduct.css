@@ -1,25 +1,14 @@
- main{
+main{
     background-color: white;
     border-top: solid;
     border-bottom: solid;
 }
-.fix {
-    position: fixed;
-    top: 170px;
-    left: 20px;
-}
-.flex{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    left: 40px;
-}
+
+/* MODALES CSS */
 .modal-create {
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    opacity: 0.7;
+    background-color: rgba(0, 0, 0, .6);
     position: absolute;
     top: 0;
     display: flex;
@@ -31,8 +20,7 @@
 .modal-edit {
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    opacity: 0.7;
+    background-color: rgba(0, 0, 0, 0.6);
     position: absolute;
     top: 0;
     display: flex;
@@ -55,7 +43,7 @@
 }
 .internal-modal {
     padding: 20px;
-    background-color: white;
+    background-color: #fff3f3;
     border-radius: 4px;
     text-align: center;
     position: relative;
@@ -63,33 +51,34 @@
 .internal-modal label {
     font-weight: bold;
     color: black;
+   
+
 }
-#button-create, #button-edit, #button-delete {
-    margin: 14%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80px;
-    height: 80px;
-    border-radius: 5px;
-    background: #dcd0d0;
-    box-shadow:  14px 14px 24px #b7adad,
-                -14px -14px 24px #fff3f3;
-    text-align: center;
-    font-size: 20px;
-    text-decoration: none;
-} 
+.modal-mr {
+    margin-right: 5px;
+    display: inline-block;
+}
+
+/* BOTONES CREATE, EDIT, DELETE */
 .create{
     color: #373737;
     font-weight: bold;
+    cursor: pointer;
+    background-color: #f6bdbd6b!important;
+    
+    height: 50px;
+   
 }
 .edit {
-    color: #373737;
+    color: #222dc0;
     font-weight: bold;
+    cursor: pointer;
+   background-color: #f6bdbd6b!important;
 }
-.fas{
-    color: #373737;
+.delete-btn {
+    cursor: pointer;
+    color: red;
+    background-color: #f6bdbd6b!important;
 }
 .button-products {
     margin-top: 5%;
@@ -103,17 +92,23 @@
     background-color: transparent;
     color: #CC8F94;
     border-color: #CC8F94;
+}
+.flex-container-titulos {
+    margin-top: 6px;
+    border-bottom: 1px solid rgba(0, 0, 0, .6);
+    margin-bottom: 10px;
+    margin-left: 5px;
 } 
 .flex-container {
     display: flex;
     flex-direction: row;
-    border-bottom: 1px solid black;
     font-size: 30px;
     width: 70%;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    align-items: center;
 }
-.product, .name, .category, .color, .sizes, .description, .type, .price, .modify, .delete {
-    width: 50%;
-}
+
   .admimg{
       width: 100px;
       height: 100px;
@@ -122,3 +117,24 @@
     
   } 
   
+
+
+  /* TABLE */
+
+th  {
+    text-align: center;
+   
+   
+}
+td {
+    border-top: 1px solid rgba(0, 0, 0, .6);
+   
+    text-align: center;
+}
+table {
+  font-size: 1.5rem;
+	width: 100%;
+	padding: 40px 0;
+}	
+
+

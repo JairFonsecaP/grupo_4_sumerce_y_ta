@@ -1,19 +1,19 @@
 <form action="/products/admproducto/edit" method="POST">
   <fieldset>
-    <label for="name">Nombre</label>
-    <input type="text" name="name" id="name" placeholder="nombre" />
+    <label for="name">Nombre :</label>
+    <input type="text" name="name" id="name" placeholder="Introduce el nombre" />
   </fieldset>
   <fieldset>
-    <label for="description">Descripción</label>
+    <label for="description">Descripción :</label>
     <input
       type="textarea"
       name="description"
       id="description"
-      placeholder="descripcion"
+      placeholder="Introduce la descripcion"
     />
   </fieldset>
   <fieldset>
-    <label for="photo">Foto</label>
+    <label for="photo">Foto :</label>
     <input type="file" name="photo" id="photo" accept=".jpg, .png" />
   </fieldset>
   <fieldset>
@@ -25,61 +25,104 @@
     </select>
   </fieldset>
   <fieldset>
-    <label for="">Talla</label>
-    <input type="checkbox" id="xs" name="sizes" value="xs" />
-    <label for="xs"> XS</label>
-    <input type="checkbox" id="s" name="sizes" value="s" />
-    <label for="s"> S</label>
-    <input type="checkbox" id="m" name="sizes" value="m" />
-    <label for="m"> M</label>
-    <input type="checkbox" id="l" name="sizes" value="l" />
-    <label for="l"> L</label>
-    <input type="checkbox" id="xl" name="sizes" value="xl" />
-    <label for="xl"> XL</label>
-    <input type="checkbox" id="xll" name="sizes" value="xll" />
-    <label for="xll"> XLL</label>
+    <label for="">Talla :</label>
+    <div class="modal-mr">
+      <label for="xs">XS :</label>
+      <input type="checkbox" id="xs" name="sizes" value="xs" />
+    </div>
+    <div class="modal-mr">
+      <label for="s">S :</label>
+      <input type="checkbox" id="s" name="sizes" value="s" />
+    </div>
+    <div class="modal-mr">
+      <label for="m">M :</label>
+      <input type="checkbox" id="m" name="sizes" value="m" />
+    </div>
+    <div class="modal-mr">
+      <label for="l">L :</label>
+      <input type="checkbox" id="l" name="sizes" value="l" />
+    </div>
+    <div class="modal-mr">
+      <label for="xl">XL :</label>
+      <input type="checkbox" id="xl" name="sizes" value="xl" />
+    </div>
+    <div class="modal-mr">
+      <label for="xll">XLL :</label>
+      <input type="checkbox" id="xll" name="sizes" value="xll" />
+    </div>
   </fieldset>
   <fieldset>
-    <label>Tonalidad</label>
-    <input type="checkbox" id="claro" name="tonalidades" value="claro" />
-    <label for="claro"> Claro</label>
-    <input type="checkbox" id="medio" name="tonalidades" value="medio" />
-    <label for="medio"> Medio</label>
-    <input type="checkbox" id="oscuro" name="tonalidades" value="oscuro" />
-    <label for="oscuro"> Oscuro</label>
-    <input type="checkbox" id="pasteles" name="tonalidades" value="pasteles" />
-    <label for="pasteles"> Pasteles</label>
-    <input type="checkbox" id="militar" name="tonalidades" value="militar" />
-    <label for="militar"> Militar</label>
-    <input
-      type="checkbox"
-      id="multicolor"
-      name="tonalidades"
-      value="multicolor"
-    />
-    <label for="multicolor"> Multicolor</label>
-    <input
-      type="checkbox"
-      id="metalizados"
-      name="tonalidades"
-      value="metalizados"
-    />
-    <label for="metalizados"> Metalizados</label>
+    <label>Tonalidad :</label>
+    <div class="modal-mr">
+      <label for="claro">Claro :</label>
+      <input type="checkbox" id="claro" name="tonalidades" value="claro" />
+     
+    </div>
+    <div class="modal-mr">
+      <label for="medio">Medio :</label>
+      <input type="checkbox" id="medio" name="tonalidades" value="medio" />
+     
+    </div>
+    <div class="modal-mr">
+      <label for="oscuro">Oscuro :</label>
+      <input type="checkbox" id="oscuro" name="tonalidades" value="oscuro" />
+      
+    </div>
+    <div class="modal-mr">
+       <label for="pasteles">Pasteles :</label>
+       <input type="checkbox" id="pasteles" name="tonalidades" value="pasteles" />
+     
+    </div>
+    <div class="modal-mr">
+      <label for="militar">Militar :</label>
+      <input type="checkbox" id="militar" name="tonalidades" value="militar" />
+     
+    </div>
+    <div class="modal-mr">
+      <label for="multicolor">Multicolor :</label>
+      <input
+        type="checkbox"
+        id="multicolor"
+        name="tonalidades"
+        value="multicolor"
+      />
+     
+    </div>
+    <div class="modal-mr">
+      <label for="metalizados">Metalizados :</label>
+      <input
+        type="checkbox"
+        id="metalizados"
+        name="tonalidades"
+        value="metalizados"
+      />
+    
+    </div>
   </fieldset>
   <fieldset>
-    <label for="">Tipo</label>
-    <input type="checkbox" id="manga-larga" name="type" value="manga-larga" />
-    <label for="manga-larga"> Manga larga</label>
-    <input type="checkbox" id="deportivas" name="type" value="deportivas" />
-    <label for="deportivas"> Deportivas</label>
-    <input type="checkbox" id="top" name="type" value="top" />
-    <label for="top"> Top</label>
-    <input type="checkbox" id="manga-corta" name="type" value="manga-corta" />
-    <label for="manga-corta"> Manga corta</label>
-    <input type="checkbox" id="sin-manga" name="type" value="sin-manga" />
-    <label for="sin-manga"> Sin manga</label>
+    <label for="">Tipo :</label>
+    <div class="modal-mr">  
+      <label for="manga-larga"> Manga larga :</label>
+      <input type="checkbox" id="manga-larga" name="type" value="manga-larga" />
+    </div>
+    <div class="modal-mr">
+      <label for="deportivas"> Deportivas :</label>
+      <input type="checkbox" id="deportivas" name="type" value="deportivas" />
+    </div>
+    <div class="modal-mr">  
+      <label for="top"> Top :</label>
+      <input type="checkbox" id="top" name="type" value="top" />
+    </div>
+    <div class="modal-mr">  
+      <label for="manga-corta"> Manga corta :</label>
+      <input type="checkbox" id="manga-corta" name="type" value="manga-corta" />
+    </div>
+    <div class="modal-mr">  
+      <label for="sin-manga"> Sin manga :</label>
+      <input type="checkbox" id="sin-manga" name="type" value="sin-manga" />
+    </div>
   </fieldset>
-  <label for="price">Precio</label>
-  <input type="text" id="price" value="price" />
+  <label for="price">Precio :</label>
+  <input type="text" id="price" value="Introduce el precio" />
   <button type="submit" class="button-products">Agregar</button>
 </form>
