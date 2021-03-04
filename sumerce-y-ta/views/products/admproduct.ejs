@@ -22,6 +22,7 @@
   </head>
   <body>
     <%- include( '../partials/header' ) %>
+<<<<<<< HEAD
     <main>
       <%# CREAR PRODUCTO %>
       <div class="modal-create">
@@ -45,6 +46,69 @@
         ><i class="fas fa-pen"></i>
         <div class="edit">Editar producto</div></a
       >
+=======
+
+    <main>
+      <%# CREATE BUTTON %>
+      <div>
+        <a href="/products/create" id="button-create">
+          <button class="create">
+            Crea tu producto <i class="fas fa-plus"></i>
+          </button>
+        </a>
+      </div>
+      <!--Tabla crear y editar producto-->
+      <table>
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Nombre</th>
+            <th>Categoria</th>
+            <th>Color</th>
+            <th>Talla</th>
+            <th>Descripcion</th>
+            <th>Tipo</th>
+            <th>Precio</th>
+            <th></th>
+            <th></th>
+            <tbody></tbody>
+          </tr>
+          <% products.map(product => { %>
+          <tr>
+            <td>
+              <img
+                src="/static/images/<%= product.photo %>"
+                alt=""
+                class="admimg"
+              />
+            </td>
+            <td><%=product.name%></td>
+            <td><%=product.categories%></td>
+            <td><%=product.color%></td>
+            <td><%=product.sizes%></td>
+            <td><%=product.description%></td>
+            <td><%=product.type%></td>
+            <td><%=toThousand(parseInt(product.price))%></td>
+            <td>
+              <a href="/products/edit/<%= product.id %>" id="button-edit">
+                <button class="edit">
+                  <i class="fas fa-pen"></i>
+                </button>
+              </a>
+            </td>
+            <td>
+              <a href="#" id="button-delete">
+                <button class="delete-btn">
+                  <i class="fas fa-times-circle"></i>
+                </button>
+              </a>
+            </td>
+          </tr>
+          <% }) %>
+        </thead>
+      </table>
+
+>>>>>>> 4678b6a (Cambios en el creaated y el edit)
       <script src="/static/Js/admproduct.js"></script>
     </main>
   </body>

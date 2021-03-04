@@ -1,0 +1,82 @@
+<form action="<%= product.id %>?_method=PUT" method="POST"
+  enctype="multipart/form-data">
+  <fieldset>
+    <label for="name">Nombre :</label>
+    <input
+      type="text"
+      name="name"
+      id="name"
+      placeholder="Introduce el nombre"
+      value="<%= product.name %>"
+    
+    />
+  </fieldset>
+  <fieldset>
+    <label for="description">Descripción :</label>
+    <input
+      type="textarea"
+      name="description"
+      id="description"
+      placeholder="Introduce la descripcion"
+      value="<%= product.descripcion != ''? product.description  : null%>"
+    />
+  </fieldset>
+  <fieldset>
+    <label for="photo">Foto :</label>
+    <input type="file" name="photo" id="photo" accept=".jpg, .png .sgv" />
+  </fieldset>
+  <fieldset>
+    <label>Categoría</label>
+    <select name="categories">
+      <option value="Ropa" <%= product.categories === "Ropa" ? 'selected':null %>>Ropa</option>
+      <option value="Deportivo" <%= product.categories === "Deportivo" ? 'selected':null %>>Deportivo</option>
+      <option value="Accesorios" <%= product.categories === "Accesorios" ? 'selected':null %>>Accesorios</option>
+    </select>
+  </fieldset>
+  <fieldset>
+    <label for="">Talla :</label>
+      <div class="modal-mr">
+       <% tallas.forEach(talla=>{ %>
+        <label for="<%= talla %>"><%= talla %> :</label>
+        <input type="checkbox" id="<%= talla %>" name="sizes" value="<%= talla %>" 
+        <% if(product.sizes){product.sizes.forEach(size =>{ %>
+          <%= size === talla ? "checked" : null %>
+        <% }) %> 
+        />
+      </div>
+     <% }}) %>
+  </fieldset>
+  <fieldset>
+    <label>Tonalidad :</label>
+    <% tonalidades.forEach(tonalidad=>{ %>
+      <div class="modal-mr">
+        <label for="<%= tonalidad%>"><%= tonalidad%> :</label>
+        <input type="checkbox" id="claro" name="color" value="<%= tonalidad%>" 
+        <% if(product.color){product.color.forEach(color =>{ %>
+          <%= color === tonalidad ? "checked" : null %>
+        <% }) %>
+        />
+      </div>
+    <% }}) %>
+  </fieldset>
+  <fieldset>
+    <label for="">Tipo :</label>
+      <% tipos.forEach(tipo=>{ %>
+      <div class="modal-mr">
+        <label for="<%= tipo %>"> <%= tipo %> :</label>
+        <input type="checkbox" id="<%= tipo %>" name="type" value="<%= tipo %>" 
+        <% if(product.type){product.type.forEach(type =>{ %>
+          <%= type === tipo ? "checked" : null %>
+       <% }) %> 
+    />
+      </div>
+      <% }}) %>
+  </fieldset>
+  <fieldset>
+  <label for="price">Precio :</label>
+  <% if(product.price){ %> 
+  <input type="text" id="price" name="price" value="<%= toThousand(product.price) %>" />
+  <% } %> 
+</fieldset>
+  <button type="submit" class="button-products">Editar</button>
+</form>

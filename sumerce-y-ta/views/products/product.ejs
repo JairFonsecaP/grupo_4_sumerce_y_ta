@@ -37,8 +37,12 @@
         <div class="details">
           <select class="input-size-tamano" name="#" id="#">
             <option value="#">Elige tamaño</option>
+<<<<<<< HEAD
             <%let tallas = product.sizes.split(',')
             tallas.forEach(talla=>{%>
+=======
+            <% product.sizes.forEach(talla=>{%>
+>>>>>>> 4678b6a (Cambios en el creaated y el edit)
             <option value="<%=talla%>"><%=talla.toUpperCase()%></option>
 
             <% }) %>
