@@ -171,11 +171,6 @@
             /></a>
             <div class="description-box">
               <h3><%= product.name %></h3>
-<<<<<<< HEAD
-              <p class="precios">$ <%= toThousand(product.price)%></p>
-              <a href="products/carrito"
-                ><button type="button">Comprar</button></a
-=======
               <% if(product.price != undefined){ %>
               <p class="precios">
                 $ <%= toThousand(parseInt(product.price)) %>
@@ -183,7 +178,6 @@
               <% } %>
               <a href="products/carrito">
                 <button type="button">Comprar</button></a
->>>>>>> 4678b6a (Cambios en el creaated y el edit)
               >
             </div>
           </article>
