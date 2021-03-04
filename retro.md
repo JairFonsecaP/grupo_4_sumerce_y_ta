@@ -73,3 +73,29 @@ Tuvimos una primera reunión para organizar tablero de tareas, una segunda reuni
 Se continuaron las consultas constantes por medio de Whatsapp.
 Creamos una nueva rama en Github llamada Develop donde cada uno manejó su propia rama para subir los archivos y cambios, en la última reunión hicimos el merge. 
 
+## Sprint 3
+
+#### Start Doing:
+
+- Empezar a investigar los temas, en vez de esperar solo que nos den los contenidos en clase.
+
+#### More of:
+
+- Comentar el código
+- Tener una convención de nombres.
+- Hacer el código desde el primer día, para que la cantidad de horas que tengamos que dedicarle por día al proyecto sea siempre constante y no incremental. 
+- Poder empezar reuniones con dos personas para no frenar el proyecto y comunicar a la persona faltante por whatsapp de los temas tratados en dicha reunion.
+
+#### Keep Doing:
+
+- Poner una columna 'Revised' en el tablero del proyecto para que cada issue sea revisado por algún integrante del equipo distinto al que lo hizo.
+- Programar una primera reunión apenas tengamos el archivo de un nuevo Sprint.
+- Seguir practicando el dominio de Git.
+- Comunicación regular.
+
+#### Less of:
+- We're perfect :)
+#### Stop Doing:
+- No ultimar detalles sobre la hora de entrega.
+
+#### Resumen sprit 2:
