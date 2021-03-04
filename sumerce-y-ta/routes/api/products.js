@@ -10,7 +10,7 @@ router.post(
 );
 router.post("/admproducto/edit", productController.edit);
 
-router.get("/producto", productController.producto);
+router.get("/producto/:id", productController.producto);
 router.get("/categorias/:category", productController.categorias);
 router.get("/carrito", productController.carrito);
 
