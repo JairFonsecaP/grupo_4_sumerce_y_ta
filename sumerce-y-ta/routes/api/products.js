@@ -12,7 +12,6 @@ router.post("/admproducto/edit", productController.edit);
 
 router.get("/producto/:id", productController.producto);
 router.get("/categorias/:category", productController.categorias);
-router.get("/producto/:id", productController.producto);
 router.get("/carrito", productController.carrito);
 
 module.exports = router;

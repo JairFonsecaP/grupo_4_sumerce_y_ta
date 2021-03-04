@@ -31,17 +31,18 @@
        
           <h2><%= product.name %></h2>
           <p class="precio-producto">Precio: $<%= toThousand(product.price) %></p>
-          <p>Ref. ####-##</p>
+          <p>Ref. <%= product.id %></p>
           <i class="far fa-heart"></i>
         </div>
         <div class="details">
           <select class="input-size-tamano" name="#" id="#">
             <option value="#">Elige tamaño</option>
-            <%let tallas = product.sizes.split(',')
-            tallas.forEach(talla=>{%>
+            <%let tallas = product.sizes.split(',') %>
+            <% tallas.forEach(talla=>{%>
             <option value="<%=talla%>"><%=talla.toUpperCase()%></option>
 
             <% }) %>
+
           </select>
 
           <input class="input-size " type="text" placeholder="Personaliza tu accesorio"><i class="fas fa-pen"></i>
