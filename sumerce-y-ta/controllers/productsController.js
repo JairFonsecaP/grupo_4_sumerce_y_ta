@@ -23,6 +23,7 @@ exports.producto = (req, res) => {
   let idDetail = req.params.id;
   products.forEach((product) => {
     if (product.id === idDetail) {
+      console.log(product);
       res.render("products/product", {
         product: product,
         toThousand: toThousand,
