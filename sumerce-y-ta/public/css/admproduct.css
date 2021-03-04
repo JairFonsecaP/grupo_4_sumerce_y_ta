@@ -1,11 +1,19 @@
-main{
-    background-color: #dcd0d0;
+ main{
+    background-color: white;
     border-top: solid;
     border-bottom: solid;
+}
+.fix {
+    position: fixed;
+    top: 170px;
+    left: 20px;
+}
+.flex{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    left: 40px;
 }
 .modal-create {
     width: 100%;
@@ -56,20 +64,20 @@ main{
     font-weight: bold;
     color: black;
 }
-#button-create, #button-edit {
+#button-create, #button-edit, #button-delete {
     margin: 14%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 200px;
-    border-radius: 50px;
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
     background: #dcd0d0;
     box-shadow:  14px 14px 24px #b7adad,
                 -14px -14px 24px #fff3f3;
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
     text-decoration: none;
 } 
 .create{
@@ -95,11 +103,22 @@ main{
     background-color: transparent;
     color: #CC8F94;
     border-color: #CC8F94;
+} 
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid black;
+    font-size: 30px;
+    width: 70%;
 }
-
-@media (min-width: 768px) {
-    main {
-        display: flex;
-        flex-direction: row;
-    }
+.product, .name, .category, .color, .sizes, .description, .type, .price, .modify, .delete {
+    width: 50%;
+}
+  .admimg{
+      width: 100px;
+      height: 100px;
   }
+@media (min-width: 768px) {
+    
+  } 
+  

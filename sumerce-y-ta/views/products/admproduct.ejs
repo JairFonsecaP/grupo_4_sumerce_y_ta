@@ -10,30 +10,66 @@
     <link rel="stylesheet" href="/static/css/index.css" />
     <link rel="stylesheet" href="/static/css/admproduct.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet"/>
     <script
       src="https://kit.fontawesome.com/5cd85102cd.js"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous">
+    </script>
   </head>
   <body>
     <%- include( '../partials/header' ) %>
     <main>
-      <%# CREAR PRODUCTO %>
+        <%# CREATE BUTTON %>
+        <div class="fix">
+            <a href="#" id="button-create"><i class="fas fa-plus"></i>
+            <div class="create">Crear</div></a>
+        </div>
+
+        <div class="flex">
+        <%# TITLES %>
+        <div class="flex-container">
+            <div class="product">Producto</div>
+            <div class="name">Nombre</div>
+            <div class="category">Categoría</div>
+            <div class="color">Color</div>
+            <div class="sizes">Talla</div>
+            <div class="description">Descripción</div>
+            <div class="type">Tipo</div>
+            <div class="price">Precio</div>
+            <div class="modify">Editar</div>
+            <div class="delete">Eliminar</div>
+          </div>
+        <% products.forEach(product => { %>
+            <div class="flex-container">
+            <div class="product"><img src="/static/images/<%= product.photo %>" alt="" class="admimg"></div>
+            <div class="name"><%=product.name%></div>
+            <div class="category"><%=product.category%></div>
+            <div class="color"><%=product.color%></div>
+            <div class="sizes"><%=product.sizes%></div>
+            <div class="description"><%=product.description%></div>
+            <div class="type"><%=product.type%></div>
+            <div class="price"><%=product.price%></div>
+            <div class="modify">
+                <a href="#" id="button-edit"><i class="fas fa-pen"></i>
+                <div class="edit"></div></a>
+            </div>
+            <div class="delete">
+                <a href="#" id="button-delete"><i class="fas fa-times-circle"></i>
+                    <div class="delete"></div></a>
+            </div>
+          </div>
+        <% }); %>
+    </div>
+      
+        <%# CREAR PRODUCTO %>
       <div class="modal-create">
         <div class="internal-modal">
           <div class="close-create"><i class="fas fa-times"></i></div>
           <%- include( '../partials/createProduct' ) %>
         </div>
       </div>
-      <a href="#" id="button-create"
-        ><i class="fas fa-plus"></i>
-        <div class="create">Crear producto</div></a
-      >
       <%# EDITAR PRODUCTO %>
       <div class="modal-edit">
         <div class="internal-modal">
@@ -41,10 +77,6 @@
           <%- include( '../partials/editProduct' ) %>
         </div>
       </div>
-      <a href="#" id="button-edit"
-        ><i class="fas fa-pen"></i>
-        <div class="edit">Editar producto</div></a
-      >
       <script src="/static/Js/admproduct.js"></script>
     </main>
   </body>

@@ -35,7 +35,7 @@ exports.producto = (req, res) => {
 };
 
 exports.admproducto = (req, res) => {
-  res.render("products/admproduct");
+  res.render("products/admproduct", {products: products});
 };
 
 exports.store = (req, res) => {
