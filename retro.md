@@ -73,3 +73,33 @@ Tuvimos una primera reunión para organizar tablero de tareas, una segunda reuni
 Se continuaron las consultas constantes por medio de Whatsapp.
 Creamos una nueva rama en Github llamada Develop donde cada uno manejó su propia rama para subir los archivos y cambios, en la última reunión hicimos el merge. 
 
+## Sprint 3
+
+#### Start Doing:
+
+- Empezar a investigar los temas, en vez de esperar solo que nos den los contenidos en clase.
+
+#### More of:
+
+- Comentar el código
+- Tener una convención de nombres.
+- Hacer el código desde el primer día, para que la cantidad de horas que tengamos que dedicarle por día al proyecto sea siempre constante y no incremental. 
+- Poder empezar reuniones con dos personas para no frenar el proyecto y comunicar a la persona faltante por whatsapp de los temas tratados en dicha reunion.
+
+#### Keep Doing:
+
+- Poner una columna 'Revised' en el tablero del proyecto para que cada issue sea revisado por algún integrante del equipo distinto al que lo hizo.
+- Programar una primera reunión apenas tengamos el archivo de un nuevo Sprint.
+- Seguir practicando el dominio de Git.
+- Comunicación regular.
+
+#### Less of:
+- We're perfect :)
+#### Stop Doing:
+- No ultimar detalles sobre la hora de entrega.
+
+#### Resumen sprint 3:
+Se continuó el trabajo como en el sprint anterior por medio de tareas pequeñas mediante un proyecto de Github donde cada integrante del equipo elegió la tarea en la que se sintiera más cómodo.
+Tuvimos una planning meeting al día siguiente de recibir los requerimientos, para organizar el tablero de tareas, asignar prioridades, y repartir el trabajo; una segunda meeting cuando terminamos las tareas para revisar en conjunto el trabajo que habíamos hecho y si teníamos detalles por mejorar los asignabamos a una nueva tarea, la tercera y última reunión fue para dar una una revisión a lo que habíamos arreglado y unión de todo el trabajo para su posterior entrega, todas las reuniones pasaron a ser por Discord.
+Se continuaron las consultas constantes por medio de Whatsapp.
+Creamos una nueva rama en Github llamada Retro para no hacer commit de la retro directamente a main, y seguimos trabajando en nuestra propia rama Develop, para subir los archivos y cambios, en la última reunión hicimos el merge a main.
