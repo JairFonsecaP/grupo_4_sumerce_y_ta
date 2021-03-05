@@ -117,15 +117,6 @@ exports.update = (req, res) => {
   let id = req.params.id;
   let editProduct = req.body;
 
-  let tonalidades = [];
-
-  if (typeof req.body.types === "string") {
-    types.push(req.body.types);
-  }
-  if (typeof req.body.tonalidades === "string") {
-    tonalidades.push(req.body.tonalidades);
-  }
-
   products.forEach((product) => {
     if (product.id === id) {
       if (typeof req.body.sizes === "string") {
@@ -154,8 +145,9 @@ exports.update = (req, res) => {
       product.categories = editProduct.categories;
       product.description = editProduct.description;
       product.price = editProduct.price;
-      product.photo = editProduct.photo;
-      console.log(product);
+      if (editProduct.photo) {
+        product.photo = editProduct.photo;
+      }
     }
   });
   let edited = JSON.stringify(products);
