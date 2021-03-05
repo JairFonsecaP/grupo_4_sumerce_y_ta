@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sumercé y tá</title>
+    <link rel="stylesheet" href="/static/css/normalize.css" />
+    <link rel="stylesheet" href="/static/css/header.css" />
+    <link rel="stylesheet" href="/static/css/index.css" />
+    <link rel="stylesheet" href="/static/css/footer.css" />
+    <link rel="stylesheet" href="/static/css/admproduct.css" />
+    <link rel="stylesheet" href="/static/css/cart.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/5cd85102cd.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+<body>
+  
+
+<form action="<%= product.id %>?_method=PUT" method="POST"
+  enctype="multipart/form-data">
+  <fieldset>
+    <label for="name">Nombre :</label>
+    <input
+      type="text"
+      name="name"
+      id="name"
+      placeholder="Introduce el nombre"
+      value="<%= product.name %>"
+    
+    />
+  </fieldset>
+  <fieldset>
+    <label for="description">Descripción :</label>
+    <input
+      type="textarea"
+      name="description"
+      id="description"
+      placeholder="Introduce la descripcion"
+      value="<%= product.descripcion != ''? product.description  : null%>"
+    />
+  </fieldset>
+  <fieldset>
+    <label for="photo">Foto :</label>
+    <input type="file" name="photo" id="photo" accept=".jpg, .png .sgv" />
+  </fieldset>
+  <fieldset>
+    <label>Categoría</label>
+    <select name="categories">
+      <option value="Ropa" <%= product.categories === "Ropa" ? 'selected':null %>>Ropa</option>
+      <option value="Deportivo" <%= product.categories === "Deportivo" ? 'selected':null %>>Deportivo</option>
+      <option value="Accesorios" <%= product.categories === "Accesorios" ? 'selected':null %>>Accesorios</option>
+    </select>
+  </fieldset>
+  <fieldset>
+    <label for="">Talla :</label>
+      <div class="modal-mr">
+       <% tallas.forEach(talla=>{ %>
+        <label for="<%= talla %>"><%= talla %> :</label>
+        <input type="checkbox" id="<%= talla %>" name="sizes" value="<%= talla %>" 
+        <% if(product.sizes){product.sizes.forEach(size =>{ %>
+          <%= size === talla ? "checked" : null %>
+        <% }) %> 
+        />
+      </div>
+     <% }}) %>
+  </fieldset>
+  <fieldset>
+    <label>Tonalidad :</label>
+    <% tonalidades.forEach(tonalidad=>{ %>
+      <div class="modal-mr">
+        <label for="<%= tonalidad%>"><%= tonalidad%> :</label>
+        <input type="checkbox" id="claro" name="color" value="<%= tonalidad%>" 
+        <% if(product.color ){product.color.forEach(color =>{ %>
+          <%= color === tonalidad ? "checked" : null %>
+        <% }) %>
+        />
+      </div>
+    <% }}) %>
+  </fieldset>
+  <fieldset>
+    <label for="type">Tipo :</label>
+      <% tipos.forEach(tipo=>{ %>
+      <div class="modal-mr">
+        <label for="<%= tipo %>"> <%= tipo %> :</label>
+        <input type="checkbox" id="<%= tipo %>" name="types" value="<%= tipo %>" 
+        <% if(product.types){product.types.forEach(type =>{ %>
+          <%= type === tipo ? "checked" : null %>
+       <% }) %> 
+    />
+      </div>
+      <% }}) %>
+  </fieldset>
+  <fieldset>
+  <label for="price">Precio :</label>
+  
+  <input type="text" id="price" name="price" value="<%= product.price ? product.price : null %>" />
+ 
+</fieldset>
+  <button type="submit" class="button-products">Editar</button>
+</form>
+</body>
+</html>
