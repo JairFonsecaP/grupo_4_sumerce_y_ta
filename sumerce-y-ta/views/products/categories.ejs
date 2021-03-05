@@ -162,7 +162,7 @@
       <div class="categories-folder">
         <div class="folder1">
           <% products.forEach((product)=>{ %> <% if(category ===
-          product.categories){%>
+          product.categories.toLowerCase()){%>
           <article>
             <a href="/products/producto/<%=product.id%>"
               ><img

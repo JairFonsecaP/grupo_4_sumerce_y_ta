@@ -77,7 +77,7 @@
       <div class="modal-mr">
         <label for="<%= tonalidad%>"><%= tonalidad%> :</label>
         <input type="checkbox" id="claro" name="color" value="<%= tonalidad%>" 
-        <% if(product.color){product.color.forEach(color =>{ %>
+        <% if(product.color ){product.color.forEach(color =>{ %>
           <%= color === tonalidad ? "checked" : null %>
         <% }) %>
         />
@@ -85,12 +85,12 @@
     <% }}) %>
   </fieldset>
   <fieldset>
-    <label for="">Tipo :</label>
+    <label for="type">Tipo :</label>
       <% tipos.forEach(tipo=>{ %>
       <div class="modal-mr">
         <label for="<%= tipo %>"> <%= tipo %> :</label>
-        <input type="checkbox" id="<%= tipo %>" name="type" value="<%= tipo %>" 
-        <% if(product.type){product.type.forEach(type =>{ %>
+        <input type="checkbox" id="<%= tipo %>" name="types" value="<%= tipo %>" 
+        <% if(product.types){product.types.forEach(type =>{ %>
           <%= type === tipo ? "checked" : null %>
        <% }) %> 
     />
@@ -99,9 +99,9 @@
   </fieldset>
   <fieldset>
   <label for="price">Precio :</label>
-  <% if(product.price){ %> 
-  <input type="text" id="price" name="price" value="<%= toThousand(product.price) %>" />
-  <% } %> 
+  
+  <input type="text" id="price" name="price" value="<%= product.price ? product.price : null %>" />
+ 
 </fieldset>
   <button type="submit" class="button-products">Editar</button>
 </form>

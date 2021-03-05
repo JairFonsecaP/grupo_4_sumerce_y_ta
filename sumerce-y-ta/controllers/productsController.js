@@ -60,29 +60,38 @@ exports.create = (req, res) => {
 
 exports.store = (req, res) => {
   let product = {};
-  let sizes = "";
-  let type = "";
-  let tonalidades = "";
 
   if (typeof req.body.sizes === "string") {
-    sizes = [req.body.sizes];
+    let sizes = [];
+    sizes.push(req.body.sizes);
+    product.sizes = sizes;
+  } else {
+    product.sizes = req.body.sizes;
   }
-  if (typeof req.body.type === "string") {
-    types = [req.body.type];
+  if (typeof req.body.types === "string") {
+    let types = [];
+    types.push(req.body.types);
+    product.types = types;
+  } else {
+    product.types = req.body.types;
   }
-  if (typeof req.body.tonalidades === "string") {
-    tonalidades = [req.body.color];
+  if (typeof req.body.color === "string") {
+    let tonalidades = [];
+    tonalidades.push(req.body.types);
+    product.color = tonalidades;
+  } else {
+    product.color = req.body.color;
   }
 
   product.id = uniqid();
   product.name = req.body.name;
   product.categories = req.body.categories;
-  product.color = tonalidades;
-  product.sizes = sizes;
+
   product.description = req.body.description;
   product.price = req.body.price;
-  product.type = type;
+
   product.photo = req.body.photo;
+  console.log(product);
   products.push(product);
   let created = JSON.stringify(products);
   fs.writeFileSync(path.join(__dirname, "../data/products.json"), created);
@@ -107,32 +116,46 @@ exports.edit = (req, res) => {
 exports.update = (req, res) => {
   let id = req.params.id;
   let editProduct = req.body;
-  console.log(req.body);
-  let sizes = editProduct.sizes;
-  let type = editProduct.type;
-  let tonalidades = editProduct.color;
 
-  if (typeof req.body.sizes === "string") {
-    sizes = [req.body.sizes];
-  }
-  if (typeof req.body.type === "string") {
-    types = [req.body.type];
+  let tonalidades = [];
+
+  if (typeof req.body.types === "string") {
+    types.push(req.body.types);
   }
   if (typeof req.body.tonalidades === "string") {
-    tonalidades = [req.body.tonalidades];
+    tonalidades.push(req.body.tonalidades);
   }
 
   products.forEach((product) => {
     if (product.id === id) {
+      if (typeof req.body.sizes === "string") {
+        let sizes = [];
+        sizes.push(req.body.sizes);
+        product.sizes = sizes;
+      } else {
+        product.sizes = req.body.sizes;
+      }
+      if (typeof req.body.types === "string") {
+        let types = [];
+        types.push(req.body.types);
+        product.types = types;
+      } else {
+        product.types = req.body.types;
+      }
+      if (typeof req.body.color === "string") {
+        let tonalidades = [];
+        tonalidades.push(req.body.types);
+        product.color = tonalidades;
+      } else {
+        product.color = req.body.color;
+      }
+
       product.name = editProduct.name;
       product.categories = editProduct.categories;
-      product.color = tonalidades;
-      product.sizes = sizes;
       product.description = editProduct.description;
       product.price = editProduct.price;
-      product.type = type;
-
       product.photo = editProduct.photo;
+      console.log(product);
     }
   });
   let edited = JSON.stringify(products);

@@ -61,7 +61,7 @@
             <td><%=product.color%></td>
             <td><%=product.sizes%></td>
             <td><%=product.description%></td>
-            <td><%=product.type%></td>
+            <td><%=product.types%></td>
             <td><%=toThousand(parseInt(product.price))%></td>
             <td>
               <a href="/products/edit/<%= product.id %>" id="button-edit">
@@ -71,7 +71,7 @@
               </a>
             </td>
             <td>
-              <a href="#" id="button-delete">
+              <a href="/prodcuts/delete/<%= product.id%>" id="button-delete">
                 <button class="delete-btn">
                   <i class="fas fa-times-circle"></i>
                 </button>
