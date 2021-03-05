@@ -14,5 +14,6 @@ router.get("/categorias/:category", productController.categorias);
 router.get("/carrito", productController.carrito);
 router.get("/edit/:id", productController.edit);
 router.put("/edit/:id", upload.single("photo"), productController.update);
+router.delete("/delete/:id", productController.delete);
 
 module.exports = router;

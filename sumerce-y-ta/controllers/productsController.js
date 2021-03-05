@@ -3,7 +3,7 @@ const path = require("path");
 const uniqid = require("uniqid");
 
 const productsFilePath = path.join(__dirname, "../data/products.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const tallas = ["XS", "S", "M", "XL", "XLL"];
 const tonalidades = [
@@ -152,5 +152,18 @@ exports.update = (req, res) => {
   });
   let edited = JSON.stringify(products);
   fs.writeFileSync(path.join(__dirname, "../data/products.json"), edited);
+  res.redirect("/products/admproducto");
+};
+
+exports.delete = (req, res) => {
+  let filter = [];
+  products.forEach((product) => {
+    if (product.id != req.params.id) {
+      filter.push(product);
+    }
+  });
+  products = filter;
+  let deleted = JSON.stringify(filter);
+  fs.writeFileSync(path.join(__dirname, "../data/products.json"), deleted);
   res.redirect("/products/admproducto");
 };

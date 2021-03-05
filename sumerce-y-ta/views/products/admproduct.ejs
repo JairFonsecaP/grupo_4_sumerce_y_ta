@@ -71,11 +71,15 @@
               </a>
             </td>
             <td>
-              <a href="/prodcuts/delete/<%= product.id%>" id="button-delete">
+              <form
+                action="/products/delete/<%= product.id%>?_method=DELETE"
+                id="button-delete"
+                method="POST"
+              >
                 <button class="delete-btn">
                   <i class="fas fa-times-circle"></i>
                 </button>
-              </a>
+              </form>
             </td>
           </tr>
           <% }) %>
