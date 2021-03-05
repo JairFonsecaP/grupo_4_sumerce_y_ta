@@ -98,4 +98,10 @@ Creamos una nueva rama en Github llamada Develop donde cada uno manejó su propi
 #### Stop Doing:
 - No ultimar detalles sobre la hora de entrega.
 
-#### Resumen sprit 2:
+
+#### Resumen sprint 3:
+Se continuó el trabajo como en el sprint anterior por medio de tareas pequeñas mediante un proyecto de Github donde cada integrante del equipo elegió la tarea en la que se sintiera más cómodo.
+Tuvimos una planning meeting al día siguiente de recibir los requerimientos, para organizar el tablero de tareas, asignar prioridades, y repartir el trabajo; una segunda meeting cuando terminamos las tareas para revisar en conjunto el trabajo que habíamos hecho y si teníamos detalles por mejorar los asignabamos a una nueva tarea, la tercera y última reunión fue para dar una una revisión a lo que habíamos arreglado y unión de todo el trabajo para su posterior entrega, todas las reuniones pasaron a ser por Discord.
+Se continuaron las consultas constantes por medio de Whatsapp.
+Creamos una nueva rama en Github llamada Retro para no hacer commit de la retro directamente a main, y seguimos trabajando en nuestra propia rama Develop, para subir los archivos y cambios, en la última reunión hicimos el merge a main.
+

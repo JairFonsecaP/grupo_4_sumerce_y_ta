@@ -4,13 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Crea o edita productos</title>
     <link rel="stylesheet" href="/static/css/normalize.css" />
     <link rel="stylesheet" href="/static/css/header.css" />
     <link rel="stylesheet" href="/static/css/index.css" />
     <link rel="stylesheet" href="/static/css/admproduct.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
       rel="stylesheet"
@@ -22,29 +21,71 @@
   </head>
   <body>
     <%- include( '../partials/header' ) %>
+
     <main>
-      <%# CREAR PRODUCTO %>
-      <div class="modal-create">
-        <div class="internal-modal">
-          <div class="close-create"><i class="fas fa-times"></i></div>
-          <%- include( '../partials/formularioProducto' ) %>
-        </div>
+      <%# CREATE BUTTON %>
+      <div>
+        <a href="/products/create" id="button-create">
+          <button class="create">
+            Crea tu producto <i class="fas fa-plus"></i>
+          </button>
+        </a>
       </div>
-      <a href="#" id="button-create"
-        ><i class="fas fa-plus"></i>
-        <div class="create">Crear producto</div></a
-      >
-      <%# EDITAR PRODUCTO %>
-      <div class="modal-edit">
-        <div class="internal-modal">
-          <div class="close-edit"><i class="fas fa-times"></i></div>
-          <%- include( '../partials/formularioProducto' ) %>
-        </div>
-      </div>
-      <a href="#" id="button-edit"
-        ><i class="fas fa-pen"></i>
-        <div class="edit">Editar producto</div></a
-      >
+      <!--Tabla crear y editar producto-->
+      <table>
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Nombre</th>
+            <th>Categoria</th>
+            <th>Color</th>
+            <th>Talla</th>
+            <th>Descripcion</th>
+            <th>Tipo</th>
+            <th>Precio</th>
+            <th></th>
+            <th></th>
+            <tbody></tbody>
+          </tr>
+          <% products.map(product => { %>
+          <tr>
+            <td>
+              <img
+                src="/static/images/<%= product.photo %>"
+                alt=""
+                class="admimg"
+              />
+            </td>
+            <td><%=product.name%></td>
+            <td><%=product.categories%></td>
+            <td><%=product.color%></td>
+            <td><%=product.sizes%></td>
+            <td><%=product.description%></td>
+            <td><%=product.types%></td>
+            <td><%=toThousand(parseInt(product.price))%></td>
+            <td>
+              <a href="/products/edit/<%= product.id %>" id="button-edit">
+                <button class="edit">
+                  <i class="fas fa-pen"></i>
+                </button>
+              </a>
+            </td>
+            <td>
+              <form
+                action="/products/delete/<%= product.id%>?_method=DELETE"
+                id="button-delete"
+                method="POST"
+              >
+                <button class="delete-btn">
+                  <i class="fas fa-times-circle"></i>
+                </button>
+              </form>
+            </td>
+          </tr>
+          <% }) %>
+        </thead>
+      </table>
+
       <script src="/static/Js/admproduct.js"></script>
     </main>
   </body>

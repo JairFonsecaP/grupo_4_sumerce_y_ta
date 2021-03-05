@@ -161,15 +161,23 @@
       </div>
       <div class="categories-folder">
         <div class="folder1">
-          <% products.forEach((product)=>{ if(category ===
+          <% products.forEach((product)=>{ %> <% if(category ===
           product.categories.toLowerCase()){%>
           <article>
-            <img src="/static/images/<%= product.photo %>" class="categories" />
+            <a href="/products/producto/<%=product.id%>"
+              ><img
+                src="/static/images/<%= product.photo %>"
+                class="categories"
+            /></a>
             <div class="description-box">
               <h3><%= product.name %></h3>
-              <p class="precios">$ <%= product.price%></p>
-              <a href="products/carrito"
-                ><button type="button">Comprar</button></a
+              <% if(product.price != undefined){ %>
+              <p class="precios">
+                $ <%= toThousand(parseInt(product.price)) %>
+              </p>
+              <% } %>
+              <a href="/products/producto/<%=product.id%>">
+                <button type="button">Detalle</button></a
               >
             </div>
           </article>
