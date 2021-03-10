@@ -133,7 +133,7 @@ Creamos una nueva rama en Github llamada Retro para no hacer commit de la retro 
 - No ultimar detalles sobre la hora de entrega.
 
 
-#### Resumen sprint 3:
+#### Resumen sprint 4:
 Empezamos el sprint teniendo reuniones diarias para hacer el ejercicio de Mercado Lievre, así afianzabamos los conocimientos necesarios para el proyecto integrador, luego creamos el tablero de tareas pequeñas mediante un proyecto de Github donde cada integrante del equipo elegió la tarea en la que se sintiera más cómodo.
 Tuvimos una planning meeting al rededor de cinco días después de recibir los requerimientos, para organizar el tablero de tareas, asignar prioridades, y repartir el trabajo; una segunda meeting, para realizar algunas partes del proyecto en conjunto y una tercera meeting cuando terminamos las tareas para revisar en conjunto el trabajo que habíamos hecho y si teníamos detalles por mejorar los asignabamos a una nueva tarea, la cuarta y última reunión fue para dar una una revisión a lo que habíamos arreglado y unión de todo el trabajo para su posterior entrega, todas las reuniones continuaron en Discord.
 Siguieron las consultas constantes por medio de Whatsapp.
