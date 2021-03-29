@@ -91,7 +91,6 @@ exports.store = (req, res) => {
   product.price = req.body.price;
 
   product.photo = req.body.photo;
-  console.log(product);
   products.push(product);
   let created = JSON.stringify(products);
   fs.writeFileSync(path.join(__dirname, "../data/products.json"), created);
