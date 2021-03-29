@@ -1,12 +1,16 @@
 const router = require("express").Router();
 const userController = require("../../controllers/userController");
 const avatar = require("../../middlewares/avatar");
+const auth = require("../../middlewares/authMiddleware");
+const noLoggin = require("../../middlewares/noLogginMiddleware");
 
 router.get("/contacto", userController.contacto);
-router.get("/login", userController.login);
-router.get("/registro", userController.registro);
+router.get("/login", auth, userController.login);
+router.get("/registro", auth, userController.registro);
+router.get("/profile", noLoggin, userController.profile);
+router.get("/logout", userController.logout);
+
 router.post("/registro", avatar.single("photo"), userController.singup);
 router.post("/login", userController.auth);
-router.get("/profile", userController.profile);
 
 module.exports = router;
