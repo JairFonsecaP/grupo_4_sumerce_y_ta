@@ -3,8 +3,17 @@ const app = express();
 const path = require("path");
 const methodOverride = require("method-override");
 const router = require("./routes/index");
+const session = require("express-session");
 
 const port = 3000;
+app.use(
+  session({
+    secret: "Es un secreto",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
