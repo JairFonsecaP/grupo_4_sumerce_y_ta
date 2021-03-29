@@ -21,7 +21,10 @@
 
   <body>
     <%- include( '../partials/header' ) %>
-    <main></main>
+    <main>
+      <img src="/public/images/avatars/<%= user.photo%>" />
+      <h1><%= user.email %></h1>
+    </main>
     <%- include( '../partials/footer' ) %>
   </body>
 </html>

@@ -52,23 +52,23 @@ exports.singup = (req, res) => {
 };
 
 exports.auth = (req, res) => {
-  console.log(req.body);
   let log = false;
   const user = users.find((oneUser) => oneUser.email === req.body.email);
   if (user) {
     const pass = bcrypt.compareSync(req.body.password, user.password);
+
     if (pass) {
       delete user.password;
       log = true;
-      if (req.body.remember === "on") {
-      }
+      /*if (req.body.remember === "on") {
+      }*/
       req.session.userAuth = user;
 
       res.redirect("/users/profile");
     }
   }
   if (!log) {
-    return res.render("/users/login", {
+    return res.render("users/login", {
       errors: {
         log: "error buscando el usuario, compruebe usuario y/o contraseña",
       },
