@@ -24,14 +24,13 @@
     <main>
       <section class="box-form">
         <form
-          action="/users/registro"
+          action="/users/editar?_method=PUT"
           method="POST"
           enctype="multipart/form-data"
         >
           <div class="form">
-           
-              <h3 class="registrate">Editar Informacion</h3>
-           
+            <h3 class="registrate">Editar Informacion</h3>
+
             <div class="form-fields1">
               <label for="name"></label>
               <input
@@ -39,12 +38,14 @@
                 name="name"
                 placeholder="Nombre de usuario"
                 id="name"
+                value="<%= user.name%>"
               />
               <input
                 type="text"
                 name="phone"
                 placeholder="Teléfono"
                 id="phone"
+                value="<%= user.phone%>"
               />
               <label for="photo">Sube una foto para tu perfil:</label>
               <input
@@ -59,13 +60,13 @@
               <select name="region" id="region">
                 <option value="">- región -</option>
                 <% regiones.forEach(region =>{ %>
-                <option value="<%= region %>"><%= region %></option>
+                <option value="<%= region %>" <%= region === user.region ? "selected" : null %> ><%= region %></option>
                 <% }) %>
               </select>
               <select name="comuna" id="comuna">
                 <option value="">Comuna</option>
                 <% comunas.forEach(comuna =>{ %>
-                <option value="<%= comuna %>"><%= comuna %></option>
+                <option value="<%= comuna %>" <%= comuna===user.comuna ? "selected":null %> ><%= comuna %></option>
                 <% }) %>
               </select>
             </div>
@@ -75,14 +76,15 @@
                 name="email"
                 id="email"
                 placeholder="Correo electrónico"
+                value="<%= user.email %> "
               />
               <input
                 type="email"
                 name="emailConfirmation"
                 id="emailConfirmation"
                 placeholder="Confirmar correo electrónico"
+                value="<%= user.email %> "
               />
-            
             </div>
             <div class="form-button">
               <input type="submit" value="Guardar cambios" />

@@ -4,6 +4,9 @@ const path = require("path");
 const methodOverride = require("method-override");
 const router = require("./routes/index");
 const session = require("express-session");
+const cookieParser = require("cookie-parser");
+
+const userPermissions = require("./middlewares/userPermissions");
 
 const port = 3000;
 app.use(
@@ -13,6 +16,9 @@ app.use(
     saveUninitialized: false,
   })
 );
+
+app.use(cookieParser());
+app.use(userPermissions);
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());

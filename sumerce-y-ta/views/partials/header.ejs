@@ -1,8 +1,13 @@
 <header>
   <div class="cabecera">
     <p>Envios a todo Chile</p>
+    <% if (locals.isLogged) { %>
+    <p>Hola, <%=locals.userAuth.name%></p>
+    <% } %>
     <p>
-      <a href="/products/admproducto"> Agregar o editar producto </a> |
+      <% if(locals.isLogged){ %>
+      <a href="/users/logout">LogOut</a> |
+      <a href="/products/admproducto"> Agregar o editar producto </a> | <% } %>
       <a href="#">Seguir mi pedido </a> | <a href="/contacto">Contáctanos</a>
     </p>
   </div>

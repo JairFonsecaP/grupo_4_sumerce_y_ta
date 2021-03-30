@@ -34,16 +34,18 @@ exports.singup = (req, res) => {
       oldData: req.body,
     });
   }
+
   let user = {};
   user.id = uniqid();
   user.name = req.body.name;
   user.phone = req.body.phone;
-  user.photo = req.file.filename;
+  if (req.file) {
+    user.photo = req.file.filename;
+  }
   user.region = req.body.region;
   user.comuna = req.body.comuna;
   user.email = req.body.email;
-  const password = bcrypt.hashSync(req.body.password, 12);
-  user.password = password;
+  user.password = bcrypt.hashSync(req.body.password, 12);
   users.push(user);
 
   const created = JSON.stringify(users);
@@ -51,19 +53,28 @@ exports.singup = (req, res) => {
   res.redirect("/users/login");
 };
 
-exports.auth =  (req, res) => {
+exports.auth = (req, res) => {
   let log = false;
   const user = users.find((oneUser) => oneUser.email === req.body.email);
   if (user) {
-    const pass =  bcrypt.compare(req.body.password, user.password);
+    const pass = bcrypt.compareSync(req.body.password, user.password);
 
     if (pass) {
-      delete user.password;
+      const userAut = {
+        id: user.id,
+        name: user.name,
+        phone: user.phone,
+        photo: user.photo,
+        region: user.region,
+        comuna: user.comuna,
+        email: user.email,
+      };
       log = true;
-      /*if (req.body.remember === "on") {
-      }*/
-      req.session.userAuth = user;
 
+      req.session.userAuth = userAut;
+      if (req.body.remember === "on") {
+        res.cookie("auth", userAut.id, { maxAge: 1000 * 60 * 60 * 24 });
+      }
       res.redirect("/users/profile");
     }
   }
@@ -84,12 +95,74 @@ exports.profile = (req, res) => {
 
 exports.logout = (req, res) => {
   req.session.destroy();
+  res.clearCookie("auth");
   res.redirect("/");
 };
 exports.editUser = (req, res) => {
-  res.render("users/editar", { regiones: regiones, comunas: comunas });
+  res.render("users/editar", {
+    regiones: regiones,
+    comunas: comunas,
+    user: req.session.userAuth,
+  });
+};
+
+exports.updateUser = (req, res) => {
+  users.forEach((user) => {
+    if (user.id === req.session.userAuth.id) {
+      user.name = req.body.name;
+      user.phone = req.body.phone;
+      user.region = req.body.region;
+      user.comuna = req.body.comuna;
+      user.email = req.body.email;
+      if (req.file) {
+        user.photo = req.file.filename;
+      }
+      const userAut = {
+        id: user.id,
+        name: user.name,
+        phone: user.phone,
+        photo: user.photo,
+        region: user.region,
+        comuna: user.comuna,
+        email: user.email,
+      };
+      req.session.userAuth = userAut;
+    }
+  });
+  let edited = JSON.stringify(users);
+  fs.writeFileSync(path.join(__dirname, "../data/users.json"), edited);
+  res.redirect("/users/profile");
 };
 
 exports.editPass = (req, res) => {
   res.render("users/editar_contrasena");
+};
+
+exports.updatePassword = (req, res) => {
+  users.forEach((oneUser) => {
+    if (oneUser.id === req.session.userAuth.id) {
+      const pass = bcrypt.compareSync(
+        req.body.passwordAnterior,
+        oneUser.password
+      );
+
+      if (pass) {
+        const passwordNew = bcrypt.hashSync(req.body.password, 12);
+        oneUser.password = passwordNew;
+        const userAut = {
+          id: oneUser.id,
+          name: oneUser.name,
+          phone: oneUser.phone,
+          photo: oneUser.photo,
+          region: oneUser.region,
+          comuna: oneUser.comuna,
+          email: oneUser.email,
+        };
+        req.session.userAuth = userAut;
+      }
+    }
+  });
+  let edited = JSON.stringify(users);
+  fs.writeFileSync(path.join(__dirname, "../data/users.json"), edited);
+  res.redirect("/users/profile");
 };

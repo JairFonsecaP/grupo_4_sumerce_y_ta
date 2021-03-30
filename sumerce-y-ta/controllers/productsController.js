@@ -89,8 +89,9 @@ exports.store = (req, res) => {
 
   product.description = req.body.description;
   product.price = req.body.price;
-
-  product.photo = req.file.filename;
+  if (req.file) {
+    product.photo = req.file.filename;
+  }
   products.push(product);
   let created = JSON.stringify(products);
   fs.writeFileSync(path.join(__dirname, "../data/products.json"), created);
@@ -144,7 +145,7 @@ exports.update = (req, res) => {
       product.categories = editProduct.categories;
       product.description = editProduct.description;
       product.price = editProduct.price;
-      if (editProduct.photo) {
+      if (editProduct.file) {
         product.photo = editProduct.file.filename;
       }
     }
