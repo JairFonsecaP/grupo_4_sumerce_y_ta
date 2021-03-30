@@ -51,11 +51,11 @@ exports.singup = (req, res) => {
   res.redirect("/users/login");
 };
 
-exports.auth = (req, res) => {
+exports.auth =  (req, res) => {
   let log = false;
   const user = users.find((oneUser) => oneUser.email === req.body.email);
   if (user) {
-    const pass = bcrypt.compareSync(req.body.password, user.password);
+    const pass =  bcrypt.compare(req.body.password, user.password);
 
     if (pass) {
       delete user.password;
@@ -85,4 +85,11 @@ exports.profile = (req, res) => {
 exports.logout = (req, res) => {
   req.session.destroy();
   res.redirect("/");
+};
+exports.editUser = (req, res) => {
+  res.render("users/editar", { regiones: regiones, comunas: comunas });
+};
+
+exports.editPass = (req, res) => {
+  res.render("users/editar_contrasena");
 };

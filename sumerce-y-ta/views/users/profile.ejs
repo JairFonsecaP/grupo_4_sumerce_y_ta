@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/static/css/header.css" />
     <link rel="stylesheet" href="/static/css/register.css" />
     <link rel="stylesheet" href="/static/css/footer.css" />
+    <link rel="stylesheet" href="/static/css/profile.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
@@ -22,8 +23,54 @@
   <body>
     <%- include( '../partials/header' ) %>
     <main>
-      <img src="/public/images/avatars/<%= user.photo%>" />
-      <h1><%= user.email %></h1>
+      <div class="wrapper">
+        <div class="left">
+          <img src="/static/images/avatars/<%=user.photo%>" width="130" height="130px" />
+         
+          <p>ID: <%= user.id%></p>
+
+          <button class="btn"><a href="/users/editar_contrasena">Editar Contrasena</a></button>
+        </div>
+        <div class="right">
+          <div class="info">
+            <h3>Informacion</h3>
+            <div class="info_data">
+              <div class="data">
+                <h4>Nombre</h4>
+
+                <p><%= user.name%></p>
+              </div>
+
+              <div class="data">
+                <h4>Telefono</h4>
+                <p><%= user.phone%></p>
+              </div>
+            </div>
+          </div>
+          <div class="info_data">
+            <div class="data">
+              <h4>Email</h4>
+              <p><%= user.email%></p>
+            </div>
+          </div>
+          <div class="projects">
+            <div class="projects_data">
+              <div class="data">
+                <h4>Region</h4>
+                <p><%= user.region%></p>
+              </div>
+              <div class="data">
+                <h4>Comuna</h4>
+                <p><%= user.comuna%></p>
+              </div>
+            </div>
+          </div>
+          <div class="social_media">
+            <button class="btn"><a href="/users/editar">Editar Info</a></button>
+            <button class="btn"><a href="/users/logout">Cerrar Sesion</a></button>
+          </div>
+        </div>
+      </div>
     </main>
     <%- include( '../partials/footer' ) %>
   </body>

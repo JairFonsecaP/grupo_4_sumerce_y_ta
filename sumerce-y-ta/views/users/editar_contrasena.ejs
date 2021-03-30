@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sumercé y tá</title>
+    <link rel="stylesheet" href="/static/css/normalize.css" />
+    <link rel="stylesheet" href="/static/css/header.css" />
+    <link rel="stylesheet" href="/static/css/register.css" />
+    <link rel="stylesheet" href="/static/css/footer.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/5cd85102cd.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <%- include( '../partials/header' ) %>
+    <main>
+      <section class="box-form">
+        <form
+          action="/users/registro"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <div class="form">
+           
+           
+            
+            <div class="form-fields3">
+                <input
+                type="password"
+                name="passwordAnterior"
+                placeholder="Contrasena Anterior"
+                id="password"
+              />
+              <input
+                type="password"
+                name="password"
+                placeholder="Contraseña nueva"
+                id="password"
+              />
+              <input
+                type="password"
+                name="passwordConfirmation"
+                placeholder="Confirmar contraseña nueva"
+                id="passwordConfirmation"
+              />
+            </div>
+            <div class="form-button">
+              <input type="submit" value="Guardar cambios" />
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+    <%- include( '../partials/footer' ) %>
+  </body>
+</html>
