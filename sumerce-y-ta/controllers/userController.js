@@ -159,31 +159,26 @@ exports.updatePassword = (req, res) => {
       errors: resultValidation.mapped(),
     });
   }
-  users.forEach((oneUser) => {
-    if (oneUser.id === req.session.userAuth.id) {
-      const pass = bcrypt.compareSync(
-        req.body.passwordAnterior,
-        oneUser.password
-      );
+  const user = users.find((oneUser) => oneUser.id === req.session.userAuth.id);
+  const pass = bcrypt.compareSync(req.body.passwordAnterior, user.password);
 
-      if (pass) {
-        const passwordNew = bcrypt.hashSync(req.body.password, 12);
-        oneUser.password = passwordNew;
-        const userAut = {
-          id: oneUser.id,
-          name: oneUser.name,
-          phone: oneUser.phone,
-          photo: oneUser.photo,
-          region: oneUser.region,
-          comuna: oneUser.comuna,
-          email: oneUser.email,
-        };
-        req.session.userAuth = userAut;
-        let edited = JSON.stringify(users);
-        fs.writeFileSync(path.join(__dirname, "../data/users.json"), edited);
-        return res.redirect("/users/profile");
-      }
-    }
+  if (pass) {
+    const passwordNew = bcrypt.hashSync(req.body.password, 12);
+    user.password = passwordNew;
+    const userAut = {
+      id: user.id,
+      name: user.name,
+      phone: user.phone,
+      photo: user.photo,
+      region: user.region,
+      comuna: user.comuna,
+      email: user.email,
+    };
+    req.session.userAuth = userAut;
+    let edited = JSON.stringify(users);
+    fs.writeFileSync(path.join(__dirname, "../data/users.json"), edited);
+    return res.redirect("/users/profile");
+  } else {
     return res.render("users/editar_contrasena", {
       errors: {
         passwordAnterior: {
@@ -191,5 +186,5 @@ exports.updatePassword = (req, res) => {
         },
       },
     });
-  });
+  }
 };
