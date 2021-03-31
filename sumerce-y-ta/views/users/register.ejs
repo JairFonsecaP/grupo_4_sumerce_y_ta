@@ -38,8 +38,10 @@
                   >INICIA SESION</a
                 >
               </h3>
+
               <h3 class="registrate">REGISTRATE</h3>
             </div>
+
             <div class="form-fields1">
               <label for="name"></label>
               <input
@@ -47,13 +49,24 @@
                 name="name"
                 placeholder="Nombre de usuario"
                 id="name"
+                class="<%= locals.errors && errors.name ? 'is-invalid': null %>"
+                value="<%= locals.oldData && oldData.name ? oldData.name : null %>"
               />
+              <% if (locals.errors && errors.name) { %>
+              <p class="error-form"><%=errors.name.msg%></p>
+              <% } %>
+
               <input
                 type="text"
                 name="phone"
                 placeholder="Teléfono"
                 id="phone"
+                class="<%= locals.errors && errors.phone ? 'is-invalid': null %>"
+                value="<%= locals.oldData && oldData.phone ? oldData.phone : null %>"
               />
+              <% if (locals.errors && errors.phone) { %>
+              <p class="error-form"><%=errors.phone.msg%></p>
+              <% } %>
               <label for="photo">Sube una foto para tu perfil:</label>
               <input
                 type="file"
@@ -64,18 +77,33 @@
               />
             </div>
             <div class="form-fields2">
-              <select name="region" id="region">
+              <select
+                name="region"
+                id="region"
+                class="<%= locals.errors && errors.region ? 'is-invalid': null %>"
+              >
                 <option value="">- región -</option>
                 <% regiones.forEach(region =>{ %>
-                <option value="<%= region %>"><%= region %></option>
+                <option value="<%= region %>" 
+                  <%= locals.oldData && oldData.region === region ? "selected" : null %>><%= region %></option>
                 <% }) %>
               </select>
-              <select name="comuna" id="comuna">
+              <% if (locals.errors && errors.region) { %>
+              <p class="error-form"><%=errors.region.msg%></p>
+              <% } %>
+              <select
+                name="comuna"
+                id="comuna"
+                class="<%= locals.errors && errors.comuna ? 'is-invalid': null %>"
+              >
                 <option value="">Comuna</option>
                 <% comunas.forEach(comuna =>{ %>
-                <option value="<%= comuna %>"><%= comuna %></option>
+                <option value="<%= comuna %>" <%= locals.oldData && oldData.comuna === comuna ? "selected" : null %>><%= comuna %></option>
                 <% }) %>
               </select>
+              <% if (locals.errors && errors.comuna) { %>
+              <p class="error-form"><%=errors.comuna.msg%></p>
+              <% } %>
             </div>
             <div class="form-fields3">
               <input
@@ -83,25 +111,43 @@
                 name="email"
                 id="email"
                 placeholder="Correo electrónico"
+                class="<%= locals.errors && errors.email ? 'is-invalid': null %>"
+                value="<%= locals.oldData && oldData.email ? oldData.email : null %>"
               />
+              <% if (locals.errors && errors.email) { %>
+              <p class="error-form"><%=errors.email.msg%></p>
+              <% } %>
               <input
                 type="email"
                 name="emailConfirmation"
                 id="emailConfirmation"
                 placeholder="Confirmar correo electrónico"
+                class="<%= locals.errors && errors.emailConfirmation ? 'is-invalid': null %>"
+                value="<%= locals.oldData && oldData.emailConfirmation ? oldData.emailConfirmation : null %>"
               />
+              <% if (locals.errors && errors.emailConfirmation) { %>
+              <p class="error-form"><%=errors.emailConfirmation.msg%></p>
+              <% } %>
               <input
                 type="password"
                 name="password"
                 placeholder="Contraseña"
                 id="password"
+                class="<%= locals.errors && errors.password ? 'is-invalid': null %>"
               />
+              <% if (locals.errors && errors.password) { %>
+              <p class="error-form"><%=errors.password.msg%></p>
+              <% } %>
               <input
                 type="password"
                 name="passwordConfirmation"
                 placeholder="Confirmar contraseña"
                 id="passwordConfirmation"
+                class="<%= locals.errors && errors.passwordConfirmation ? 'is-invalid': null %>"
               />
+              <% if (locals.errors && errors.passwordConfirmation) { %>
+              <p class="error-form"><%=errors.passwordConfirmation.msg%></p>
+              <% } %>
             </div>
             <div class="form-button">
               <input type="submit" value="Ingresar" />

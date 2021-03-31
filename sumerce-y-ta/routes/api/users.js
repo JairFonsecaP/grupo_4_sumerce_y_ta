@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const userController = require("../../controllers/userController");
 const avatar = require("../../middlewares/avatar");
+const validation = require("../../middlewares/validation");
 const auth = require("../../middlewares/authMiddleware");
 const noLoggin = require("../../middlewares/noLogginMiddleware");
 
@@ -10,9 +11,20 @@ router.get("/registro", auth, userController.registro);
 router.get("/profile", noLoggin, userController.profile);
 router.get("/logout", noLoggin, userController.logout);
 router.get("/editar", noLoggin, userController.editUser);
-router.get("/editar_contrasena", noLoggin, userController.editPass);
+router.get(
+  "/editar_contrasena",
+  noLoggin,
 
-router.post("/registro", auth, avatar.single("photo"), userController.singup);
+  userController.editPass
+);
+
+router.post(
+  "/registro",
+  auth,
+  avatar.single("photo"),
+  validation.register,
+  userController.singup
+);
 router.post("/login", auth, userController.auth);
 
 router.put(
@@ -21,6 +33,11 @@ router.put(
   avatar.single("photo"),
   userController.updateUser
 );
-router.put("/editar_contrasena", noLoggin, userController.updatePassword);
+router.put(
+  "/editar_contrasena",
+  noLoggin,
+  validation.updatePassword,
+  userController.updatePassword
+);
 
 module.exports = router;

@@ -32,18 +32,27 @@
                 placeholder="Contrasena Anterior"
                 id="passwordAnterior"
               />
+              <% if (locals.errors && errors.passwordAnterior) { %>
+              <p class="error-form"><%=errors.passwordAnterior.msg%></p>
+              <% } %>
               <input
                 type="password"
                 name="password"
                 placeholder="Contraseña nueva"
                 id="password"
               />
+              <% if (locals.errors && errors.password) { %>
+              <p class="error-form"><%=errors.password.msg%></p>
+              <% } %>
               <input
                 type="password"
                 name="passwordConfirmation"
                 placeholder="Confirmar contraseña nueva"
                 id="passwordConfirmation"
               />
+              <% if (locals.errors && errors.passwordConfirmation) { %>
+              <p class="error-form"><%=errors.passwordConfirmation.msg%></p>
+              <% } %>
             </div>
             <div class="form-button">
               <input type="submit" value="Guardar cambios" />

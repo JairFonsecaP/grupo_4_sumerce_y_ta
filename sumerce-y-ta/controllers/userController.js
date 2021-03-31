@@ -2,6 +2,7 @@ const uniqid = require("uniqid");
 const fs = require("fs");
 const path = require("path");
 const bcrypt = require("bcryptjs");
+const { validationResult } = require("express-validator");
 
 const usersFilePath = path.join(__dirname, "../data/users.json");
 let users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
@@ -22,13 +23,25 @@ exports.registro = (req, res) => {
 };
 
 exports.singup = (req, res) => {
-  const userInDB = users.find((oneUser) => oneUser.email === req.body.email);
+  const resultValidation = validationResult(req);
 
+  if (resultValidation.errors.length > 0) {
+    return res.render("users/register", {
+      regiones: regiones,
+      comunas: comunas,
+      errors: resultValidation.mapped(),
+      oldData: req.body,
+    });
+  }
+
+  const userInDB = users.find((oneUser) => oneUser.email === req.body.email);
   if (userInDB) {
-    return res.render("user/register", {
+    return res.render("users/register", {
+      regiones: regiones,
+      comunas: comunas,
       errors: {
         email: {
-          msg: "Este email ya está registrado",
+          msg: "Este email ya está registrado, use otro email",
         },
       },
       oldData: req.body,
@@ -139,6 +152,13 @@ exports.editPass = (req, res) => {
 };
 
 exports.updatePassword = (req, res) => {
+  const resultValidation = validationResult(req);
+  console.log(resultValidation.errors.length);
+  if (resultValidation.errors.length > 0) {
+    return res.render("users/editar_contrasena", {
+      errors: resultValidation.mapped(),
+    });
+  }
   users.forEach((oneUser) => {
     if (oneUser.id === req.session.userAuth.id) {
       const pass = bcrypt.compareSync(
@@ -160,6 +180,14 @@ exports.updatePassword = (req, res) => {
         };
         req.session.userAuth = userAut;
       }
+    } else {
+      return res.render("users/editar_contrasena", {
+        errors: {
+          passwordAnterior: {
+            msg: "Debes ingresar tu contraseña actual",
+          },
+        },
+      });
     }
   });
   let edited = JSON.stringify(users);

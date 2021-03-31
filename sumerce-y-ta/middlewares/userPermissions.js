@@ -2,8 +2,17 @@ const users = require("../data/users.json");
 
 const userPermissions = (req, res, next) => {
   if (!req.session.isLogged && req.cookies.auth) {
-    const userCookie = users.find((user) => req.cookies.auth === user.id);
-    req.session.userAuth = userCookie;
+    const user = users.find((user) => req.cookies.auth === user.id);
+    const userAut = {
+      id: user.id,
+      name: user.name,
+      phone: user.phone,
+      photo: user.photo,
+      region: user.region,
+      comuna: user.comuna,
+      email: user.email,
+    };
+    req.session.userAuth = userAut;
   }
 
   res.locals.isLogged = false;
