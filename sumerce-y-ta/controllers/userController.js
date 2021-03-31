@@ -144,7 +144,7 @@ exports.updateUser = (req, res) => {
   });
   let edited = JSON.stringify(users);
   fs.writeFileSync(path.join(__dirname, "../data/users.json"), edited);
-  res.redirect("/users/profile");
+  res.render("users/profile", { user: req.session.userAuth });
 };
 
 exports.editPass = (req, res) => {
@@ -179,6 +179,9 @@ exports.updatePassword = (req, res) => {
           email: oneUser.email,
         };
         req.session.userAuth = userAut;
+        let edited = JSON.stringify(users);
+        fs.writeFileSync(path.join(__dirname, "../data/users.json"), edited);
+        return res.redirect("/users/profile");
       }
     } else {
       return res.render("users/editar_contrasena", {
@@ -190,7 +193,4 @@ exports.updatePassword = (req, res) => {
       });
     }
   });
-  let edited = JSON.stringify(users);
-  fs.writeFileSync(path.join(__dirname, "../data/users.json"), edited);
-  res.redirect("/users/profile");
 };
