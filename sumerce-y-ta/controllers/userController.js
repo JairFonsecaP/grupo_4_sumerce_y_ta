@@ -183,14 +183,13 @@ exports.updatePassword = (req, res) => {
         fs.writeFileSync(path.join(__dirname, "../data/users.json"), edited);
         return res.redirect("/users/profile");
       }
-    } else {
-      return res.render("users/editar_contrasena", {
-        errors: {
-          passwordAnterior: {
-            msg: "Debes ingresar tu contraseña actual",
-          },
-        },
-      });
     }
+    return res.render("users/editar_contrasena", {
+      errors: {
+        passwordAnterior: {
+          msg: "Debes ingresar tu contraseña actual",
+        },
+      },
+    });
   });
 };
