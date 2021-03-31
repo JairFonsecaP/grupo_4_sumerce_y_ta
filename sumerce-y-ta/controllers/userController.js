@@ -153,7 +153,7 @@ exports.editPass = (req, res) => {
 
 exports.updatePassword = (req, res) => {
   const resultValidation = validationResult(req);
-  console.log(resultValidation.errors.length);
+
   if (resultValidation.errors.length > 0) {
     return res.render("users/editar_contrasena", {
       errors: resultValidation.mapped(),

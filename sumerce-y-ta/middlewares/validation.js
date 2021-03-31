@@ -62,7 +62,6 @@ const validation = {
       .bail()
       .custom((value, { req }) => {
         if (req.body.password != req.body.passwordConfirmation) {
-          console.log("entramos");
           throw new Error("Las contraseñas deben coincidir");
         }
         return true;
