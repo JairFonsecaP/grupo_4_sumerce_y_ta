@@ -105,3 +105,38 @@ Tuvimos una planning meeting al día siguiente de recibir los requerimientos, pa
 Se continuaron las consultas constantes por medio de Whatsapp.
 Creamos una nueva rama en Github llamada Retro para no hacer commit de la retro directamente a main, y seguimos trabajando en nuestra propia rama Develop, para subir los archivos y cambios, en la última reunión hicimos el merge a main.
 
+
+## Sprint 4
+
+#### Start Doing:
+
+-
+
+#### More of:
+
+- Empezar a investigar los temas, en vez de esperar solo que nos den los contenidos en clase.
+- Comentar el código
+- Poder empezar reuniones con dos personas para no frenar el proyecto y comunicar a la persona faltante por whatsapp de los temas tratados en dicha reunion.
+
+#### Keep Doing:
+
+- Tener una convención de nombres.
+- Hacer el código desde el primer día, para que la cantidad de horas que tengamos que dedicarle por día al proyecto sea siempre constante y no incremental.
+- Poner una columna 'Revised' en el tablero del proyecto para que cada issue sea revisado por algún integrante del equipo distinto al que lo hizo.
+- Programar una primera reunión apenas tengamos el archivo de un nuevo Sprint.
+- Seguir practicando el dominio de Git.
+- Comunicación regular.
+
+#### Less of:
+- No atrasarse con los temas.
+#### Stop Doing:
+- No ultimar detalles sobre la hora de entrega.
+
+
+#### Resumen sprint 4:
+Empezamos el sprint teniendo reuniones diarias para hacer el ejercicio de Mercado Lievre, así afianzabamos los conocimientos necesarios para el proyecto integrador, luego creamos el tablero de tareas pequeñas mediante un proyecto de Github donde cada integrante del equipo elegió la tarea en la que se sintiera más cómodo.
+Tuvimos una planning meeting al rededor de cinco días después de recibir los requerimientos, para organizar el tablero de tareas, asignar prioridades, y repartir el trabajo; una segunda meeting, para realizar algunas partes del proyecto en conjunto y una tercera meeting cuando terminamos las tareas para revisar en conjunto el trabajo que habíamos hecho y si teníamos detalles por mejorar los asignabamos a una nueva tarea, la cuarta y última reunión fue para dar una una revisión a lo que habíamos arreglado y unión de todo el trabajo para su posterior entrega, todas las reuniones continuaron en Discord.
+Siguieron las consultas constantes por medio de Whatsapp.
+Creamos una rama Retro-4 para no hacer commit de la retro directamente a main, y seguimos trabajando en nuestra propia rama Develop, para subir los archivos y cambios, en la última reunión hicimos el merge a main.
+
+
