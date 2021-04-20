@@ -10,7 +10,7 @@ module.exports = (sequelize, dataTypes) => {
       product_id: { type: dataTypes.INTEGER },
       size_id: { type: dataTypes.INTEGER },
     },
-    { tableName: "productsizes", timestamps: false }
+    { tableName: "productssizes", timestamps: false }
   );
 
   return ProductsSizes;
