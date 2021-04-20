@@ -197,7 +197,7 @@ exports.updatePassword = (req, res) => {
 };
 
 exports.all = (req, res) => {
-  db.users.findAll().then((response) => {
+  db.productssizes.findAll().then((response) => {
     res.status(200).json(response);
   });
 };

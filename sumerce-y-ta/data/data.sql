@@ -1,4 +1,4 @@
-INSERT INTO `regions` (`regionId`,`region`,`ordinal`)
+INSERT INTO `regions` (`idregion`,`name`,`ordinal`)
 VALUES
 	(1,'Arica y Parinacota','XV'),
 	(2,'Tarapacá','I'),
@@ -16,7 +16,7 @@ VALUES
 	(14,'Aisén del General Carlos Ibáñez del Campo','XI'),
 	(15,'Magallanes y de la Antártica Chilena','XII');
     
-INSERT INTO `comunas` (`comunaId`,`nombre`,`region_id`)
+INSERT INTO `comunas` (`idcomuna`,`name`,`region_id`)
 VALUES
 	(1,'Arica',1),
 	(2,'Camarones',1),
@@ -364,31 +364,26 @@ VALUES
 	(344,'Natales',15),
 	(345,'Torres del Paine',15);
     
-INSERT INTO `users` (`userId`,`name`, `phone`, `photo`, `email`, `password`, `comuna_id`)
+INSERT INTO `users` (`iduser`,`name`, `phone`, `photo`, `email`, `password`, `comuna_id`)
 VALUES 
 	(1,"Jona", "+56875698548",null,"jona@gmail.com", "$2a$12$I.2jrOje7xMen0HFyBTB3uiPAZgw7v4avaUPKjiNnfVywiIc2lZeK", 58),
 	(2,"Jair", "+56875698548",null,"jair@jair.cl", "$2a$12$I.2jrOje7xMen0HFyBTB3uiPAZgw7v4avaUPKjiNnfVywiIc2lZeK", 341),
 	(3,"Eli", "+56875698548",null,"eli@gmail.com", "$2a$12$I.2jrOje7xMen0HFyBTB3uiPAZgw7v4avaUPKjiNnfVywiIc2lZeK", 254);
     
-INSERT INTO `categories` (`categoryId`, `category`)
+INSERT INTO `categories_products` (`idcategory`, `category`)
 VALUES
 	(1, "Ropa"),
     (2, "Deportivo"),
     (3, "Accesorios");
     
-INSERT INTO `products` (`productId`, `name`, `photo`, `description`, `price`)
+INSERT INTO `products` (`idproduct`, `name`, `photo`, `description`, `price`, `category_id`)
 VALUES
-	(1, "Chiguiro", "product-1614909051118.png", "Sabroso", 50000),
-    (2, "Erizo", "product-1614909660195.jpg", "Hecho bolita",90000),
-    (3, "Husky", "product-1614909764165.jpg", "Peludito", 50000);
+	(1, "Chiguiro", "product-1614909051118.png", "Sabroso", 50000, 2),
+    (2, "Erizo", "product-1614909660195.jpg", "Hecho bolita",90000, 1),
+    (3, "Husky", "product-1614909764165.jpg", "Peludito", 50000, 3);
     
-INSERT INTO `productscategories` (`productsCategoriesId`, `product_id`, `category_id`)
-VALUES
-	(1, 1, 2),
-    (2, 2, 1),
-    (3, 3, 3);
     
-INSERT INTO `sizes` (`sizeId`, `size`)
+INSERT INTO `sizes` (`idsize`, `size`)
 VALUES
 	(1, "XS"),
     (2, "S"),
@@ -397,7 +392,7 @@ VALUES
     (5, "XL"),
     (6, "XLL");    
     
-INSERT INTO `productssizes` (`productssizesid`, `productId`, `size_Id`)
+INSERT INTO `productssizes` (`idproductssizes`, `product_id`, `size_id`)
 VALUES
 	(1, 1, 2),
     (2, 1, 3),
@@ -407,7 +402,7 @@ VALUES
     (6, 3, 2),
     (7, 3, 5);
     
-INSERT INTO `color` (`colorId`, `color`)
+INSERT INTO `colors` (`idcolor`, `color`)
 VALUES
 	(1, "Claro"),
     (2, "Medio"),
@@ -417,7 +412,7 @@ VALUES
     (6, "Multicolor"),
     (7, "Metalizados");    
     
-INSERT INTO `productscolor` (`productsColorId`, `product_id`, `color_id`)
+INSERT INTO `productscolors` (`idproductscolor`, `product_id`, `color_id`)
 VALUES
 	(1, 1, 2),
     (2, 1, 3),

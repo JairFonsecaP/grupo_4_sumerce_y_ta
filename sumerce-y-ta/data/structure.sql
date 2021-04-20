@@ -15,196 +15,176 @@ CREATE DATABASE IF NOT EXISTS `sumerceyta` DEFAULT CHARACTER SET utf8 ;
 USE `sumerceyta` ;
 
 -- -----------------------------------------------------
--- Table `sumerceyta`.`Regions`
+-- Table `sumerceyta`.`regions`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sumerceyta`.`Regions` (
-  `regionId` INT NOT NULL AUTO_INCREMENT,
-  `region` VARCHAR(45) NOT NULL,
-  `ordinal` VARCHAR(4) NOT NULL,
-  PRIMARY KEY (`regionId`))
+CREATE TABLE IF NOT EXISTS `sumerceyta`.`regions` (
+  `idregion` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL,
+  `ordinal` VARCHAR(5) NULL,
+  PRIMARY KEY (`idregion`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `sumerceyta`.`Comunas`
+-- Table `sumerceyta`.`comunas`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sumerceyta`.`Comunas` (
-  `comunaId` INT NOT NULL AUTO_INCREMENT,
-  `nombre` VARCHAR(45) NOT NULL,
+CREATE TABLE IF NOT EXISTS `sumerceyta`.`comunas` (
+  `idcomuna` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
   `region_id` INT NOT NULL,
-  PRIMARY KEY (`comunaId`),
-  
-  CONSTRAINT `fk_Comunas_Regions1`
+  PRIMARY KEY (`idcomuna`),
+  CONSTRAINT `fk_comunas_regions`
     FOREIGN KEY (`region_id`)
-    REFERENCES `sumerceyta`.`Regions` (`regionId`)
+    REFERENCES `sumerceyta`.`regions` (`idregion`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB AUTO_INCREMENT=346;
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `sumerceyta`.`Users`
+-- Table `sumerceyta`.`users`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sumerceyta`.`Users` (
-  `userId` INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `sumerceyta`.`users` (
+  `iduser` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL,
-  `phone` VARCHAR(15) NULL,
+  `phone` VARCHAR(13) NULL,
   `photo` VARCHAR(45) NULL,
-  `email` VARCHAR(32) NULL,
+  `email` VARCHAR(45) NULL,
   `password` VARCHAR(100) NULL,
   `comuna_id` INT NOT NULL,
-  PRIMARY KEY (`userId`),
-  CONSTRAINT `fk_Users_Comunas1`
+  PRIMARY KEY (`iduser`),
+  CONSTRAINT `fk_users_comunas1`
     FOREIGN KEY (`comuna_id`)
-    REFERENCES `sumerceyta`.`Comunas` (`comunaId`)
+    REFERENCES `sumerceyta`.`comunas` (`idcomuna`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `sumerceyta`.`Color`
+-- Table `sumerceyta`.`carts`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sumerceyta`.`Color` (
-  `colorId` INT NOT NULL AUTO_INCREMENT,
-  `color` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`colorId`))
+CREATE TABLE IF NOT EXISTS `sumerceyta`.`carts` (
+  `idcart` INT NOT NULL AUTO_INCREMENT,
+  `quantity` INT NULL,
+  `price` INT NULL,
+  `user_id` INT NOT NULL,
+  PRIMARY KEY (`idcart`),
+  CONSTRAINT `fk_carts_users1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `sumerceyta`.`users` (`iduser`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `sumerceyta`.`Sizes`
+-- Table `sumerceyta`.`categories`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sumerceyta`.`Sizes` (
-  `sizeId` INT NOT NULL AUTO_INCREMENT,
-  `size` VARCHAR(4) NOT NULL,
-  PRIMARY KEY (`sizeId`))
+CREATE TABLE IF NOT EXISTS `sumerceyta`.`categories_products` (
+  `idcategory` INT NOT NULL AUTO_INCREMENT,
+  `category` VARCHAR(45) NULL,
+  PRIMARY KEY (`idcategory`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `sumerceyta`.`Categories`
+-- Table `sumerceyta`.`colors`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sumerceyta`.`Categories` (
-  `categoryId` INT NOT NULL AUTO_INCREMENT,
-  `category` VARCHAR(32) NOT NULL,
-  PRIMARY KEY (`categoryId`))
+CREATE TABLE IF NOT EXISTS `sumerceyta`.`colors` (
+  `idcolor` INT NOT NULL AUTO_INCREMENT,
+  `color` VARCHAR(45) NULL,
+  PRIMARY KEY (`idcolor`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `sumerceyta`.`Products`
+-- Table `sumerceyta`.`sizes`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sumerceyta`.`Products` (
-  `ProductId` INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `sumerceyta`.`sizes` (
+  `idsize` INT NOT NULL AUTO_INCREMENT,
+  `size` VARCHAR(45) NULL,
+  PRIMARY KEY (`idsize`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `sumerceyta`.`products`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `sumerceyta`.`products` (
+  `idproduct` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL,
   `photo` VARCHAR(45) NULL,
-  `description` VARCHAR(500) NULL,
-  `price` INT(8) NULL,
-  PRIMARY KEY (`ProductId`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `sumerceyta`.`ProductsSizes`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sumerceyta`.`ProductsSizes` (
-  `ProductsSizesId` INT NOT NULL AUTO_INCREMENT,
-  `productId` INT NOT NULL,
-  `size_Id` INT NOT NULL,
-  PRIMARY KEY (`ProductsSizesId`),
-  CONSTRAINT `fk_Products_has_Sizes_Products1`
-    FOREIGN KEY (`productId`)
-    REFERENCES `sumerceyta`.`Products` (`ProductId`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Products_has_Sizes_Sizes1`
-    FOREIGN KEY (`size_Id`)
-    REFERENCES `sumerceyta`.`Sizes` (`sizeId`)
+  `description` LONGTEXT NULL,
+  `price` INT NULL,
+  `category_id` INT NOT NULL,
+  PRIMARY KEY (`idproduct`),
+  CONSTRAINT `fk_products_categories1`
+    FOREIGN KEY (`category_id`)
+    REFERENCES `sumerceyta`.`categories_products` (`idcategory`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `sumerceyta`.`ProductsColor`
+-- Table `sumerceyta`.`ProductsColors`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sumerceyta`.`ProductsColor` (
-  `ProductsColorId` INT NOT NULL,
+CREATE TABLE IF NOT EXISTS `sumerceyta`.`ProductsColors` (
+  `idproductscolor` INT NOT NULL AUTO_INCREMENT,
   `product_id` INT NOT NULL,
-  `color_id` INT NOT NULL,
-  
-  PRIMARY KEY (`ProductsColorId`),
-  CONSTRAINT `fk_Products_has_Color_Products1`
+    `color_id` INT NOT NULL,
+  PRIMARY KEY (`idproductscolor`),
+  CONSTRAINT `fk_colors_has_products_products1`
     FOREIGN KEY (`product_id`)
-    REFERENCES `sumerceyta`.`Products` (`ProductId`)
+    REFERENCES `sumerceyta`.`products` (`idproduct`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Products_has_Color_Color1`
+  CONSTRAINT `fk_colors_has_products_colors1`
     FOREIGN KEY (`color_id`)
-    REFERENCES `sumerceyta`.`Color` (`colorId`)
+    REFERENCES `sumerceyta`.`colors` (`idcolor`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `sumerceyta`.`Products_has_Categories`
+-- Table `sumerceyta`.`productssizes`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sumerceyta`.`ProductsCategories` (
-  `ProductsCategoriesId` INT NOT NULL AUTO_INCREMENT,
-  `product_Id` INT NOT NULL,
-  `category_Id` INT NOT NULL,
-  
-  PRIMARY KEY (`ProductsCategoriesId`),
-  CONSTRAINT `fk_Products_has_Categories_Products1`
-    FOREIGN KEY (`product_Id`)
-    REFERENCES `sumerceyta`.`Products` (`ProductId`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Products_has_Categories_Categories1`
-    FOREIGN KEY (`category_Id`)
-    REFERENCES `sumerceyta`.`Categories` (`categoryId`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `sumerceyta`.`Carts`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sumerceyta`.`Carts` (
-  `cartsId` INT NOT NULL AUTO_INCREMENT,
-  `quantity` INT NOT NULL,
-  `price` INT NOT NULL,
-  `user_id` INT NOT NULL,
-  PRIMARY KEY (`cartsId`),
-  
-  CONSTRAINT `fk_Carts_Users1`
-    FOREIGN KEY (`user_id`)
-    REFERENCES `sumerceyta`.`Users` (`userId`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `sumerceyta`.`CartProducts`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sumerceyta`.`CartProducts` (
-  `CartProductsId` INT NOT NULL AUTO_INCREMENT,
-  `carts_id` INT NOT NULL,
+CREATE TABLE IF NOT EXISTS `sumerceyta`.`productssizes` (
+  `idproductssizes` INT NOT NULL AUTO_INCREMENT,
   `product_id` INT NOT NULL,
-  
-  PRIMARY KEY (`CartProductsId`),
-  CONSTRAINT `fk_Carts_has_Products_Carts1`
-    FOREIGN KEY (`carts_id`)
-    REFERENCES `sumerceyta`.`Carts` (`cartsId`)
+  `size_id` INT NOT NULL,
+  PRIMARY KEY (`idproductssizes`),
+  CONSTRAINT `fk_products_has_sizes_products1`
+    FOREIGN KEY (`product_id`)
+    REFERENCES `sumerceyta`.`products` (`idproduct`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Carts_has_Products_Products1`
+  CONSTRAINT `fk_products_has_sizes_sizes1`
+    FOREIGN KEY (`size_id`)
+    REFERENCES `sumerceyta`.`sizes` (`idsize`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `sumerceyta`.`productIncart`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `sumerceyta`.`productIncarts` (
+  `productIncart` INT NOT NULL AUTO_INCREMENT,
+  `product_id` INT NOT NULL,
+  `cart_id` INT NOT NULL,
+  PRIMARY KEY (`productIncart`),
+  CONSTRAINT `fk_products_has_carts_products1`
     FOREIGN KEY (`product_id`)
-    REFERENCES `sumerceyta`.`Products` (`ProductId`)
+    REFERENCES `sumerceyta`.`products` (`idproduct`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_products_has_carts_carts1`
+    FOREIGN KEY (`cart_id`)
+    REFERENCES `sumerceyta`.`carts` (`idcart`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
