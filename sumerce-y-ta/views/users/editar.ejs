@@ -57,16 +57,17 @@
               />
             </div>
             <div class="form-fields2">
-              <select name="region" id="region">
+              <!-- <select name="region" id="region">
                 <option value="">- región -</option>
-                <% regiones.forEach(region =>{ %>
-                <option value="<%= region %>" <%= region === user.region ? "selected" : null %> ><%= region %></option>
-                <% }) %>
-              </select>
-              <select name="comuna" id="comuna">
+                <%// regiones.forEach(region =>{ %>
+                <option value="<%=// region %>" <%=// region === user.region ? "selected" : null %> ><%=// region %></option>
+                <%// }) %>
+              </select> -->
+              <select name="comuna" id="comuna"> 
                 <option value="">Comuna</option>
                 <% comunas.forEach(comuna =>{ %>
-                <option value="<%= comuna %>" <%= comuna===user.comuna ? "selected":null %> ><%= comuna %></option>
+                  
+                <option value="<%= comuna.idcomuna %>" <%= comuna.idcomuna===user.comuna ? "selected":null %> ><%= comuna.name %></option>
                 <% }) %>
               </select>
             </div>

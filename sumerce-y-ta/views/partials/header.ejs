@@ -2,7 +2,7 @@
   <div class="cabecera">
     <p>Envios a todo Chile</p>
     <% if (locals.isLogged) { %>
-    <p>Hola, <%=locals.userAuth.name%></p>
+    <a href="/users/profile"><p>Hola, <%=locals.userAuth.name%></p></a>
     <% } %>
     <p>
       <% if(locals.isLogged){ %>

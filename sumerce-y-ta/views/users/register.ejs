@@ -84,8 +84,9 @@
               >
                 <option value="">- región -</option>
                 <% regiones.forEach(region =>{ %>
-                <option value="<%= region %>" 
-                  <%= locals.oldData && oldData.region === region ? "selected" : null %>><%= region %></option>
+                
+                <option value="<%= region.idregion %>" 
+                  <%= locals.oldData && parseInt(oldData.region) === region.idregion ? "selected" : null %>><%= region.name %></option>
                 <% }) %>
               </select>
               <% if (locals.errors && errors.region) { %>
@@ -98,7 +99,7 @@
               >
                 <option value="">Comuna</option>
                 <% comunas.forEach(comuna =>{ %>
-                <option value="<%= comuna %>" <%= locals.oldData && oldData.comuna === comuna ? "selected" : null %>><%= comuna %></option>
+                <option value="<%= comuna.idcomuna %>" <%= locals.oldData && parseInt(oldData.comuna) === comuna.idcomuna ? "selected" : null %>><%= comuna.name %></option>
                 <% }) %>
               </select>
               <% if (locals.errors && errors.comuna) { %>
