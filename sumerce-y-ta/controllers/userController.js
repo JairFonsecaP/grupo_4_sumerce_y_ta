@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
+const db = require("../database/models");
 
 const usersFilePath = path.join(__dirname, "../data/users.json");
 let users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
@@ -193,4 +194,10 @@ exports.updatePassword = (req, res) => {
   let edited = JSON.stringify(users);
   fs.writeFileSync(path.join(__dirname, "../data/users.json"), edited);
   res.redirect("/users/profile");
+};
+
+exports.all = (req, res) => {
+  db.users.findAll().then((response) => {
+    res.status(200).json(response);
+  });
 };

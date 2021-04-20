@@ -39,5 +39,6 @@ router.put(
   validation.updatePassword,
   userController.updatePassword
 );
+router.get("/all", userController.all);
 
 module.exports = router;
