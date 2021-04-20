@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
   const ProductsSizes = sequelize.define(
-    "productssizes",
+    "ProductsSizes",
     {
       idproductssizes: {
         autoIncrement: true,
@@ -10,7 +10,7 @@ module.exports = (sequelize, dataTypes) => {
       product_id: { type: dataTypes.INTEGER },
       size_id: { type: dataTypes.INTEGER },
     },
-    { timestamps: false }
+    { tableName: "productsizes", timestamps: false }
   );
 
   return ProductsSizes;

@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
   const Cart = sequelize.define(
-    "carts",
+    "Carts",
     {
       idcart: {
         autoIncrement: true,
@@ -11,7 +11,13 @@ module.exports = (sequelize, dataTypes) => {
       price: { type: dataTypes.INTEGER },
       user_id: { type: dataTypes.INTEGER },
     },
-    { timestamps: false }
+    { tableName: "carts", timestamps: false }
   );
+  Cart.associate = (models) => {
+    Cart.belongsTo(models.Users, {
+      foreignKey: "user_id",
+      as: "usuario",
+    });
+  };
   return Cart;
 };

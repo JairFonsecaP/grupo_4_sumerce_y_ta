@@ -197,7 +197,9 @@ exports.updatePassword = (req, res) => {
 };
 
 exports.all = (req, res) => {
-  db.productssizes.findAll().then((response) => {
+  db.Products.findAll({
+    include: ["colors"],
+  }).then((response) => {
     res.status(200).json(response);
   });
 };

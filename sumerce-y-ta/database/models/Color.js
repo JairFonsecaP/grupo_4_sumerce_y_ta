@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
   const Color = sequelize.define(
-    "colors",
+    "Colors",
     {
       idcolor: {
         autoIncrement: true,
@@ -9,7 +9,16 @@ module.exports = (sequelize, dataTypes) => {
       },
       color: { type: dataTypes.STRING },
     },
-    { timestamps: false }
+    { tableName: "colors", timestamps: false }
   );
+  Color.associate = (models) => {
+    Color.belongsToMany(models.Products, {
+      as: "products",
+      through: "productscolors",
+      foreignKey: "color_id",
+      otherKey: "product_id",
+      timestamps: false,
+    });
+  };
   return Color;
 };

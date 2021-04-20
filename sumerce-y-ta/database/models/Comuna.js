@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
   const Comuna = sequelize.define(
-    "comunas",
+    "Comunas",
     {
       idcomuna: {
         autoIncrement: true,
@@ -10,7 +10,21 @@ module.exports = (sequelize, dataTypes) => {
       name: { type: dataTypes.STRING },
       region_id: { type: dataTypes.INTEGER },
     },
-    { timestamps: false }
+    {
+      tableName: "comunas",
+      timestamps: false,
+    }
   );
+
+  Comuna.associate = (models) => {
+    Comuna.belongsTo(models.Regions, {
+      foreignKey: "region_id",
+      as: "region",
+    });
+    Comuna.hasMany(models.Users, {
+      foreignKey: "comuna_id",
+      as: "users",
+    });
+  };
   return Comuna;
 };

@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
   const Region = sequelize.define(
-    "regions",
+    "Regions",
     {
       idregion: {
         autoIncrement: true,
@@ -10,7 +10,17 @@ module.exports = (sequelize, dataTypes) => {
       name: { type: dataTypes.STRING },
       ordinal: { type: dataTypes.STRING },
     },
-    { timestamps: false }
+    {
+      tableName: "regions",
+      timestamps: false,
+    }
   );
+
+  Region.associate = function (models) {
+    Region.hasMany(models.Comunas, {
+      foreignKey: "region_id",
+      as: "comunas",
+    });
+  };
   return Region;
 };

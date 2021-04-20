@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
   const User = sequelize.define(
-    "users",
+    "Users",
     {
       iduser: {
         autoIncrement: true,
@@ -14,7 +14,19 @@ module.exports = (sequelize, dataTypes) => {
       password: { type: dataTypes.STRING },
       comuna_id: { type: dataTypes.INTEGER },
     },
-    { timestamps: false }
+    { tableName: "users", timestamps: false }
   );
+
+  User.associate = (models) => {
+    User.belongsTo(models.Comunas, {
+      foreignKey: "comuna_id",
+      as: "comuna",
+    });
+    User.hasMany(models.Carts, {
+      foreignKey: "user_id",
+      as: "compras",
+    });
+  };
+
   return User;
 };
