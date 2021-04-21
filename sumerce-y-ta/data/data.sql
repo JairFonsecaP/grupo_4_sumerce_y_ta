@@ -392,7 +392,7 @@ VALUES
     (5, "XL"),
     (6, "XLL");    
     
-INSERT INTO `productssizes` (`idproductssizes`, `product_id`, `size_id`)
+/*INSERT INTO `productssizes` (`idproductssizes`, `product_id`, `size_id`)
 VALUES
 	(1, 1, 2),
     (2, 1, 3),
@@ -400,7 +400,7 @@ VALUES
     (4, 2, 2),
     (5, 2, 3),
     (6, 3, 2),
-    (7, 3, 5);
+    (7, 3, 5);*/
     
 INSERT INTO `colors` (`idcolor`, `color`)
 VALUES
@@ -412,11 +412,11 @@ VALUES
     (6, "Multicolor"),
     (7, "Metalizados");    
     
-INSERT INTO `productscolors` (`idproductscolor`, `product_id`, `color_id`)
+/*INSERT INTO `productscolors` (`idproductscolor`, `product_id`, `color_id`)
 VALUES
 	(1, 1, 2),
     (2, 1, 3),
     (3, 2, 5),
     (4, 3, 1),
     (5, 3, 6),
-    (6, 3, 4);
+    (6, 3, 4);*/

@@ -162,7 +162,7 @@
       <div class="categories-folder">
         <div class="folder1">
           <% products.forEach((product)=>{ %> <% if(category ===
-          product.categories.toLowerCase()){%>
+          product["categoria.category"].toLowerCase()){%>
           <article>
             <a href="/products/producto/<%=product.id%>"
               ><img
@@ -176,7 +176,7 @@
                 $ <%= toThousand(parseInt(product.price)) %>
               </p>
               <% } %>
-              <a href="/products/producto/<%=product.id%>">
+              <a href="/products/producto/<%=product.idproduct%>">
                 <button type="button">Detalle</button></a
               >
             </div>

@@ -57,14 +57,17 @@
               />
             </td>
             <td><%=product.name%></td>
-            <td><%=product.categories%></td>
+            <td><%=product['categoria.category']%></td>
             <td><%=product.color%></td>
             <td><%=product.sizes%></td>
             <td><%=product.description%></td>
             <td><%=product.types%></td>
             <td><%=toThousand(parseInt(product.price))%></td>
             <td>
-              <a href="/products/edit/<%= product.id %>" id="button-edit">
+              <a
+                href="/products/edit/<%= product.idproduct %>"
+                id="button-edit"
+              >
                 <button class="edit">
                   <i class="fas fa-pen"></i>
                 </button>
@@ -72,7 +75,7 @@
             </td>
             <td>
               <form
-                action="/products/delete/<%= product.id%>?_method=DELETE"
+                action="/products/delete/<%= product.idproduct %>?_method=DELETE"
                 id="button-delete"
                 method="POST"
               >

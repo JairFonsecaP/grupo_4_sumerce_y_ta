@@ -1,7 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-//const uniqid = require("uniqid");
-
+const db = require("../database/models");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const tallas = ["XS", "S", "M", "XL", "XLL"];
 const tonalidades = [
@@ -19,8 +18,13 @@ exports.carrito = (req, res) => {
   res.render("products/cart");
 };
 
-exports.categorias = (req, res) => {
+exports.categorias = async (req, res) => {
   const category = req.params.category;
+  const products = await db.Products.findAll({
+    include: [{ association: "categoria" }],
+    raw: true,
+    neft: true,
+  });
   res.render("products/categories", {
     products: products,
     toThousand: toThousand,
@@ -28,20 +32,34 @@ exports.categorias = (req, res) => {
   });
 };
 
-exports.producto = (req, res) => {
+exports.producto = async (req, res) => {
   let idDetail = req.params.id;
-  products.forEach((product) => {
-    if (product.id === idDetail) {
-      res.render("products/product", {
-        product: product,
-        toThousand: toThousand,
-        tallas: tallas,
-      });
-    }
+  const product = await db.Products.findByPk(idDetail, {
+    include: [
+      { association: "categoria" },
+      { association: "sizes" },
+      { association: "colors" },
+    ],
+    raw: true,
+    neft: true,
+  });
+
+  const tallas = await db.Sizes.findAll({ raw: true, neft: true });
+
+  res.render("products/product", {
+    product: product,
+    toThousand: toThousand,
+    tallas: tallas,
   });
 };
 
-exports.admproducto = (req, res) => {
+exports.admproducto = async (req, res) => {
+  const products = await db.Products.findAll({
+    include: [{ association: "categoria" }],
+    raw: true,
+    neft: true,
+  });
+
   res.render("products/admproduct", {
     products: products,
     toThousand: toThousand,
@@ -154,14 +172,7 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-  let filter = [];
-  products.forEach((product) => {
-    if (product.id != req.params.id) {
-      filter.push(product);
-    }
-  });
-  products = filter;
-  let deleted = JSON.stringify(filter);
-  fs.writeFileSync(path.join(__dirname, "../data/products.json"), deleted);
-  res.redirect("/products/admproducto");
+  db.Products.destroy({
+    where: { idproduct: req.params.id },
+  }).then(res.redirect("/products/admproducto"));
 };
