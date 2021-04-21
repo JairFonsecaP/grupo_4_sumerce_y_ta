@@ -84,16 +84,7 @@
       </div>
     <% }}) %>
   </fieldset>
-  <fieldset>
-    <label for="type">Tipo :</label>
-      <% tipos.forEach(tipo=>{ %>
-      <div class="modal-mr">
-        <label for="<%= tipo %>"> <%= tipo %> :</label>
-        <input type="checkbox" id="<%= tipo %>" name="types" value="<%= tipo %>" 
-        <% if(product.types){product.types.forEach(type =>{ %>
-          <%= type === tipo ? "checked" : null %>
-       <% }) %> 
-    />
+  
       </div>
       <% }}) %>
   </fieldset>

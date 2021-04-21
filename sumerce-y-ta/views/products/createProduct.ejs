@@ -53,21 +53,24 @@
         <label>Categoría :</label>
         <select name="categories">
           <option value="ropa">Seleccionar...</option>
-          <option value="Ropa">Ropa</option>
-          <option value="Deportivo">Deportivo</option>
-          <option value="Accesorios">Accesorios</option>
+          <% categorias.forEach(categoria=>{%>
+          <option value="<%= categoria.idcategory %>">
+            <%= categoria.category %>
+          </option>
+
+          <% }) %>
         </select>
       </fieldset>
       <fieldset>
         <label for="">Talla :</label>
         <div class="modal-mr">
           <% tallas.forEach(talla=>{ %>
-          <label for="<%= talla %>"><%= talla %> :</label>
+          <label for="<%= talla.size %>"><%= talla.size %> :</label>
           <input
             type="checkbox"
-            id="<%= talla %>"
+            id="<%= talla.size %>"
             name="sizes"
-            value="<%= talla %>"
+            value="<%= talla.idsize %>"
           />
         </div>
         <% }) %>
@@ -76,30 +79,17 @@
         <label>Tonalidad :</label>
         <% tonalidades.forEach(tonalidad=>{ %>
         <div class="modal-mr">
-          <label for="<%= tonalidad%>"><%= tonalidad%> :</label>
+          <label for="<%= tonalidad.color%>"><%= tonalidad.color%> :</label>
           <input
             type="checkbox"
-            id="<%= tonalidad%>"
+            id="<%= tonalidad.color%>"
             name="color"
-            value="<%= tonalidad%>"
+            value="<%= tonalidad.idcolor%>"
           />
         </div>
         <% }) %>
       </fieldset>
-      <fieldset>
-        <label for="">Tipo :</label>
-        <% tipos.forEach(tipo=>{ %>
-        <div class="modal-mr">
-          <label for="<%= tipo %>"> <%= tipo %> :</label>
-          <input
-            type="checkbox"
-            id="<%= tipo %>"
-            name="types"
-            value="<%= tipo %>"
-          />
-        </div>
-        <% }) %>
-      </fieldset>
+
       <label for="price">Precio :</label>
       <input
         type="text"

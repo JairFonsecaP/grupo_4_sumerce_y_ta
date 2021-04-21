@@ -12,7 +12,10 @@ exports.login = (req, res) => {
 
 exports.registro = async (req, res) => {
   const regiones = await db.Regions.findAll({ raw: true, netf: true });
-  const comunas = await db.Comunas.findAll({ raw: true, netf: true });
+  const comunas = await db.Comunas.findAll({
+    raw: true,
+    netf: true,
+  });
   res.render("users/register", { regiones: regiones, comunas: comunas });
 };
 
@@ -108,11 +111,14 @@ exports.auth = async (req, res) => {
 };
 
 exports.profile = async (req, res) => {
-  const comuns = await db.Comunas.findByPk(req.session.userAuth.comuna, {
-    include: [{ association: "region" }],
-    raw: true,
-    netf: true,
-  });
+  const comuns = await db.Comunas.findByPk(
+    req.session.userAuth.comuna,
+    { include: ["region"] },
+    {
+      raw: true,
+      netf: true,
+    }
+  );
   res.render("users/profile", {
     user: req.session.userAuth,
     comuns: comuns,
