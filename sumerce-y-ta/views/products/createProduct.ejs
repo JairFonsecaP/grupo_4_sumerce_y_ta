@@ -34,7 +34,11 @@
           name="name"
           id="name"
           placeholder="Nombre del producto."
-        />
+          class="<%= locals.errors && errors.name ? 'is-invalid': null %>"
+          value="<%= locals.oldData && oldData.name ? oldData.name : null %>"
+        /><% if (locals.errors && errors.name) { %>
+        <p class="error-form"><%=errors.name.msg%></p>
+        <% } %>
       </fieldset>
       <fieldset>
         <label for="description">Descripción :</label>
@@ -43,7 +47,11 @@
           name="description"
           id="description"
           placeholder="Descripción del producto."
-        />
+          class="<%= locals.errors && errors.description ? 'is-invalid': null %>"
+          value="<%= locals.oldData && oldData.description ? oldData.description : null %>"
+        /><% if (locals.errors && errors.description) { %>
+        <p class="error-form"><%=errors.description.msg%></p>
+        <% } %>
       </fieldset>
       <fieldset>
         <label for="photo">Foto :</label>
@@ -51,14 +59,21 @@
       </fieldset>
       <fieldset>
         <label>Categoría :</label>
-        <select name="categories">
+        <select
+          name="categories"
+          class="<%= locals.errors && errors.categories ? 'is-invalid': null %>"
+        >
           <option value="">Seleccionar...</option>
           <% categorias.forEach(categoria=>{%>
-          <option value="<%= categoria.idcategory %>">
+          <option value="<%= categoria.idcategory %>" 
+            <%= locals.oldData && oldData.categories && parseInt(oldData.categories) === categoria.idcategory ? "selected" : null %>
+            >
             <%= categoria.category %>
           </option>
           <% }) %>
-        </select>
+        </select><% if (locals.errors && errors.categories) { %>
+          <p class="error-form"><%=errors.categories.msg%></p>
+          <% } %>
       </fieldset>
 
       <fieldset>
@@ -71,9 +86,16 @@
             id="<%= talla.size %>"
             name="sizes"
             value="<%= talla.idsize %>"
+            class="<%= locals.errors && errors.sizes ? 'is-invalid': null %>"
+            <% if (locals.oldData && oldData.sizes){oldData.sizes.forEach(size=>{ %>
+            <%= parseInt(size) === talla.idsize ? "checked" : null %>
+            <% })} %>
           />
         </div>
         <% }) %>
+        <% if (locals.errors && errors.sizes) { %>
+          <p class="error-form"><%=errors.sizes.msg%></p>
+        <% } %>
       </fieldset>
       <fieldset>
         <label>Tonalidad :</label>
@@ -85,9 +107,16 @@
             id="<%= tonalidad.color%>"
             name="color"
             value="<%= tonalidad.idcolor%>"
+            class="<%= locals.errors && errors.colors ? 'is-invalid': null %>"
+            <% if (locals.oldData && oldData.colors){oldData.colors.forEach(color=>{ %>
+              <%= parseInt(color) === tonalidad.idcolor ? "checked" : null %>
+            <% })} %>
           />
         </div>
         <% }) %>
+        <% if (locals.errors && errors.colors) { %>
+          <p class="error-form"><%=errors.colors.msg%></p>
+        <% } %>
       </fieldset>
 
       <label for="price">Precio :</label>
@@ -96,7 +125,12 @@
         id="price"
         placeholder="Precio del producto."
         name="price"
+        class="<%= locals.errors && errors.price ? 'is-invalid': null %>"
+        value="<%= locals.oldData && oldData.price ? oldData.price.toString() : null %>"
       />
+      <% if (locals.errors && errors.price) { %>
+        <p class="error-form"><%=errors.price.msg%></p>
+      <% } %>
       <button type="submit" class="button-products">Agregar</button>
     </form>
   </body>

@@ -1,4 +1,6 @@
 const db = require("../database/models");
+const { validationResult } = require("express-validator");
+
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 exports.carrito = (req, res) => {
@@ -74,50 +76,56 @@ exports.create = async (req, res) => {
 };
 
 exports.store = async (req, res) => {
-  let product = {};
-
-  product.name = req.body.name;
-  product.description = req.body.description;
-  if (req.file) {
-    product.photo = req.file.filename;
-  } else {
-    product.photo = null;
-  }
-  product.price = parseFloat(req.body.price);
-  product.categories = parseInt(req.body.categories);
+  const resultValidation = validationResult(req);
 
   if (typeof req.body.sizes === "string") {
     let sizes = [];
     sizes.push(req.body.sizes);
-    product.sizes = sizes;
+    req.body.sizes = sizes;
   } else {
-    product.sizes = req.body.sizes;
+    req.body.sizes = req.body.sizes;
   }
   if (typeof req.body.color === "string") {
     let colors = [];
-    colors.push(req.body.types);
-    product.colors = colors;
+    colors.push(req.body.color);
+    req.body.colors = colors;
   } else {
-    product.colors = req.body.color;
+    req.body.colors = req.body.color;
   }
+  if (resultValidation.mapped().price && req.body.price) {
+    delete req.body.price;
+  }
+  if (resultValidation.errors.length > 0) {
+    const tallas = await db.Sizes.findAll({ raw: true, neft: true });
+    const tonalidades = await db.Colors.findAll({ raw: true, neft: true });
+    const categorias = await db.Categories.findAll({ raw: true, neft: true });
+    return res.render("products/createProduct", {
+      categorias: categorias,
+      tallas: tallas,
+      tonalidades: tonalidades,
+      errors: resultValidation.mapped(),
+      oldData: req.body,
+    });
+  }
+
   let created = await db.Products.create({
-    name: product.name,
-    photo: product.photo,
-    description: product.description,
-    price: product.price,
-    category_id: product.categories,
+    name: req.body.name,
+    photo: req.file ? req.file.filename : null,
+    description: req.body.description,
+    price: parseFloat(req.body.price),
+    category_id: parseInt(req.body.categories),
   });
   created = JSON.parse(JSON.stringify(created));
-  if (product.sizes) {
-    product.sizes.forEach((size) =>
+  if (req.body.sizes) {
+    req.body.sizes.forEach((size) =>
       db.ProductsSizes.create({
         product_id: created.idproduct,
         size_id: parseInt(size),
       })
     );
   }
-  if (product.colors) {
-    product.colors.forEach((color) =>
+  if (req.body.colors) {
+    req.body.colors.forEach((color) =>
       db.ProductsColors.create({
         product_id: created.idproduct,
         color_id: parseInt(color),

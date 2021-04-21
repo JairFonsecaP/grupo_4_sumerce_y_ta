@@ -1,146 +1,144 @@
-main{
-    background-color: white;
-    border-top: solid;
-    border-bottom: solid;
+main {
+  background-color: white;
+  border-top: solid;
+  border-bottom: solid;
 }
 label {
-    font-size: 1.3rem;
-    margin-right: 5px;
+  font-size: 1.3rem;
+  margin-right: 5px;
 }
 input {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 /* MODALES CSS */
 .modal-create {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, .6);
-    position: absolute;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  display: none;
 }
 .modal-edit {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    position: absolute;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  display: none;
 }
 .close-create {
-    position: absolute;
-    top: 0;
-    right: 14px;
-    cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 14px;
+  cursor: pointer;
 }
 .close-edit {
-    position: absolute;
-    top: 0;
-    right: 14px;
-    cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 14px;
+  cursor: pointer;
 }
 .internal-modal {
-    padding: 20px;
-    background-color: #fff3f3;
-    border-radius: 4px;
-    text-align: center;
-    position: relative;
+  padding: 20px;
+  background-color: #fff3f3;
+  border-radius: 4px;
+  text-align: center;
+  position: relative;
 }
 .internal-modal label {
-    font-weight: bold;
-    color: black;
-   
-
+  font-weight: bold;
+  color: black;
 }
 .modal-mr {
-    margin-right: 5px;
-    display: inline-block;
+  margin-right: 5px;
+  display: inline-block;
 }
 
 /* BOTONES CREATE, EDIT, DELETE */
-.create{
-    color: #373737;
-    font-weight: bold;
-    cursor: pointer;
-    background-color: #f6bdbd6b!important;
-    
-    height: 50px;
-   
+.create {
+  color: #373737;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #f6bdbd6b !important;
+
+  height: 50px;
 }
 .edit {
-    color: #222dc0;
-    font-weight: bold;
-    cursor: pointer;
-   background-color: #f6bdbd6b!important;
+  color: #222dc0;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #f6bdbd6b !important;
 }
 .delete-btn {
-    cursor: pointer;
-    color: red;
-    background-color: #f6bdbd6b!important;
+  cursor: pointer;
+  color: red;
+  background-color: #f6bdbd6b !important;
 }
 .button-products {
-    margin-top: 5%;
-    background-color: #CC8F94;
-    font-weight: bold;
-    border-radius: 5px;
-    font-size: 25px;
-    transition: all .5s ease;
+  margin-top: 5%;
+  background-color: #cc8f94;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 25px;
+  transition: all 0.5s ease;
 }
 .button-products:hover {
-    background-color: transparent;
-    color: #CC8F94;
-    border-color: #CC8F94;
+  background-color: transparent;
+  color: #cc8f94;
+  border-color: #cc8f94;
 }
 .flex-container-titulos {
-    margin-top: 6px;
-    border-bottom: 1px solid rgba(0, 0, 0, .6);
-    margin-bottom: 10px;
-    margin-left: 5px;
-} 
+  margin-top: 6px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
 .flex-container {
-    display: flex;
-    flex-direction: row;
-    font-size: 30px;
-    width: 70%;
-    margin-bottom: 10px;
-    margin-right: 5px;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
+  width: 70%;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  align-items: center;
 }
 
-  .admimg{
-      width: 100px;
-      height: 100px;
-  }
+.admimg {
+  width: 100px;
+  height: 100px;
+}
+.error-form {
+  margin-top: 0;
+  font-weight: bold;
+  color: #cf010b;
+}
+.is-invalid {
+  border: 2px solid #cf010b;
+}
 @media (min-width: 768px) {
-    
-  } 
-  
+}
 
+/* TABLE */
 
-  /* TABLE */
-
-th  {
-    text-align: center;
-   
-   
+th {
+  text-align: center;
 }
 td {
-    border-top: 1px solid rgba(0, 0, 0, .6);
-   
-    text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.6);
+
+  text-align: center;
 }
 table {
   font-size: 1.5rem;
-	width: 100%;
-	padding: 40px 0;
-}	
-
-
+  width: 100%;
+  padding: 40px 0;
+}

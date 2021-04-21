@@ -67,6 +67,24 @@ const validation = {
         return true;
       }),
   ],
+  product: [
+    body("name").notEmpty().withMessage("Debe darle un nombre a su producto"),
+    body("description").notEmpty().withMessage("Agregue una descripcion"),
+    body("categories").notEmpty().withMessage("Seleccione una categoria"),
+    body("sizes").notEmpty().withMessage("Seleccione al menos una talla"),
+    body("colors").notEmpty().withMessage("Seleccione al menos un color"),
+    body("price")
+      .notEmpty()
+      .withMessage("Ingrese el precio del producto")
+      .bail()
+      .custom((value, { req }) => {
+        console.log(value);
+        if (isNaN(parseFloat(req.body.price) + 5)) {
+          throw new Error("Debe ingresar un valor númerico");
+        }
+        return true;
+      }),
+  ],
 };
 
 module.exports = validation;
