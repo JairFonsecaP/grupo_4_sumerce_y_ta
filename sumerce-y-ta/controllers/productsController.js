@@ -172,7 +172,17 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-  db.Products.destroy({
-    where: { idproduct: req.params.id },
-  }).then(res.redirect("/products/admproducto"));
+  db.ProductsColors.destroy({
+    where: { product_id: req.params.id },
+  })
+    .then(
+      db.ProductsSizes.destroy({
+        where: { product_id: req.params.id },
+      })
+    )
+    .then(
+      db.Products.destroy({
+        where: { idproduct: req.params.id },
+      }).then(res.redirect("/products/admproducto"))
+    );
 };
