@@ -174,15 +174,13 @@ exports.update = (req, res) => {
 exports.delete = (req, res) => {
   db.ProductsColors.destroy({
     where: { product_id: req.params.id },
-  })
-    .then(
-      db.ProductsSizes.destroy({
-        where: { product_id: req.params.id },
-      })
-    )
-    .then(
+  }).then(
+    db.ProductsSizes.destroy({
+      where: { product_id: req.params.id },
+    }).then(
       db.Products.destroy({
         where: { idproduct: req.params.id },
       }).then(res.redirect("/products/admproducto"))
-    );
+    )
+  );
 };
