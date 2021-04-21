@@ -37,8 +37,8 @@
         <div class="details">
           <select class="input-size-tamano" name="#" id="#">
             <option value="#">Elige tamaño</option>
-            <% product.sizes.forEach(talla=>{%>
-            <option value="<%=talla%>"><%=talla.toUpperCase()%></option>
+            <% tallas.forEach(talla=>{%>
+            <option value="<%=talla.idsize%>"><%=talla.size.toUpperCase()%></option>
 
             <% }) %>
 

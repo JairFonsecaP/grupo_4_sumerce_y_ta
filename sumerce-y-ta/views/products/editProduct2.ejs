@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sumercé y tá</title>
+    <title><%= product.name %></title>
     <link rel="stylesheet" href="/static/css/normalize.css" />
     <link rel="stylesheet" href="/static/css/header.css" />
     <link rel="stylesheet" href="/static/css/index.css" />
@@ -21,9 +21,8 @@
     ></script>
   </head>
   <body>
-    <h2 class="titulo-crear">Crear Producto</h2>
     <form
-      action="/products/admproducto/create"
+      action="<%= product.idproduct %>?_method=PUT"
       method="POST"
       enctype="multipart/form-data"
     >
@@ -33,7 +32,8 @@
           type="text"
           name="name"
           id="name"
-          placeholder="Nombre del producto."
+          placeholder="Introduce el nombre"
+          value="<%= product.name %>"
         />
       </fieldset>
       <fieldset>
@@ -42,17 +42,17 @@
           type="textarea"
           name="description"
           id="description"
-          placeholder="Descripción del producto."
+          placeholder="Introduce la descripcion"
+          value="<%= product.descripcion != '' ? product.description  : null%>"
         />
       </fieldset>
       <fieldset>
         <label for="photo">Foto :</label>
-        <input type="file" name="photo" id="photo" accept=".jpg, .png, .sgv" />
+        <input type="file" name="photo" id="photo" accept=".jpg, .png .sgv" />
       </fieldset>
       <fieldset>
-        <label>Categoría :</label>
+        <label>Categoría</label>
         <select name="categories">
-          <option value="">Seleccionar...</option>
           <% categorias.forEach(categoria=>{%>
           <option value="<%= categoria.idcategory %>">
             <%= categoria.category %>
@@ -63,41 +63,49 @@
 
       <fieldset>
         <label for="">Talla :</label>
+        <% tallas.forEach(talla=>{ %>
         <div class="modal-mr">
-          <% tallas.forEach(talla=>{ %>
           <label for="<%= talla.size %>"><%= talla.size %> :</label>
-          <input
-            type="checkbox"
-            id="<%= talla.size %>"
-            name="sizes"
-            value="<%= talla.idsize %>"
-          />
+          <input type="checkbox" id="<%= talla.size %>" name="sizes" value="<%=
+          talla.idsize %>" <% if(product.sizes.length !== 0){
+          product.sizes.forEach(size =>{ talla.idsize === size.idsize ?
+          "checked" : null %> })} %> />
         </div>
-        <% }) %>
+        <% })%>
       </fieldset>
+
       <fieldset>
         <label>Tonalidad :</label>
         <% tonalidades.forEach(tonalidad=>{ %>
         <div class="modal-mr">
-          <label for="<%= tonalidad.color%>"><%= tonalidad.color%> :</label>
+          <label for="<%= tonalidad .color%>"><%= tonalidad.color%> :</label>
           <input
             type="checkbox"
-            id="<%= tonalidad.color%>"
+            id="claro"
             name="color"
             value="<%= tonalidad.idcolor%>"
+            <%
+            if(product.colors.length
           />
+          0 ){product.colors.forEach(color =>{ %> <%= color.idcolor ===
+          tonalidad.idcolor ? "checked" : null %> <% }) %> />
         </div>
-        <% }) %>
+        <% }}) %>
       </fieldset>
 
-      <label for="price">Precio :</label>
-      <input
-        type="text"
-        id="price"
-        placeholder="Precio del producto."
-        name="price"
-      />
-      <button type="submit" class="button-products">Agregar</button>
+      <% }}) %>
+
+      <fieldset>
+        <label for="price">Precio :</label>
+
+        <input
+          type="text"
+          id="price"
+          name="price"
+          value="<%= product.price ? product.price : null %>"
+        />
+      </fieldset>
+      <button type="submit" class="button-products">Editar</button>
     </form>
   </body>
 </html>

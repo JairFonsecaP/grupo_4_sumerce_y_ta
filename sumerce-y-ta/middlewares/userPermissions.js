@@ -1,16 +1,14 @@
-const users = require("../data/users.json");
+const db = require("../database/models");
 
-const userPermissions = (req, res, next) => {
+const userPermissions = async (req, res, next) => {
   if (!req.session.isLogged && req.cookies.auth) {
-    const user = users.find((user) => req.cookies.auth === user.id);
-
+    const user = await db.Users.findByPk(req.cookies.auth);
     const userAut = {
-      id: user.id,
+      id: user.iduser,
       name: user.name,
       phone: user.phone,
       photo: user.photo,
-      region: user.region,
-      comuna: user.comuna,
+      comuna: user.comuna_id,
       email: user.email,
     };
     req.session.userAuth = userAut;

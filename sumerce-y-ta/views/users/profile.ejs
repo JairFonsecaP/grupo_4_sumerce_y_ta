@@ -25,11 +25,17 @@
     <main>
       <div class="wrapper">
         <div class="left">
-          <img src="/static/images/avatars/<%=user.photo%>" width="130" height="130px" />
-         
+          <img
+            src="/static/images/avatars/<%=user.photo%>"
+            width="130"
+            height="130px"
+          />
+
           <p>ID: <%= user.id%></p>
 
-          <button class="btn"><a href="/users/editar_contrasena">Editar Contrasena</a></button>
+          <button class="btn">
+            <a href="/users/editar_contrasena">Editar Contrasena</a>
+          </button>
         </div>
         <div class="right">
           <div class="info">
@@ -57,17 +63,23 @@
             <div class="projects_data">
               <div class="data">
                 <h4>Region</h4>
-                <p><%= user.region%></p>
+                <p>
+                  <%= comuns["region.ordinal"] %> región <%=
+                  comuns["region.name"] %>
+                </p>
               </div>
               <div class="data">
                 <h4>Comuna</h4>
-                <p><%= user.comuna%></p>
+
+                <p><%= comuns.name%></p>
               </div>
             </div>
           </div>
           <div class="social_media">
             <button class="btn"><a href="/users/editar">Editar Info</a></button>
-            <button class="btn"><a href="/users/logout">Cerrar Sesion</a></button>
+            <button class="btn">
+              <a href="/users/logout">Cerrar Sesion</a>
+            </button>
           </div>
         </div>
       </div>
