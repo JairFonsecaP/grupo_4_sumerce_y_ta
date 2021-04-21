@@ -78,9 +78,9 @@
         <% tonalidades.forEach(tonalidad=>{ %>
         <div class="modal-mr">
           <label for="<%= tonalidad.color%>"><%= tonalidad.color%> :</label>
-          <input type="checkbox" id="<%= tonalidad.color%>" name="color"
+          <input type="checkbox" id="<%= tonalidad.color%>" name="colors"
           value="<%= tonalidad.idcolor%>" <% product.colors.forEach(color =>{ %>
-          <%= color.idcolor === tonalidad.idcolor ? "checked" : null %> <% }) %>
+          <%= parseInt(color.idcolor) === tonalidad.idcolor ? "checked" : null %> <% }) %>
           />
         </div>
         <% }) %>

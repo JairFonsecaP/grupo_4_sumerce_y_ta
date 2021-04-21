@@ -82,20 +82,18 @@ exports.store = async (req, res) => {
     let sizes = [];
     sizes.push(req.body.sizes);
     req.body.sizes = sizes;
-  } else {
-    req.body.sizes = req.body.sizes;
   }
-  if (typeof req.body.color === "string") {
+  if (typeof req.body.colors === "string") {
     let colors = [];
-    colors.push(req.body.color);
+    colors.push(req.body.colors);
     req.body.colors = colors;
-  } else {
-    req.body.colors = req.body.color;
   }
-  if (resultValidation.mapped().price && req.body.price) {
-    delete req.body.price;
-  }
+
   if (resultValidation.errors.length > 0) {
+    const errors = resultValidation.mapped();
+    if (errors.price && req.body.price) {
+      delete req.body.price;
+    }
     const tallas = await db.Sizes.findAll({ raw: true, neft: true });
     const tonalidades = await db.Colors.findAll({ raw: true, neft: true });
     const categorias = await db.Categories.findAll({ raw: true, neft: true });
@@ -103,7 +101,7 @@ exports.store = async (req, res) => {
       categorias: categorias,
       tallas: tallas,
       tonalidades: tonalidades,
-      errors: resultValidation.mapped(),
+      errors: errors,
       oldData: req.body,
     });
   }
@@ -163,23 +161,37 @@ exports.edit = async (req, res) => {
   });
 };
 
-exports.update = (req, res) => {
-  let sizes = [];
-  let colors = [];
+exports.update = async (req, res) => {
+  const resultValidation = validationResult(req);
+
   if (typeof req.body.sizes === "string") {
+    let sizes = [];
     sizes.push(req.body.sizes);
-  } else {
-    sizes = req.body.sizes;
+    req.body.sizes = sizes;
+  }
+  if (typeof req.body.colors === "string") {
+    let colors = [];
+    colors.push(req.body.colors);
+    req.body.colors = colors;
   }
 
-  if (typeof req.body.color === "string") {
-    colors.push(req.body.color);
-  } else {
-    colors = req.body.color;
+  if (resultValidation.errors.length > 0) {
+    const errors = resultValidation.mapped();
+    if (errors.price && req.body.price) {
+      delete req.body.price;
+    }
+    const tallas = await db.Sizes.findAll({ raw: true, neft: true });
+    const tonalidades = await db.Colors.findAll({ raw: true, neft: true });
+    const categorias = await db.Categories.findAll({ raw: true, neft: true });
+    return res.render("products/editProduct", {
+      categorias: categorias,
+      tallas: tallas,
+      tonalidades: tonalidades,
+      errors: errors,
+      oldData: req.body,
+    });
   }
-  req.body.categories = parseInt(req.body.categories);
-  req.body.price = parseFloat(req.body.price);
-  console.log(req.body);
+
   db.Products.update(
     {
       name: req.body.name,
@@ -196,8 +208,8 @@ exports.update = (req, res) => {
       db.ProductsSizes.destroy({
         where: { product_id: req.params.id },
       }).then(
-        sizes
-          ? sizes.forEach((size) =>
+        req.body.sizes
+          ? req.body.sizes.forEach((size) =>
               db.ProductsSizes.create({
                 product_id: req.params.id,
                 size_id: parseInt(size),
@@ -210,8 +222,8 @@ exports.update = (req, res) => {
       db.ProductsColors.destroy({
         where: { product_id: req.params.id },
       }).then(
-        colors
-          ? colors.forEach((color) =>
+        req.body.colors
+          ? req.body.colors.forEach((color) =>
               db.ProductsColors.create({
                 product_id: req.params.id,
                 color_id: parseInt(color),

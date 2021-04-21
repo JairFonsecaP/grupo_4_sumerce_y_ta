@@ -21,7 +21,7 @@
     ></script>
   </head>
   <body>
-    <h2 class="titulo-crear">Crear Producto</h2>
+    <h2 class="titulo-crear"> Crear Producto  </h2>
     <form
       action="/products/admproducto/create"
       method="POST"
@@ -105,7 +105,7 @@
           <input
             type="checkbox"
             id="<%= tonalidad.color%>"
-            name="color"
+            name="colors"
             value="<%= tonalidad.idcolor%>"
             class="<%= locals.errors && errors.colors ? 'is-invalid': null %>"
             <% if (locals.oldData && oldData.colors){oldData.colors.forEach(color=>{ %>

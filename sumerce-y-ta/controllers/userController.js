@@ -83,13 +83,13 @@ exports.auth = async (req, res) => {
   if (user) {
     const pass = bcrypt.compareSync(req.body.password, user.password);
     if (pass) {
+      console.log(user);
       const userAuth = {
         id: user.iduser,
         name: user.name,
         phone: user.phone,
         photo: user.photo,
-        region: user.region,
-        comuna: user.comuna,
+        comuna: user.comuna_id,
         email: user.email,
       };
       log = true;
