@@ -116,7 +116,7 @@ CREATE TABLE IF NOT EXISTS `sumerceyta`.`products` (
   `name` VARCHAR(45) NULL,
   `photo` VARCHAR(45) NULL,
   `description` LONGTEXT NULL,
-  `price` INT NULL,
+  `price` FLOAT NULL,
   `category_id` INT NOT NULL,
   PRIMARY KEY (`idproduct`),
   CONSTRAINT `fk_products_categories1`

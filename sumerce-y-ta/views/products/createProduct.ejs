@@ -52,7 +52,7 @@
       <fieldset>
         <label>Categoría :</label>
         <select name="categories">
-          <option value="ropa">Seleccionar...</option>
+          <option value="">Seleccionar...</option>
           <% categorias.forEach(categoria=>{%>
           <option value="<%= categoria.idcategory %>">
             <%= categoria.category %>
@@ -61,6 +61,7 @@
           <% }) %>
         </select>
       </fieldset>
+
       <fieldset>
         <label for="">Talla :</label>
         <div class="modal-mr">
