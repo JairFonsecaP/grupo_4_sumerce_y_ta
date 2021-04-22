@@ -174,7 +174,9 @@ exports.update = async (req, res) => {
     colors.push(req.body.colors);
     req.body.colors = colors;
   }
-
+  if (req.file) {
+    req.body.photo = req.file.filename;
+  }
   if (resultValidation.errors.length > 0) {
     const errors = resultValidation.mapped();
     if (errors.price && req.body.price) {
@@ -183,7 +185,23 @@ exports.update = async (req, res) => {
     const tallas = await db.Sizes.findAll({ raw: true, neft: true });
     const tonalidades = await db.Colors.findAll({ raw: true, neft: true });
     const categorias = await db.Categories.findAll({ raw: true, neft: true });
+    let product = await db.Products.findByPk(
+      req.params.id,
+      {
+        include: [
+          { association: "categoria" },
+          { association: "sizes" },
+          { association: "colors" },
+        ],
+      },
+      {
+        raw: true,
+        neft: true,
+      }
+    );
     return res.render("products/editProduct", {
+      toThousand: toThousand,
+      product: product,
       categorias: categorias,
       tallas: tallas,
       tonalidades: tonalidades,
@@ -195,7 +213,7 @@ exports.update = async (req, res) => {
   db.Products.update(
     {
       name: req.body.name,
-      photo: req.body.file ? req.body.file.filename : null,
+      photo: req.body.photo,
       description: req.body.description,
       price: req.body.price,
       category_id: req.body.categories,
