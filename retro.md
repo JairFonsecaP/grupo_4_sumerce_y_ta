@@ -129,6 +129,7 @@ Creamos una nueva rama en Github llamada Retro para no hacer commit de la retro 
 
 #### Less of:
 - No atrasarse con los temas.
+
 #### Stop Doing:
 - No ultimar detalles sobre la hora de entrega.
 
@@ -140,3 +141,33 @@ Siguieron las consultas constantes por medio de Whatsapp.
 Creamos una rama Retro-4 para no hacer commit de la retro directamente a main, y seguimos trabajando en nuestra propia rama Develop, para subir los archivos y cambios, en la última reunión hicimos el merge a main.
 
 
+## Sprint 5
+
+#### Start Doing:
+
+-Daily meetings usando la convención GIFTS (Good start, Improvement, Focus, Team, Status)
+
+#### More of:
+
+- Empezar a investigar los temas, en vez de esperar solo que nos den los contenidos en clase.
+
+#### Keep Doing:
+
+- Comentar el código
+- Poder empezar reuniones con dos personas para no frenar el proyecto y comunicar a la persona faltante por whatsapp de los temas tratados en dicha reunion.
+- Tener una convención de nombres.
+- Hacer el código desde el primer día, para que la cantidad de horas que tengamos que dedicarle por día al proyecto sea siempre constante y no incremental.
+- Programar una primera reunión apenas tengamos el archivo de un nuevo Sprint.
+
+#### Less of:
+- No atrasarse con los temas.
+
+#### Stop Doing:
+- No ultimar detalles sobre la hora de entrega.
+
+
+#### Resumen sprint 5:
+Este Sprint costó más empezarlo dado que tuvimos problemas de comunicación para poder reunirnos, por horarios incompatibles, así que la planning meet se postergó un poco pero finalmente se realizó por Discord, usando la tabla de tareas de Github para ir tomando las tareas a realizar. 
+Siguieron las consultas constantes por medio de Whatsapp.
+No se pudo hacer la meet para revisar todo el trabajo hecho en el Sprint, pero cada uno por su parte se aseguró de revisar el trabajo hecho en conjunto para poder hacer el commit a main.
+Seguimos con el uso de la rama Retro-4 para no hacer commit de la retro directamente a main, y seguimos trabajando en nuestra propia rama Develop, para subir los archivos y cambios, en la última reunión hicimos el merge a main.

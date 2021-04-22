@@ -88,8 +88,7 @@ exports.auth = async (req, res) => {
         name: user.name,
         phone: user.phone,
         photo: user.photo,
-        region: user.region,
-        comuna: user.comuna,
+        comuna: user.comuna_id,
         email: user.email,
       };
       log = true;
@@ -138,41 +137,36 @@ exports.editUser = async (req, res) => {
   });
 };
 
-exports.updateUser = (req, res) => {
-  const user = {};
-
-  if (user) {
-    user.name = req.body.name;
-    user.phone = req.body.phone;
-    user.comuna_id = req.body.comuna;
-    user.email = req.body.email;
-
-    if (req.file) {
-      user.photo = req.file.filename;
-    }
-
-    req.session.userAuth = {
-      id: req.session.userAuth.id,
-      name: user.name,
-      phone: user.phone,
-      photo: user.photo,
-      comuna: user.comuna_id,
-      email: user.email,
-    };
-
-    db.Users.update(
-      {
-        name: user.name,
-        phone: user.phone,
-        photo: user.photo,
-        email: user.email,
-        comuna_id: user.comuna_id,
-      },
-      {
-        where: { iduser: req.session.userAuth.id },
-      }
-    ).then(res.redirect("/users/profile"));
+exports.updateUser = async (req, res) => {
+  if (req.file) {
+    req.body.photo = req.file.filename;
   }
+
+  const edit = await db.Users.update(
+    {
+      name: req.body.name,
+      phone: req.body.phone,
+      photo: req.body.photo,
+      email: req.body.email,
+      comuna_id: req.body.comuna,
+    },
+    {
+      where: { iduser: req.session.userAuth.id },
+    }
+  );
+  const response = await db.Users.findByPk(req.session.userAuth.id, {
+    raw: true,
+    netf: true,
+  });
+
+  req.session.userAuth = {
+    name: response.name,
+    phone: response.phone,
+    photo: response.photo,
+    comuna: response.comuna_id,
+    email: response.email,
+  };
+  res.redirect("/users/profile");
 };
 
 exports.editPass = (req, res) => {
@@ -197,7 +191,7 @@ exports.updatePassword = async (req, res) => {
 
     if (pass) {
       const passwordNew = bcrypt.hashSync(req.body.password, 12);
-      console.log(passwordNew);
+
       db.Users.update(
         {
           password: passwordNew,

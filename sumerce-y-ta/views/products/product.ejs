@@ -31,13 +31,13 @@
        
           <h2><%= product.name %></h2>
           <p class="precio-producto">Precio: $<%= toThousand(product.price) %></p>
-          <p>Ref. <%= product.id %></p>
+          <p>Ref. <%= product.idproduct %></p>
           <i class="far fa-heart"></i>
         </div>
         <div class="details">
           <select class="input-size-tamano" name="#" id="#">
             <option value="#">Elige tamaño</option>
-            <% tallas.forEach(talla=>{%>
+            <% product.sizes.forEach(talla=>{%>
             <option value="<%=talla.idsize%>"><%=talla.size.toUpperCase()%></option>
 
             <% }) %>

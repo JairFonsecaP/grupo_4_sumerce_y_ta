@@ -41,7 +41,7 @@
             <th>Color</th>
             <th>Talla</th>
             <th>Descripcion</th>
-            <th>Tipo</th>
+
             <th>Precio</th>
             <th></th>
             <th></th>
@@ -57,11 +57,10 @@
               />
             </td>
             <td><%=product.name%></td>
-            <td><%=product['categoria.category']%></td>
-            <td><%=product.color%></td>
-            <td><%=product.sizes%></td>
+            <td><%=product.categoria.category%></td>
+            <td><%=product.colors.map(color=> color.color).join(", ")%></td>
+            <td><%=product.sizes.map(size=> size.size ).join(", ");%></td>
             <td><%=product.description%></td>
-            <td><%=product.types%></td>
             <td><%=toThousand(parseInt(product.price))%></td>
             <td>
               <a
