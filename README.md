@@ -37,3 +37,5 @@ Tablero del sprint 4: https://github.com/JairFonsecaP/grupo_4_sumerce_y_ta/proje
 Tablero del sprint 5: https://github.com/JairFonsecaP/grupo_4_sumerce_y_ta/projects/5
 
 Tablero del sprint 6: https://github.com/JairFonsecaP/grupo_4_sumerce_y_ta/projects/6
+
+Tablero del sprint 7: https://github.com/JairFonsecaP/grupo_4_sumerce_y_ta/projects/7
