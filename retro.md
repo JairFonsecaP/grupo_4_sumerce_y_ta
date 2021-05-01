@@ -171,3 +171,33 @@ Este Sprint costó más empezarlo dado que tuvimos problemas de comunicación pa
 Siguieron las consultas constantes por medio de Whatsapp.
 No se pudo hacer la meet para revisar todo el trabajo hecho en el Sprint, pero cada uno por su parte se aseguró de revisar el trabajo hecho en conjunto para poder hacer el commit a main.
 Seguimos con el uso de la rama Retro-4 para no hacer commit de la retro directamente a main, y seguimos trabajando en nuestra propia rama Develop, para subir los archivos y cambios, en la última reunión hicimos el merge a main.
+
+
+## Sprint 6
+
+#### Start Doing:
+
+-Daily meetings usando la convención GIFTS (Good start, Improvement, Focus, Team, Status).
+
+#### More of:
+
+- 
+
+#### Keep Doing:
+
+- Empezar a investigar los temas, en vez de esperar solo que nos den los contenidos en clase.
+- Comentar el código
+- Hacer el código desde el primer día, para que la cantidad de horas que tengamos que dedicarle por día al proyecto sea siempre constante y no incremental.
+
+#### Less of:
+- No atrasarse con los temas.
+
+#### Stop Doing:
+- No ultimar detalles sobre la hora de entrega.
+
+
+#### Resumen sprint 6:
+Habíamos decidido en el sprint anterior empezar a hacer daily meetings, pero dado que tuvimos poco trabajo por hacer no hubo necesidad de las daily, así que decidimos dejarlas para el sprint 7.
+Respetamos el uso de diswtintas ramas para commitear, el tablero de tareas para dividir responsabilidades, y el uso dde discord como plataforma de reuniones, también eliminamos ramas que ya estaban en desuso para mantener mas limpio nuestro repositorio, así cuando alguien ajeno al proyecto entre, esa persona encuentre todo mas ordenado.
+
+
