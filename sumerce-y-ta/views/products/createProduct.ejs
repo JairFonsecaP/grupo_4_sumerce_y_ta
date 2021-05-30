@@ -22,7 +22,13 @@
   </head>
   <body>
     <h2 class="titulo-crear"> Crear Producto  </h2>
+    <div class="errors">
+      <ul>
+        
+      </ul>
+    </div>
     <form
+      id="form-crear"
       action="/products/admproducto/create"
       method="POST"
       enctype="multipart/form-data"
@@ -60,6 +66,7 @@
       <fieldset>
         <label>Categoría :</label>
         <select
+        id="categories"
           name="categories"
           class="<%= locals.errors && errors.categories ? 'is-invalid': null %>"
         >

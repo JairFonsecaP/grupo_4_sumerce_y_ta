@@ -22,8 +22,16 @@
   </head>
   <body>
     <h2 class="titulo-crear">Editar <%= product.name %></h2>
-    <form action="<%= product.idproduct %>?_method=PUT" method="POST"
-        enctype="multipart/form-data">
+    <div class="errors">
+      <ul>
+        
+      </ul>
+    </div>
+    <form 
+    id="form-editar"
+    action="<%= product.idproduct %>?_method=PUT" 
+    method="POST"
+    enctype="multipart/form-data">
       <fieldset>
         <label for="name">Nombre :</label>
         <input
@@ -52,7 +60,7 @@
 
       <fieldset>
         <label>Categoría :</label>
-        <select name="categories">
+        <select name="categories" id="categorieEdit">
           <option value="">Seleccionar...</option>
           <% categorias.forEach(categoria=>{ %>
           <option value="<%= categoria.idcategory %>" <%= product.categoria.idcategory === categoria.idcategory ? 'selected' : null %>>

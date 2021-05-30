@@ -23,7 +23,15 @@
     <%- include( '../partials/header' ) %>
     <main>
       <section class="box-form">
-        <form action="/users/login" method="POST">
+        <div class="errors">
+          <ul>
+            
+          </ul>
+        </div>
+        <form 
+        id="form-login"
+        action="/users/login" 
+        method="POST">
           <div class="form">
             <div class="form-title">
               <h3 class="login-session">INICIA SESION</h3>
@@ -39,11 +47,12 @@
             </div>
             <div class="form-fields1">
               <input
+                id="user"
                 type="text"
                 name="email"
                 placeholder="Usuario o correo electrónico"
               />
-              <input type="password" name="password" placeholder="Contraseña" />
+              <input id="passwordLogin" type="password" name="password" placeholder="Contraseña" />
             </div>
             <div>
               <input type="checkbox" name="remember" id="remember" checked />
@@ -59,6 +68,6 @@
         </form>
       </section>
     </main>
-    <%- include( '../partials/footer' ) %>
+    <%- include( '../partials/footer' ) %> 
   </body>
 </html>
