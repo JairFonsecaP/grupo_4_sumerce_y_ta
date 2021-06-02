@@ -25,5 +25,7 @@ router.put(
   productController.update
 );
 router.delete("/delete/:id", noLoggin, productController.delete);
+router.get("/list", productController.list);
+router.get("/detail/:id", productController.detail);
 
 module.exports = router;
