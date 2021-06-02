@@ -1,23 +1,26 @@
-const fs = require("fs");
-const path = require("path");
+const db = require("../database/models");
 
-const productsFilePath = path.join(__dirname, "../data/products.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+//const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-exports.index = (req, res) => {
-  res.render("index", {products:products});
-};
-
-exports.search = (req, res) => {
-  let busca = req.query.search;
-  let results = [];
-
-  products.forEach((product) => {
-    if (product.name.includes(busca)) {
-      results.push(product);
-    }
+exports.index = async (req, res) => {
+  const products = await db.Products.findAll({
+    include: [{ association: "categoria" }],
+    raw: true,
+    neft: true,
   });
 
-  res.render("results", { results: results, busca: busca });
+  res.render("index", { products });
 };
+
+// exports.search = (req, res) => {
+//   let busca = req.query.search;
+//   let results = [];
+
+//   products.forEach((product) => {
+//     if (product.name.includes(busca)) {
+//       results.push(product);
+//     }
+//   });
+
+//   res.render("results", { results: results, busca: busca });
+// };
