@@ -9,6 +9,24 @@ body {
   font-family: "Caveat", sans-serif;
   background-color: #f4f4f4;
 }
+.sidebar {
+  background-color: #DCD0D0;
+  overflow: hidden;
+  display: none;
+}
+.sidebar .lista-header{
+  padding-left: 0!important;
+}
+.sidebar ul li{
+  list-style: none;
+  font-size: 1.6em;
+  margin: 0 10px;
+  font-weight: 800;
+}
+.sidebar ul li a{
+  text-decoration: none;
+  display: block;
+}
 ul li a {
   border-bottom: 4px solid #DCD0C0;
 }
@@ -178,6 +196,9 @@ ul li a:hover {
   }
   .lista-header i {
     font-size: 2em;
+  }
+  .sidebar{
+    display: none;
   }
 }
 
