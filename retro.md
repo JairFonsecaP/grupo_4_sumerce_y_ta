@@ -201,3 +201,54 @@ Habíamos decidido en el sprint anterior empezar a hacer daily meetings, pero da
 Respetamos el uso de diswtintas ramas para commitear, el tablero de tareas para dividir responsabilidades, y el uso dde discord como plataforma de reuniones, también eliminamos ramas que ya estaban en desuso para mantener mas limpio nuestro repositorio, así cuando alguien ajeno al proyecto entre, esa persona encuentre todo mas ordenado.
 
 
+## Sprint 7
+
+#### Start Doing:
+
+-
+
+#### More of:
+
+- Daily meetings usando la convención GIFTS (Good start, Improvement, Focus, Team, Status).
+
+#### Keep Doing:
+
+- Investigar los temas, en vez de esperar solo que nos den los contenidos en clase.
+- Hacer el código desde el primer día, para que la cantidad de horas que tengamos que dedicarle por día al proyecto sea siempre constante y no incremental.
+
+#### Less of:
+-
+
+#### Stop Doing:
+-
+
+
+#### Resumen sprint 7:
+Estuvimos cortos de tiempo en el sprint 7 así que se nos juntaron el sprint 7 con el sprint 8, pero usando las mismas metodologías habíamos usado anteriormente (Videollamadas por discord, canal de comunicación por whatsapp, y tablero de tareas de Github -> Projects) pudimos ir organizando todas las tareas correspondientes a este sprint.
+
+## Sprint 8
+
+#### Start Doing:
+
+-
+
+#### More of:
+
+- Daily meetings usando la convención GIFTS (Good start, Improvement, Focus, Team, Status).
+- Conversación fluida donde podamos hablar abiertamente sobre las dificultades que nos implican algunas tareas mas complejas que otras.
+
+#### Keep Doing:
+
+- Hacer el código desde el primer día, para que la cantidad de horas que tengamos que dedicarle por día al proyecto sea siempre constante y no incremental.
+
+#### Less of:
+- No atrasarse con los temas.
+
+#### Stop Doing:
+-
+
+
+#### Resumen sprint 8:
+Empezamos con el sprint 7 encima de este por lo que tuvimos poco tiempo en el sprint 8 para revisar bien cada tarea que ibamos realizando, así que decidimos aumentar el nivel de reuniones por discord, para estar al tanto en tiempo real del código que iba escribiendo cada uno y así hacer unos merge con menos conflictos, y con menos tiempo de espera entre uno y otro.
+Se usó menos el whatsapp dando que nos comunicabamos mas seguido por discord, y seguimos respetando el uso de distintas ramas para no pisar el trabajo del otro.
+
