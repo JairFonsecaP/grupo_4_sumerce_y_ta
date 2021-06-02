@@ -5,7 +5,7 @@ const users = require("./api/users");
 const mainController = require("../controllers/mainController");
 
 router.get("/", mainController.index);
-router.get("/search", mainController.search);
+//router.get("/search", mainController.search);
 
 router.use("/products", products);
 router.use("/users", users);
