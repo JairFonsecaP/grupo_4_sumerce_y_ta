@@ -211,11 +211,15 @@ exports.updatePassword = async (req, res) => {
     });
   }
 };
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1e4ab35dcf0221331d4bfbf1692f261288a668ac
 // APIS USUARIOS
 const Users = db.Users;
 
 exports.userAPI = {
+<<<<<<< HEAD
   list: (req, res) => {
     Users.findAll().then((users) => {
       let userPush;
@@ -249,3 +253,41 @@ exports.userAPI = {
     }
   },
 };
+=======
+    'list': (req, res) => {
+        Users.findAll()
+        .then(users => {
+            let userPush;
+            let usersArray = [];
+            users.forEach(user => {
+                userPush = {
+                id: user.iduser,
+                name: user.name,
+                email: user.email,
+                detail: '/api/users/' + user.iduser
+                };
+                usersArray.push(userPush);
+            })
+            let respuesta = {
+                count: users.length,
+                users: usersArray
+            };
+            res.json(respuesta);
+        })
+    },
+    'findUser': async (req, res) => {
+        const userSearch = await Users.findByPk(req.params.id);
+        let userFound;
+        if(userSearch === null){
+            return res.json("not found");
+        } else {
+            userFound = userSearch.dataValues;
+            delete userFound.password;
+            userFound.urlImage = '/images/' + userSearch.photo; 
+            return res.json(userFound);
+        }
+    }
+}
+
+
+>>>>>>> 1e4ab35dcf0221331d4bfbf1692f261288a668ac
