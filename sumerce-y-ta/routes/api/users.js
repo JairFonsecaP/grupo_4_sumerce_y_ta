@@ -17,6 +17,10 @@ router.get(
 
   userController.editPass
 );
+//Api lista de usuarios
+router.get("/", userController.userAPI.list);
+//Api detalle de un usuario
+router.get("/:id", userController.userAPI.findUser);
 
 router.post(
   "/registro",
@@ -39,5 +43,7 @@ router.put(
   validation.updatePassword,
   userController.updatePassword
 );
+
+
 
 module.exports = router;

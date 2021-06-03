@@ -266,3 +266,65 @@ exports.delete = (req, res) => {
     )
   );
 };
+
+//API productos
+
+const Products = db.Products;
+const Categories = db.categoria;
+const { QueryTypes } = require('sequelize');
+
+exports.productAPI = {
+    'list': async (req, res) => {
+        let productos = await Products.findAll({include: [{model: db.Categories, as:'categoria', atributes:['category']}]
+      });
+      let countByCategory = await db.sequelize.query("SELECT categories_products.category, count(products.idproduct) as cantidad from products left join categories_products on products.category_id = categories_products.idcategory group by categories_products.category;", { type: QueryTypes.SELECT });
+        
+      let objetoCategorias = {};
+
+      countByCategory.forEach(category => {
+          objetoCategorias = { 
+              ...objetoCategorias,
+              [category.category] : category.cantidad
+            }
+        });
+
+        let productPush;
+        let productsArray = [];
+        productos.forEach(product => {
+            let categories = []
+         /*   categoria.forEach(categorii => {
+                if(product.category_id === categorii.idcategory) {
+                    categories.push(categorii.category);
+                }
+            }) */
+            productPush = {
+            id: product.idproduct,
+            name: product.name,
+            description: product.description,
+          /*  categories: categories, */
+            detail: '/api/products/' + product.idproduct
+            };
+            productsArray.push(productPush);
+        })
+
+        let respuesta = {
+            count: productsArray.length,
+            countByCategory: objetoCategorias,
+            products: productsArray
+        };
+        return res.json(respuesta);
+    },
+
+
+
+
+
+/*
+
+    'findProduct': async (req, res) => {
+        let productSearch = await Products.findByPk(req.params.id, 
+            {include:[
+                
+    } */
+}
+

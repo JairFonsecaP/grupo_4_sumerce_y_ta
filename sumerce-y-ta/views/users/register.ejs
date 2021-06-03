@@ -23,7 +23,13 @@
     <%- include( '../partials/header' ) %>
     <main>
       <section class="box-form">
+        <div class="errors">
+          <ul>
+            
+          </ul>
+        </div>
         <form
+        id="form-register"
           action="/users/registro"
           method="POST"
           enctype="multipart/form-data"
@@ -158,5 +164,6 @@
       </section>
     </main>
     <%- include( '../partials/footer' ) %>
+
   </body>
 </html>

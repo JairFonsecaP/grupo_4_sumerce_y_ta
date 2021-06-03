@@ -4,6 +4,11 @@ const upload = require("../../middlewares/photoUp");
 const noLoggin = require("../../middlewares/noLogginMiddleware");
 const validation = require("../../middlewares/validation");
 
+//Api lista de productos
+router.get("/list", productController.productAPI.list);
+//Api detalle de producto
+/* router.get("/:id", productController.productAPI.findProduct); */
+
 router.get("/admproducto", noLoggin, productController.admproducto);
 router.get("/create", noLoggin, productController.create);
 router.post(
