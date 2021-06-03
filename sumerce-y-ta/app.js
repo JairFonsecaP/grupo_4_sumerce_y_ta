@@ -5,9 +5,10 @@ const methodOverride = require("method-override");
 const router = require("./routes/index");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
-
+const cors = require('cors');
 const userPermissions = require("./middlewares/userPermissions");
 
+app.use(cors());
 const port = 3000;
 app.use(
   session({
