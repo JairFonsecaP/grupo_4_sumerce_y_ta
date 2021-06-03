@@ -267,6 +267,7 @@ exports.delete = (req, res) => {
   );
 };
 
+<<<<<<< HEAD
 //API productos
 
 const Products = db.Products;
@@ -328,3 +329,41 @@ exports.productAPI = {
     } */
 }
 
+=======
+exports.list = async (req, res) => {
+  const productos = await db.Products.findAll({
+    include: [
+      { association: "categoria" },
+      { association: "sizes" },
+      { association: "colors" },
+    ],
+  });
+  for (let i = 0; i < productos.length; i++) {
+    productos[
+      i
+    ].dataValues.url = `http://localhost:3000/products/detail/${productos[i].idproduct}`;
+  }
+  res.status(200).json({ productos });
+};
+
+exports.detail = async (req, res) => {
+  const detalle = await db.Products.findByPk(
+    req.params.id,
+    {
+      include: [
+        { association: "categoria" },
+        { association: "sizes" },
+        { association: "colors" },
+      ],
+    },
+    {
+      raw: true,
+      neft: true,
+    }
+  );
+
+  detalle.dataValues.imagen = `http://localhost:3000/static/images/products/${detalle.photo}`;
+
+  res.status(200).json(detalle);
+};
+>>>>>>> 25d3fb22f17f67076474ce16e9e4cba98b7c54da
