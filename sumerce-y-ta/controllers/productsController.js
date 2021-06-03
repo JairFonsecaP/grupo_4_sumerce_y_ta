@@ -280,7 +280,8 @@ exports.list = async (req, res) => {
       i
     ].dataValues.url = `http://localhost:3000/products/detail/${productos[i].idproduct}`;
   }
-  res.status(200).json({ productos });
+  const count = productos.length;
+  res.status(200).json({ count, productos });
 };
 
 exports.detail = async (req, res) => {
@@ -298,8 +299,15 @@ exports.detail = async (req, res) => {
       neft: true,
     }
   );
-
   detalle.dataValues.imagen = `http://localhost:3000/static/images/products/${detalle.photo}`;
 
   res.status(200).json(detalle);
+};
+
+exports.last = async (req, res) => {
+  const register = await db.Products.findOne({
+    order: [["idproduct", "DESC"]],
+  });
+
+  res.status(200).json(register);
 };
